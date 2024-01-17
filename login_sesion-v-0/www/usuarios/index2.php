@@ -134,3 +134,4 @@ session_start();
 <?php 
 include "../footer.php"
 ?>
+hola soy jorge aaaaaaaaaa
