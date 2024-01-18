@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-  <title>Sistema CRUD de inventario de productos</title>
+  <title>3DREAMS</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -70,6 +70,5 @@
         </ul>
     </header>
   <header class="container-fluid bg-primary  text-center py-3 display-4">
-  Sistema Gestor de Inventariado de Productos
-    
+    3DREAMS
   </header>

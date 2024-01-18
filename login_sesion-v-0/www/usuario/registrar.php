@@ -12,7 +12,7 @@
     // $descripcion = $_POST["descripcion"];
     // $precio = $_POST["precio"];
     // var_dump ($_FILES['imagen']);
-    $directorioSubida = "imagenes/";
+    $directorioSubida = "../imagenes/";
     $max_file_size="5120000";
     $extensionesValidas=array("jpg","png","gif");
     if ($dni < 60000 || $dni > 80000) {
