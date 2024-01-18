@@ -70,6 +70,5 @@
         </ul>
     </header>
   <header class="container-fluid bg-primary  text-center py-3 display-4">
- bienvenido a 3DREAMS
-    
+    3DREAMS
   </header>
