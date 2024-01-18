@@ -15,10 +15,10 @@
 	if($row[0] > 0 ){
 		session_start();
 		
-			$_SESSION['usuario'] = $usuario;
+			
 			
 		if($usuario == "admin"){
-			
+			$_SESSION['usuario'] = $usuario;
 			header( 'Location: principal.php' );
 		}
 		else{
