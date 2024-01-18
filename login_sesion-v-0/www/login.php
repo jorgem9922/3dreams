@@ -14,9 +14,7 @@
 
 	if($row[0] > 0 ){
 		session_start();
-		$completo = "SELECT nom_compreto FROM usuario where usuario='$usuario' ";
-			$res1 = mysqli_query($conn,$completo);
-			$row1 = mysqli_fetch_array($res1);
+		
 			$_SESSION['usuario'] = $usuario;
 			$_SESSION['nom_compreto'] = $row1[0];
 		if($usuario == "admin"){
