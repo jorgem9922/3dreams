@@ -14,7 +14,7 @@
     // $correo_electronico = $_POST["correo_electrico"];
     //var_dump ($_FILES['imagen']);
     
-    $directorioSubida = "imagenes/";
+    $directorioSubida = "../imagenes/";
     $max_file_size="5120000";
     $extensionesValidas=array("jpg","png","gif");
     
