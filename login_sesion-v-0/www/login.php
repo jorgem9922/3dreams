@@ -16,7 +16,7 @@
 		session_start();
 		
 			$_SESSION['usuario'] = $usuario;
-			$_SESSION['nom_compreto'] = $row1[0];
+			
 		if($usuario == "admin"){
 			
 			header( 'Location: principal.php' );
