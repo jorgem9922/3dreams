@@ -103,7 +103,7 @@ session_start();
                 <div class="table-responsive">
                     <table class="table table-primary">
                         <thead>
-                            <tr style= "margin-left:5px;">
+                            <tr>
                                 <th scope="col">usuario</th>
                                 <th scope="col">reseñas</th>
                                 <th scope="col">fabricantes</th>
