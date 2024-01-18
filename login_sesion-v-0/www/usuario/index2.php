@@ -58,6 +58,8 @@ session_start();
 
         </div>  
     </div>
+    <a href="../indexcrud.php"> <i class="bi-arrow-return-left px-3" style="font-size: 4rem; color:black;"></i> </a>
+
 </div>
 
 
