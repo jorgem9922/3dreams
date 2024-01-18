@@ -1,12 +1,11 @@
 <?php 
 session_start();
-
-if(!isset($usuario)){
+$usuario = $_SESSION['usuario'];
+if (!isset($_SESSION['usuario']) || $_SESSION['usuario'] === null) {
     header("Location: ../index.php");
     exit;
+    
 }
-$usuario = $_SESSION['usuario'];
-
 include "../header.php"
 ?>
 
