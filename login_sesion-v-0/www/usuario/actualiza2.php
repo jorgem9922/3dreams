@@ -8,8 +8,8 @@ if (!isset($_SESSION['usuario']) || $_SESSION['usuario'] === null) {
 }
 $usuario = $_SESSION['usuario'];
 
-include "header.php";
-include "conexion.php";
+include "../header.php";
+include "../conexion.php";
 
 mysqli_select_db($conn, "dreams3");
 $usuarioactualizar = $_GET["id"];

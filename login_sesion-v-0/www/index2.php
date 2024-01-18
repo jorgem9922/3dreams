@@ -7,7 +7,7 @@
 session_start();
     
     if (!isset($_SESSION['usuario']) || $_SESSION['usuario'] === null) {
-        header("Location: index.php");
+        header("Location: ../index.php");
         exit;
         
     }
@@ -75,7 +75,7 @@ session_start();
             </li>
             <li class="dropdown open">
                 <a href="#" class="dropdown-toggle hidden-xs hidden-sm" data-toggle="dropdown">
-                    Bienvenido<?php echo ": ". $_SESSION['nom_compreto'] ?>
+                    Bienvenido<?php echo ": ". $_SESSION['usuario'] ?>
                 </a>                
             </li>             
             <li class="settings hidden-xs hidden-sm">

@@ -2,12 +2,12 @@
 session_start();
 $usuario = $_SESSION['usuario'];
 if (!isset($_SESSION['usuario']) || $_SESSION['usuario'] === null) {
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit;
     
 }
 
-include "header.php"
+include "../header.php"
 ?>
 
 <div class="container mt-5">
@@ -26,5 +26,5 @@ include "header.php"
 
 
 <?php 
-include "footer.php"
+include "../footer.php"
 ?>
