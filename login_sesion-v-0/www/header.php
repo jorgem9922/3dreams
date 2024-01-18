@@ -70,6 +70,5 @@
         </ul>
     </header>
   <header class="container-fluid bg-primary  text-center py-3 display-4">
-  Sistema Gestor de Inventariado de Productos
-    
+    3DREAMS
   </header>

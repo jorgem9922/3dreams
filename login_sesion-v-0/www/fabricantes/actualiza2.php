@@ -5,7 +5,7 @@ if(!isset($usuario)){
     header("Location: indexcrud.php");
     exit;
 }
-include "header.php";
+include ".../header.php";
 include "conexioncrud.php";
 
 mysqli_Select_db($conexion, "dreams3");
@@ -97,5 +97,5 @@ $registro = mysqli_fetch_row($registros);
 
 
 <?php 
-include "footer.php"
+include "../footer.php"
 ?>
