@@ -23,7 +23,7 @@
 		}
 		else{
 			$_SESSION['usuario'] = $usuario;
-		header( 'Location: indexcrud.php' );
+		header( 'Location: index2.php' );
 		}
 	}
 	else{
