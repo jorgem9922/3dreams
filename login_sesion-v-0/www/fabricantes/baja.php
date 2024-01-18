@@ -7,7 +7,7 @@ if(!isset($usuario)){
     header("Location: login.php");
 }
 include "conexioncrud.php";
-include "conexion.php";
+include "../conexion.php";
 include "../header.php";
 ?>
 
