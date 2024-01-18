@@ -6,14 +6,14 @@
 session_start();
     
     if (!isset($_SESSION['usuario']) || $_SESSION['usuario'] === null) {
-        header("Location: index.php");
+        header("Location: ../index.php");
         exit;
         
     }
     $usuario = $_SESSION['usuario'];
 
-include "conexion.php";
-include "header.php";
+include "../conexion.php";
+include "../header.php";
 ?>
 
 <div class="container my-5">

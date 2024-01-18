@@ -8,8 +8,8 @@ if (!isset($_SESSION['usuario']) || $_SESSION['usuario'] === null) {
 }
 $usuario = $_SESSION['usuario'];
 
-include "conexion.php";
-include "header.php";
+include "../conexion.php";
+include "../header.php";
 ?>
 
 <div class="container my-5">

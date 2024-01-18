@@ -1,4 +1,4 @@
-<?php include "conexion.php";?>
+<?php include "../conexion.php";?>
 <?php
     mysqli_select_db($conn, "dreams3");
     // $identificador = $_POST["identificador"];

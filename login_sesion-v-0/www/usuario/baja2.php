@@ -1,5 +1,5 @@
 <?php 
-include "conexion.php";
+include "../conexion.php";
 
 mysqli_select_db($conn, "dreams3");
 
