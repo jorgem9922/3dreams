@@ -75,7 +75,7 @@ session_start();
             </li>
             <li class="dropdown open">
                 <a href="#" class="dropdown-toggle hidden-xs hidden-sm" data-toggle="dropdown">
-                    Bienvenido<?php echo ": ". $_SESSION['nom_compreto'] ?>
+                    Bienvenido<?php echo ": ". $_SESSION['usuario'] ?>
                 </a>                
             </li>             
             <li class="settings hidden-xs hidden-sm">
