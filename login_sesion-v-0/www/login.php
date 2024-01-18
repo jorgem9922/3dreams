@@ -25,7 +25,7 @@
 		}
 		else{
 			$_SESSION['usuario'] = $usuario;
-		header( 'Location: usuarios/index2.php' );
+		header( 'Location: index2.php' );
 		}
 	}
 	else{
