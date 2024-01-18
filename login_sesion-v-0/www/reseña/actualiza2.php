@@ -2,10 +2,10 @@
 include "../header.php";
 include "../conexion.php";
 
-mysqli_select_db($conexion, "productosbd");
+mysqli_select_db($conn, "productosbd");
 $productoactualizar = $_GET["id"];
 $seleccionar = "SELECT * FROM reseña WHERE id_reseña='$productoactualizar'";
-$registros = mysqli_Query($conexion, $seleccionar);
+$registros = mysqli_Query($conn, $seleccionar);
 $registro = mysqli_fetch_row($registros);
 ?>
 

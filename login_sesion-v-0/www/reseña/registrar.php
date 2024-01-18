@@ -1,6 +1,6 @@
 <?php include "../conexion.php";?>
 <?php
-    mysqli_select_db($conexion, "productosbd");
+    mysqli_select_db($conn, "productosbd");
     $id_reseña = $_POST["id_reseña"];
     $nombre = $_POST["nombre"];
     $autor = $_POST["autor"];
@@ -40,7 +40,7 @@
 
     $insertar="INSERT reseña (id_reseña, nombre, autor, titulo ,descripcion, imagen) VALUES ($id_reseña, '$nombre', '$autor', '$titulo', '$descripcion', '$nombreArchivo')";
     //echo $insertar;
-    mysqli_query($conexion, $insertar);
+    mysqli_query($conn, $insertar);
     header("Location:alta_ok.php");
     
     ?>

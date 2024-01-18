@@ -4,7 +4,7 @@
     // $idm = $_GET["idmodifica"];
     $nombreantiguo = $_GET["nombreimagen"];
 
-    mysqli_select_db($conexion, "productosbd");
+    mysqli_select_db($conn, "productosbd");
     $id_reseña = $_POST["id_reseña"];
     $nombre = $_POST["nombre"];
     $autor = $_POST["autor"];
