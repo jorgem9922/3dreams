@@ -1,6 +1,6 @@
 <?php 
-include "header.php";
-include "conexion.php";
+include "../header.php";
+include "../conexion.php";
 
 mysqli_select_db($conexion, "productosbd");
 $productoactualizar = $_GET["id"];
@@ -96,5 +96,5 @@ $registro = mysqli_fetch_row($registros);
 
 
 <?php 
-include "footer.php"
+include "../footer.php"
 ?>

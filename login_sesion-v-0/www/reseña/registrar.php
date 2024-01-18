@@ -1,4 +1,4 @@
-<?php include "conexion.php";?>
+<?php include "../conexion.php";?>
 <?php
     mysqli_select_db($conexion, "productosbd");
     $id_reseña = $_POST["id_reseña"];
