@@ -9,6 +9,8 @@
     if(isset($_SESSION['usuario'])){
         header("Location: principal.php");
     }
+    
+
 ?>
 <!DOCTYPE html>
 <html class="login-bg" lang="es">
