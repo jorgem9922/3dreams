@@ -1,4 +1,11 @@
-<?php include "../conexion.php";?>
+<?php
+session_start();
+$usuario = $_SESSION['usuario'];
+if(!isset($usuario)){
+    header("Location: indexcrud.php");
+    exit;
+} 
+include "../conexion.php";?>
 <?php
     
     // $idm = $_GET["idmodifica"];
