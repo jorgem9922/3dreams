@@ -3,8 +3,8 @@
 /* *********************  ******************  **************************** */
 /* **************** Listado de productos en la BD ************************ */
 /* *********************************************************************** */
-include "conexion.php";
-include "header.php";
+include "../conexion.php";
+include "../header.php";
 ?>
 
 <div class="container my-5">
@@ -24,10 +24,10 @@ include "header.php";
                             Reseñas:
                         </div>
                         <?php
-                          mysqli_select_db($conexion,"productosbd");
+                          mysqli_select_db($conn,"productosbd");
                           $consultar= "SELECT * FROM reseña";
 
-                          $registros= mysqli_query($conexion, $consultar);
+                          $registros= mysqli_query($conn, $consultar);
 
                         ?>
                         <div class="table-responsive">
@@ -84,5 +84,5 @@ include "header.php";
 
 
 <?php 
-include "footer.php"
+include "../footer.php"
 ?>
