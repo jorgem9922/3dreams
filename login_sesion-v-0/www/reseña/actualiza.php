@@ -1,4 +1,10 @@
 <?php 
+session_start();
+$usuario = $_SESSION['usuario'];
+if(!isset($usuario)){
+    header("Location: indexcrud.php");
+    exit;
+}
 include "../conexion.php";
 include "../header.php";
 ?>

@@ -1,4 +1,6 @@
-<?php include "../conexion.php";?>
+<?php
+
+include "../conexion.php";?>
 <?php
     mysqli_select_db($conn, "productosbd");
     $id_reseña = $_POST["id_reseña"];
@@ -8,7 +10,7 @@
     $descripcion = $_POST["descripcion"];
     
     // var_dump ($_FILES['imagen']);
-    $directorioSubida = "../imagenes";
+    $directorioSubida = "../imagenes/";
     $max_file_size="5120000";
     $extensionesValidas=array("jpg","png","gif");
     if(isset($_FILES['imagen'])){
