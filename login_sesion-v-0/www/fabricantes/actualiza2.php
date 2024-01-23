@@ -5,10 +5,10 @@ if(!isset($usuario)){
     header("Location: indexcrud.php");
     exit;
 }
-include ".../header.php";
+include "../header.php";
 include "conexioncrud.php";
 
-mysqli_Select_db($conexion, "dreams3");
+mysqli_Select_db($conexion, "productosbd");
 $productoactualizar = $_GET["id"];
 $seleccionar = "SELECT * FROM fabricantes WHERE id_fabricante='$productoactualizar'";
 $registros = mysqli_Query($conexion, $seleccionar);
@@ -69,7 +69,7 @@ $registro = mysqli_fetch_row($registros);
                       <!-- imagen antigua -->
                         <div class="mb-3">
                           <label for="" class="form-label">Imagen Antigua</label>
-                          <?php  echo '<img width="100px" height="100px" src="imagenes/'.$registro[5].'">';
+                          <?php  echo '<img width="100px" height="100px" src="../imagenes/'.$registro[5].'">';
                           ?>
                         </div>
 
