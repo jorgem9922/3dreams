@@ -69,7 +69,7 @@ $registro = mysqli_fetch_row($registros);
                       <!-- imagen antigua -->
                         <div class="mb-3">
                           <label for="" class="form-label">Imagen Antigua</label>
-                          <?php  echo '<img width="100px" height="100px" src="imagenes/'.$registro[5].'">';
+                          <?php  echo '<img width="100px" height="100px" src="../imagenes/'.$registro[5].'">';
                           ?>
                         </div>
 
