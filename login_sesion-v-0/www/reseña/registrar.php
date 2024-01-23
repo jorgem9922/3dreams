@@ -10,7 +10,7 @@ include "../conexion.php";?>
     $descripcion = $_POST["descripcion"];
     
     // var_dump ($_FILES['imagen']);
-    $directorioSubida = "../imagenes";
+    $directorioSubida = "../imagenes/";
     $max_file_size="5120000";
     $extensionesValidas=array("jpg","png","gif");
     if(isset($_FILES['imagen'])){

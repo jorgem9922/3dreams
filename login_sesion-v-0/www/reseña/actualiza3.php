@@ -20,7 +20,7 @@ include "../conexion.php";?>
 
     //var_dump ($_FILES['imagen']);
     
-    $directorioSubida = "imagenes/";
+    $directorioSubida = "../imagenes/";
     $max_file_size="5120000";
     $extensionesValidas=array("jpg","png","gif");
     
@@ -32,7 +32,6 @@ include "../conexion.php";?>
         $tipoArchivo = $_FILES['imagen']['type'];
         $arrayArchivo = pathinfo ($nombreArchivo);
         $extension = $arrayArchivo['extension'];
-
        
         if(!in_array($extension, $extensionesValidas)) {
             echo "Extensión no válida";
@@ -51,10 +50,6 @@ include "../conexion.php";?>
         }
     }
 
-
-   
-
-
     if($_FILES['imagen']['name'] != ""){
         $insertar = "UPDATE reseña SET id_reseña=$id_reseña, nombre='$nombre', autor = '$autor', titulo = '$titulo', descripcion = '$descripcion', imagen = '$nombreArchivo' WHERE id_reseña=$id_reseña";
     }
@@ -63,6 +58,5 @@ include "../conexion.php";?>
     }
 
     // echo $insertar;
-    
-    mysqli_query($conexion, $insertar);
+    mysqli_query($conn, $insertar);
     header("Location:actualiza_ok.php");?>
