@@ -60,7 +60,7 @@ include "../header.php";
                                 <td><?php echo $registro[2]; ?></td>
                                 <td><?php echo $registro[3]; ?></td>
                                 <td><?php echo $registro[4]; ?></td>
-                                <td><?php echo '<img width="100px" height="100px" src="imagenes/'. $registro[5]. '">'; ?>  </td>
+                                <td><?php echo '<img width="100px" height="100px" src="../imagenes/'. $registro[5]. '">'; ?>  </td>
                                 
                                 <td> <a href="actualiza2.php?id=<?php echo $registro[0]; ?>"><i class="bi-pencil px-1" style="font-size: 2rem; color:green;"></i> </a></td>  
                               </tr>

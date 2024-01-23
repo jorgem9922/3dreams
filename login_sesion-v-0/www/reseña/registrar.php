@@ -13,6 +13,7 @@ include "../conexion.php";?>
     $directorioSubida = "../imagenes/";
     $max_file_size="5120000";
     $extensionesValidas=array("jpg","png","gif");
+    
     if(isset($_FILES['imagen'])){
         $errores=0;
         $nombreArchivo = $_FILES['imagen']['name'];
@@ -42,6 +43,7 @@ include "../conexion.php";?>
 
     $insertar="INSERT reseña (id_reseña, nombre, autor, titulo ,descripcion, imagen) VALUES ($id_reseña, '$nombre', '$autor', '$titulo', '$descripcion', '$nombreArchivo')";
     //echo $insertar;
+    
     mysqli_query($conn, $insertar);
     header("Location:alta_ok.php");
     
