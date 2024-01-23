@@ -27,7 +27,7 @@ include "../header.php";
                             Productos:
                         </div>
                         <?php
-                          mysqli_select_db($conexion,"dreams3");
+                          mysqli_select_db($conexion,"productosbd");
                           $consultar= "SELECT * FROM fabricantes";
                           $registros= mysqli_query($conexion, $consultar);
 
