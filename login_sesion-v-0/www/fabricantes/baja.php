@@ -28,7 +28,7 @@ include "../header.php";
                             Fabricantes:
                         </div>
                         <?php
-                          mysqli_select_db($conexion,"dreams3");
+                          mysqli_select_db($conexion,"productosbd");
                           $consultar= "SELECT * FROM fabricantes";
 
                           $registros= mysqli_query($conexion, $consultar);
@@ -90,5 +90,5 @@ include "../header.php";
 
 
 <?php 
-include "../*footer.php"
+include "../footer.php";
 ?>

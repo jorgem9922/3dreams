@@ -1,10 +1,10 @@
 <?php 
-
-/* *********************************************************************** */
-/* *********************  Programa principal  **************************** */
-/* **************** Menu de selección de opciones ************************ */
-/* *********************************************************************** */
-
+session_start();
+$usuario = $_SESSION['usuario'];
+if(!isset($usuario)){
+    header("Location: indexcrud.php");
+    exit;
+}
 include "../header.php"
 ?>
 

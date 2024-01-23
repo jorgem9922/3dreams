@@ -1,4 +1,11 @@
-<?php include "../conexion.php";?>
+<?php
+session_start();
+$usuario = $_SESSION['usuario'];
+if(!isset($usuario)){
+    header("Location: indexcrud.php");
+    exit;
+} 
+include "../conexion.php";?>
 <?php
     
     // $idm = $_GET["idmodifica"];
@@ -13,7 +20,7 @@
 
     //var_dump ($_FILES['imagen']);
     
-    $directorioSubida = "imagenes/";
+    $directorioSubida = "../imagenes/";
     $max_file_size="5120000";
     $extensionesValidas=array("jpg","png","gif");
     
@@ -25,7 +32,6 @@
         $tipoArchivo = $_FILES['imagen']['type'];
         $arrayArchivo = pathinfo ($nombreArchivo);
         $extension = $arrayArchivo['extension'];
-
        
         if(!in_array($extension, $extensionesValidas)) {
             echo "Extensión no válida";
@@ -44,10 +50,6 @@
         }
     }
 
-
-   
-
-
     if($_FILES['imagen']['name'] != ""){
         $insertar = "UPDATE reseña SET id_reseña=$id_reseña, nombre='$nombre', autor = '$autor', titulo = '$titulo', descripcion = '$descripcion', imagen = '$nombreArchivo' WHERE id_reseña=$id_reseña";
     }
@@ -56,6 +58,5 @@
     }
 
     // echo $insertar;
-    
-    mysqli_query($conexion, $insertar);
+    mysqli_query($conn, $insertar);
     header("Location:actualiza_ok.php");?>

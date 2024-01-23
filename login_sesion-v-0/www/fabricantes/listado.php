@@ -6,7 +6,7 @@ if(!isset($usuario)){
     exit;
 }
 include "conexioncrud.php";
-include "header.php";
+include "../header.php";
 ?>
 
 <div class="container my-5">
@@ -26,7 +26,7 @@ include "header.php";
                             fabricantes:
                         </div>
                         <?php
-                          mysqli_select_db($conexion,"dreams3");
+                          mysqli_select_db($conexion,"productosbd");
                           $consultar= "SELECT * FROM fabricantes";
 
                           $registros= mysqli_query($conexion, $consultar);
@@ -84,5 +84,5 @@ include "header.php";
 
 
 <?php 
-include "footer.php"
+include "../footer.php"
 ?>
