@@ -55,10 +55,10 @@ session_start();
                 </div>
                 </div>
             </div>
+            <a href="../index2.php"> <i class="bi-arrow-return-left px-3" style="font-size: 4rem; color:black;"></i> </a>
 
         </div>  
     </div>
-    <a href="../indexcrud.php"> <i class="bi-arrow-return-left px-3" style="font-size: 4rem; color:black;"></i> </a>
 
 </div>
 
