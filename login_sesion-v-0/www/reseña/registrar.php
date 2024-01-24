@@ -4,11 +4,12 @@ include "../conexion.php";?>
 <?php
     mysqli_select_db($conn, "productosbd");
     $id_reseña = $_POST["id_reseña"];
-    $nombre = $_POST["nombre"];
-    $autor = $_POST["autor"];
+    $calificacion = $_POST["calificacion"];
+    $usuario = $_POST["usuario"];
     $titulo = $_POST["titulo"];
     $descripcion = $_POST["descripcion"];
-    
+    $fecha_creacion = $_POST["fecha_creacion"];
+    $id_producto = $_POST["id_producto"];
     // var_dump ($_FILES['imagen']);
     $directorioSubida = "../imagenes/";
     $max_file_size="5120000";
@@ -41,8 +42,8 @@ include "../conexion.php";?>
         }
     }
 
-    $insertar="INSERT reseña (id_reseña, nombre, autor, titulo ,descripcion, imagen) VALUES ($id_reseña, '$nombre', '$autor', '$titulo', '$descripcion', '$nombreArchivo')";
-    //echo $insertar;
+    $insertar="INSERT reseña (id_reseña, calificacion, id_usuario, titulo ,descripcion,fecha_creacion,id_producto,imagenes) VALUES ($id_reseña, '$calificacion', '$usuario', '$titulo', '$descripcion','$fecha_creacion','$id_producto','$nombreArchivo')";
+//echo $insertar;
     
     mysqli_query($conn, $insertar);
     header("Location:alta_ok.php");

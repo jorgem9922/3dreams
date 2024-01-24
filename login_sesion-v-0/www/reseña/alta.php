@@ -34,17 +34,32 @@ include "../header.php"
                         </div>
 
                         <div class="mb-3">
-                          <label for="" class="form-label"><b>Nombre</b></label>
+                          <label for="" class="form-label"><b>Calificacion</b></label>
                           <input type="text"
-                            class="form-control" name="nombre" id="nombre"  required aria-describedby="helpId" placeholder="Introduce el Nombre">
-                          <small id="helpId" class="form-text text-muted">Nombre</small>
+                            class="form-control" name="calificacion" id="calificacion"  required aria-describedby="helpId" placeholder="Introduce el Nombre">
+                          <small id="helpId" class="form-text text-muted">Calificacion</small>
                         </div>
 
-                        <div class="mb-3">
-                          <label for="" class="form-label"><b>Autor</b></label>
-                          <input type="text"
-                            class="form-control" name="autor" id="autor"  required aria-describedby="helpId" placeholder="Introduce el Autor">
-                          <small id="helpId" class="form-text text-muted">Autor</small>
+                       <div> <label for="">Usuario</label>
+                      <select name="usuario" class="form-control">
+                          <option selected disabled>Seleccione el usuario</option>
+                          <?php
+                          include("../conexion.php");
+                          mysqli_select_db($conn, "productosbd");
+                          $consultar = "SELECT * FROM usuario";
+
+                          $sql = mysqli_query($conn, $consultar);
+
+                          // Verifica si hay resultados antes de recorrerlos
+                          if ($sql) {
+                              while ($resultado = mysqli_fetch_assoc($sql)) {
+                                  echo "<option value='" . $resultado['id_usuario'] . "'>" . $resultado['nombre'] . "</option>";
+                              }
+                          } else {
+                              echo "Error en la consulta: " . mysqli_error($conn);
+                          }
+                          ?>
+                      </select>
                         </div>
 
                         <div class="mb-3">
@@ -55,6 +70,35 @@ include "../header.php"
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Descripción</b></label>
                           <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="" class="form-label"><b>Fecha de creacion</b></label>
+                          <input type="date"
+                            class="form-control" name="fecha_creacion" id="fecha_creacion"  required aria-describedby="helpId" placeholder="Introduce el Nombre">
+                        </div>
+
+
+                        <div> <label for="">Producto</label>
+                      <select name="id_producto" class="form-control">
+                          <option selected disabled>Seleccione el producto</option>
+                          <?php
+                          include("../conexion.php");
+                          mysqli_select_db($conn, "productosbd");
+                          $consultar = "SELECT * FROM producto";
+
+                          $sql = mysqli_query($conn, $consultar);
+
+                          // Verifica si hay resultados antes de recorrerlos
+                          if ($sql) {
+                              while ($resultado = mysqli_fetch_assoc($sql)) {
+                                  echo "<option value='" . $resultado['id_producto'] . "'>" . $resultado['nombre_producto'] . "</option>";
+                              }
+                          } else {
+                              echo "Error en la consulta: " . mysqli_error($conn);
+                          }
+                          ?>
+                      </select>
                         </div>
 
 

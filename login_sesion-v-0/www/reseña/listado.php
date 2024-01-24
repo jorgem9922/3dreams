@@ -27,7 +27,7 @@ include "../header.php";
                         </div>
                         <?php
                           mysqli_select_db($conn,"productosbd");
-                          $consultar= "SELECT * FROM reseña";
+                          $consultar= "SELECT * FROM reseña r INNER JOIN usuario u ON r.id_usuario = u.id_usuario INNER JOIN producto d ON r.id_producto = d.id_producto";
 
                           $registros= mysqli_query($conn, $consultar);
 
@@ -37,10 +37,12 @@ include "../header.php";
                             <thead>
                               <tr>
                                 <th scope="col">Identificador Reseña</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Autor</th>
-                                <th scope="col">Título</th>
-                                <th scope="col">Descripción</th>
+                                <th scope="col">Usuario</th>
+                                <th scope="col">Calificacion</th>
+                                <th scope="col">Titulo</th>
+                                <th scope="col">Descripcion</th>
+                                <th scope="col">Producto</th> 
+                                <th scope="col">Fecha de creacion</th>                           
                                 <th scope="col">Imagen</th>
                               
                               </tr>
@@ -48,19 +50,27 @@ include "../header.php";
                             <tbody>
                               <?php
 
-                                while($registro=mysqli_fetch_row($registros)){
+                                while($registro=mysqli_fetch_assoc($registros)){
 
                               ?>
 
-
                               <tr class="align-middle">
-                                <td scope="row"><?php echo $registro[0]; ?></td>
-                                <td><?php echo $registro[1]; ?></td>
-                                <td><?php echo $registro[2]; ?></td>
-                                <td><?php echo $registro[3]; ?></td>
-                                <td><?php echo $registro[4]; ?></td>
-                                <td><?php echo '<img width="100px" height="100px" src="../imagenes/'. $registro[5]. '">'; ?>  </td>
-                                
+                                <td scope="row"><?php echo $registro['id_reseña']; ?></td>
+                                <td><?php echo $registro['nombre']; ?></td>
+                                <td><?php echo $registro['calificacion']; ?></td>
+                                <td><?php echo $registro['titulo']; ?></td>
+                                <td><?php echo $registro['descripcion']; ?></td> 
+                                <td><?php echo $registro['nombre_producto']; ?></td>  
+                                <td><?php echo $registro['fecha_creacion']; ?></td>                              
+                                <td>
+                                    <?php 
+                                        if (isset($registro['imagen'])) {
+                                            echo "<img width='100px' height='100px' src='../imagenes/{$registro['imagen']}' alt='imagen'>"; 
+                                        } else {
+                                            echo "Sin imagen";
+                                        }
+                                    ?>
+                                </td>                                
                               </tr>
                               
                             
@@ -81,9 +91,6 @@ include "../header.php";
         </div>  
     </div>
 </div>
-
-
-
 
 <?php 
 include "../footer.php"
