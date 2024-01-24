@@ -7,7 +7,7 @@ if(!isset($usuario)){
 }
 include "conexioncrud.php";
 
-mysqli_Select_db($conexion, "dreams3");
+mysqli_Select_db($conexion, "productosbd");
 
 $fabricanteborrar = $_GET["id"];
 $borrar="DELETE FROM fabricantes WHERE id_fabricante = '$fabricanteborrar'";

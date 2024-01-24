@@ -58,7 +58,7 @@ include "../header.php";
                                 <td><?php echo $registro[2]; ?></td>
                                 <td><?php echo $registro[3]; ?></td>
                                 <td><?php echo $registro[4]; ?></td>
-                                <td><?php echo '<img width="100px" height="100px" src="imagenes/'. $registro[5]. '">'; ?>  </td>
+                                <td><?php echo '<img width="100px" height="100px" src="../imagenes/'. $registro[5]. '">'; ?>  </td>
                               </tr>
                               
                             
