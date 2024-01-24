@@ -29,7 +29,7 @@ include "../header.php";
                             usuario:
                         </div>
                         <?php
-                       mysqli_select_db($conn,"dreams3");
+                       mysqli_select_db($conn,"productosbd");
                        $consultar= "SELECT * FROM usuario ";
 
                        $registros= mysqli_query($conn, $consultar);
@@ -60,7 +60,7 @@ include "../header.php";
                                     <td scope="row"><?php echo $registro['id_usuario']; ?></td>
                                     <td><?php echo $registro['nombre']; ?></td>
                                     <td><?php echo $registro['apellido']; ?></td>
-                                    <td><?php echo $registro['ciudad']; ?></td>
+                                    <td><?php echo $registro['id_ciudad']; ?></td>
                                     <td><?php echo $registro['correo_electronico']; ?></td>
                                     <td><?php echo $registro['DNI']; ?></td>
                                         <td>
@@ -94,5 +94,5 @@ include "../header.php";
 
 
 <?php 
-include "footer.php"
+include "../footer.php"
 ?>

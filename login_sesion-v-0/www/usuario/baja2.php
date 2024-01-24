@@ -1,7 +1,7 @@
 <?php 
 include "../conexion.php";
 
-mysqli_select_db($conn, "dreams3");
+mysqli_select_db($conn, "productosbd");
 
 $usuarioborrar = $_GET["id"];
 

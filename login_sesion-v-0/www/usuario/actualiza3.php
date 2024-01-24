@@ -4,7 +4,7 @@
     $idm = $_GET["idmodifica"];
     // $nombreantiguo = $_GET["nombreimagen"];
 
-    mysqli_select_db($conn, "dreams3");
+    mysqli_select_db($conn, "productosbd");
     $nombre = $_POST["nombre"];
    
     $dni = $_POST["dni"];
@@ -57,7 +57,7 @@
                      WHERE id_usuario = $idm";
     }
     
-    // $insertar = "UPDATE `usuario` SET `nombre` = '$nombre', `DNI` = '$dni', `correo_electronico` = '$correo_electronico', `ciudad` = '$ciudad', `apellido` = '$apellido' WHERE `usuario`.`id_usuario` = $idm";
+    // $insertar = "UPDATE `usuario` SET `nombre` = '$nombre', `DNI` = '$dni', `correo_electronico` = '$correo_electronico', `id_ciudad` = '$ciudad', `apellido` = '$apellido' WHERE `usuario`.`id_usuario` = $idm";
     // echo $idm;
     // echo $nombre;
     mysqli_query($conn, $insertar);

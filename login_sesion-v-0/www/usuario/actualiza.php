@@ -28,7 +28,7 @@ include "../header.php";
                             Productos:
                         </div>
                         <?php
-                        mysqli_select_db($conn, "dreams3");
+                        mysqli_select_db($conn, "productosbd");
                         $consultar = "SELECT * FROM usuario";
 
                         $registros = mysqli_query($conn, $consultar);
@@ -54,13 +54,14 @@ include "../header.php";
                                 while ($registro = mysqli_fetch_assoc($registros)) {
                                     ?>
                                     <tr class="align-middle">
-                                        <td scope="row"><?php echo $registro['id_usuario']; ?></td>
-                                        <td><?php echo $registro['nombre']; ?></td>
-                                        <td><?php echo $registro['apellido']; ?></td>
-                                        <td><?php echo $registro['ciudad']; ?></td>
-                                        <td><?php echo $registro['correo_electronico']; ?></td>
-                                        <td><?php echo $registro['DNI']; ?></td>
-                                        <td>
+                                            <td scope="row"><?php echo $registro['id_usuario']; ?></td>
+                                            <td><?php echo $registro['nombre']; ?></td>
+                                            <td><?php echo $registro['apellido']; ?></td>
+                                            <td><?php echo $registro['id_ciudad']; ?></td>
+                                            <td><?php echo $registro['correo_electronico']; ?></td>
+                                            <td><?php echo $registro['DNI']; ?></td>
+                                            <td>
+                                        
                                         <?php 
                                          echo "<img width='100px' height='100px' src='../imagenes/{$registro['fotografia']}' alt='Imagen de producto'>"; 
                                       

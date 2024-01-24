@@ -1,6 +1,6 @@
 <?php include "../conexion.php";?>
 <?php
-    mysqli_select_db($conn, "dreams3");
+    mysqli_select_db($conn, "productosbd");
     // $identificador = $_POST["identificador"];
     $nombre = $_POST["nombre"];
     $identificador = $_POST["identificador"];
@@ -45,7 +45,7 @@
         }
     }
 
-   $insertar="INSERT INTO `usuario` (`id_usuario`, `nombre`, `DNI`, `correo_electronico`, `ciudad`, `apellido`,`fotografia`) VALUES ($identificador, '$nombre', '$dni', '$correo_electronico', '$ciudad', '$apellido','$nombreArchivo');";
+   $insertar="INSERT INTO `usuario` (`id_usuario`, `nombre`, `DNI`, `correo_electronico`, `id_ciudad`, `apellido`,`fotografia`) VALUES ($identificador, '$nombre', '$dni', '$correo_electronico', '$ciudad', '$apellido','$nombreArchivo');";
     mysqli_query($conn, $insertar);
     header("Location:alta_ok.php");
     ?>

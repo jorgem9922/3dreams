@@ -11,7 +11,7 @@ $usuario = $_SESSION['usuario'];
 include "../header.php";
 include "../conexion.php";
 
-mysqli_select_db($conn, "dreams3");
+mysqli_select_db($conn, "productosbd");
 $usuarioactualizar = $_GET["id"];
 $seleccionar = "SELECT *FROM usuario
 
@@ -77,7 +77,7 @@ if ($registro = mysqli_fetch_assoc($registros)) {
                         <div class="mb-3">
                           <label for="" class="form-label">ciudad</label>
                           <input type="int"
-                            class="form-control" name="ciudad" id="ciudad"  required aria-describedby="helpId"  value="<?php echo $registro['ciudad'];?>" placeholder="Introduce el Nombre">
+                            class="form-control" name="ciudad" id="ciudad"  required aria-describedby="helpId"  value="<?php echo $registro['id_ciudad'];?>" placeholder="Introduce el Nombre">
                           <small id="helpId" class="form-text text-muted">ciudad</small>
                         </div>
 
@@ -127,10 +127,8 @@ if ($registro = mysqli_fetch_assoc($registros)) {
     echo "No se encontró el producto para actualizar.";
 }
 
-include "footer.php"
-?>
-
-
-<?php 
 include "../footer.php"
 ?>
+
+
+
