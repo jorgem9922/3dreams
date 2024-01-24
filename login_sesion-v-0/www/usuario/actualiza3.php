@@ -47,12 +47,12 @@
 
     if ($_FILES['imagen']['name'] != "") {
         $insertar = "UPDATE usuario  
-                     SET nombre = '$nombre',apellido = '$apellido',  DNI = '$dni', ciudad = '$ciudad', 
+                     SET nombre = '$nombre',apellido = '$apellido',  DNI = '$dni', id_ciudad = '$ciudad', 
                      correo_electronico = '$correo_electronico', fotografia = '$nombreArchivo'
                      WHERE id_usuario = $idm";
     } else {
         $insertar = "UPDATE usuario 
-                     SET nombre = '$nombre' ,apellido = '$apellido', DNI = '$dni', ciudad = '$ciudad', 
+                     SET nombre = '$nombre' ,apellido = '$apellido', DNI = '$dni', id_ciudad = '$ciudad', 
                      correo_electronico = '$correo_electronico', fotografia = '$nombreantiguo'
                      WHERE id_usuario = $idm";
     }
