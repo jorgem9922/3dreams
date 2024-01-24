@@ -66,12 +66,28 @@ include "../header.php"
                             class="form-control" name="correo_electronico" id="correo_electronico"  required aria-describedby="helpId" placeholder="Introduce el Nombre">
                           <small id="helpId" class="form-text text-muted">correo_electronico</small>
                         </div>
-                        <div class="mb-3">
-                          <label for="" class="form-label">ciudad</label>
-                          <input type="int"
-                            class="form-control" name="ciudad" id="ciudad"  required aria-describedby="helpId" placeholder="Introduce el Nombre">
-                          <small id="helpId" class="form-text text-muted">ciudad</small>
+                        <label for="">Ciudad</label>
+                      <select name="ciudad" class="form-control">
+                          <option selected disabled>Seleccione la ciudad</option>
+                          <?php
+                          include("../conexion.php");
+                          mysqli_select_db($conn, "productosbd");
+                          $consultar = "SELECT * FROM ciudad";
+
+                          $sql = mysqli_query($conn, $consultar);
+
+                          // Verifica si hay resultados antes de recorrerlos
+                          if ($sql) {
+                              while ($resultado = mysqli_fetch_assoc($sql)) {
+                                  echo "<option value='" . $resultado['id_ciudad'] . "'>" . $resultado['nombre_ciudad'] . "</option>";
+                              }
+                          } else {
+                              echo "Error en la consulta: " . mysqli_error($conn);
+                          }
+                          ?>
+                      </select>
                         </div>
+
                         <!-- <div class="mb-3">
                           <label for="" class="form-label">ciudad</label>
                           <input type="text"

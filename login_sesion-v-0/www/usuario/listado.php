@@ -30,7 +30,7 @@ include "../header.php";
                         </div>
                         <?php
                         mysqli_select_db($conn, "productosbd");
-                        $consultar = "SELECT * FROM usuario ";
+                        $consultar = "SELECT * FROM usuario u inner join ciudad d on u.id_ciudad = d.id_ciudad";
                         $registros = mysqli_query($conn, $consultar);
                         ?>
                         <div class="table-responsive">
@@ -54,7 +54,7 @@ include "../header.php";
                                             <td scope="row"><?php echo $registro['id_usuario']; ?></td>
                                             <td><?php echo $registro['nombre']; ?></td>
                                             <td><?php echo $registro['apellido']; ?></td>
-                                            <td><?php echo $registro['id_ciudad']; ?></td>
+                                            <td><?php echo $registro['nombre_ciudad']; ?></td>
                                             <td><?php echo $registro['correo_electronico']; ?></td>
                                             <td><?php echo $registro['DNI']; ?></td>
                                             <td>
