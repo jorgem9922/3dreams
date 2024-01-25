@@ -74,7 +74,7 @@ if ($registro = mysqli_fetch_assoc($registros)) {
                             class="form-control" name="correo_electronico" id="correo_electronico"  required aria-describedby="helpId" value="<?php echo $registro['correo_electronico'];?>" placeholder="Introduce el Nombre">
                           <small id="helpId" class="form-text text-muted">correo_electronico</small>
                         </div>
-                        /div>
+                        <div>
                         <label for="">Ciudad</label>
                       <select name="ciudad" class="form-control">
                           <option selected disabled>Seleccione la ciudad</option>
