@@ -53,26 +53,32 @@ $registro = mysqli_fetch_row($registros);
                           class="form-control" name="color" id="color" autofocus required value="<?php echo $registro['color'];?>" aria-describedby="helpId" placeholder="Introduce el color">
                           <small id="helpId" class="form-text text-muted">color</small>
                         </div>
-                        <!-- tamaño x -->
+                        <!-- tamaño impresora -->
                         <div class="mb-3">
-                          <label for="" class="form-label">CP</label>
+                          <label for="" class="form-label">Tamaño  </label>
+                          <input type="twxt" class="form-control" name="Tamaño_impresora" id="Tamaño_impresora" required value="<?php echo $registro['tamaño_impresora'];?>" aria-describedby="helpId" placeholder="Introduce el correo electrónico">
+                          <small id="helpId" class="form-text text-muted">Tamaño</small>
+                        </div>
+                        <!-- tamañocamax -->
+                        <div class="mb-3">
+                          <label for="" class="form-label">tamañocamax</label>
                           <input type="number" class="form-control" name="tamañocamax" id="tamañocamax" required value="<?php echo $registro['tamañocamax'];?>" aria-describedby="helpId" placeholder="Introduce el tamaño de la cama en el eje x">
                           <small id="helpId" class="form-text text-muted">tamañocamax</small>
                         </div>
-                        <!-- tamañoy -->
+                        <!-- tamañocamay -->
                         <div class="mb-3">
-                          <label for="" class="form-label">Tamaño impresora </label>
-                          <input type="twxt" class="form-control" name="Tamaño_impresora" id="Tamaño_impresora" required value="<?php echo $registro[4];?>" aria-describedby="helpId" placeholder="Introduce el correo electrónico">
-                          <small id="helpId" class="form-text text-muted">Correo</small>
+                          <label for="" class="form-label">tamañocamay  </label>
+                          <input type="twxt" class="form-control" name="tamañocamay" id="tamañocamay" required value="<?php echo $registro['tamañocamay'];?>" aria-describedby="helpId" placeholder="Introduce el tamaño de la cama en el eje y">
+                          <small id="helpId" class="form-text text-muted">tamañocamay</small>
                         </div>
 
                       <!-- imagen antigua -->
                         <div class="mb-3">
                           <label for="" class="form-label">Imagen Antigua</label>
-                          <?php  echo '<img width="100px" height="100px" src="../imagenes/'.$registro[5].'">';
+                          <?php  echo '<img width="100px" height="100px" src="../imagenes/'.$registro['imagenantigua'].'">';
                           ?>
                         </div>
-
+                      <!--imagen nueva   -->
                         <div class="mb-3">
                           <label for="" class="form-label">Imagen Nueva</label>
                           <input type="file"

@@ -57,12 +57,12 @@ include "../header.php";
 
 
                               <tr class="align-middle">
-                                <td scope="row"><?php echo $registro[0]; ?></td>
-                                <td><?php echo $registro[1]; ?></td>
-                                <td><?php echo $registro[2]; ?></td>
-                                <td><?php echo $registro[3]; ?></td>
-                                <td><?php echo $registro[4]; ?></td>
-                                <td><?php echo $registro[5]; ?></td>
+                                <td scope="row"><?php echo $registro['id_impresora']; ?></td>
+                                <td><?php echo $registro['modelo']; ?></td>
+                                <td><?php echo $registro['color']; ?></td>
+                                <td><?php echo $registro['tamañocamax']; ?></td>
+                                <td><?php echo $registro['tamañoy']; ?></td>
+                                <td><?php echo $registro['imagenantigua']; ?></td>
 
                                 <td><?php echo '<img width="100px" height="100px" src="../imagenes/'. $registro[5]. '">'; ?>  </td>
                                 <td> <a href="actualiza2.php?id=<?php echo $registro[0]; ?>"><i class="bi-pencil px-1" style="font-size: 2rem; color:green;"></i> </a></td>  
