@@ -80,22 +80,17 @@ $registro = mysqli_fetch_assoc($registros);
                               class="form-control" name="fecha_creacion" id="fecha_creacion"  required value="<?php echo $registro['fecha_creacion'] ?? '';?>" aria-describedby="helpId" placeholder="Introduce la Fecha de Creación">
                           <small id="helpId" class="form-text text-muted">Fecha de Creación</small>
                       </div>
-
                       <div class="mb-3">
-                          <label for="imagen_antigua" class="form-label"><b>Imagen Antigua</b></label>
-                          <?php  
-                            if (isset($registro['imagenes'])) {
-                                echo '<img width="100px" height="100px" src="../imagenes/'.$registro['imagenes'].'">';
-                            }
-                          ?>
-                      </div>
+                          <label for="" class="form-label">Imagen Antigua</label>
+                          <?php  echo '<img width="100px" height="100px" src="../imagenes/'.$registro['imagenes'].'">';?>
+                        </div>
 
-                      <div class="mb-3">
-                          <label for="imagen_nueva" class="form-label"><b>Imagen Nueva</b></label>
+                        <div class="mb-3">
+                          <label for="" class="form-label">Imagen</label>
                           <input type="file"
-                              class="form-control" name="imagen_nueva" id="imagen_nueva" accept="image/*">
-                          <small id="helpId" class="form-text text-muted">Imagen Nueva</small>
-                      </div>
+                            class="form-control" name="imagen" id="imagen" required accept="image/*">
+                          <small id="helpId" class="form-text text-muted">Imagen</small>
+                        </div>
 
                       <div class="d-grid">
                           <input type="submit" class="btn btn-primary" value="Actualizar">
