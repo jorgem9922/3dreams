@@ -1,15 +1,15 @@
 <?php
 include "../conexion.php";
-mysqli_select_db($conexion, "dreams");
+mysqli_select_db($conn, "productosbd");
 
 // Obtén el id del material a eliminar
-$productoborrar = mysqli_real_escape_string($conexion, $_GET["id"]);
+$productoborrar = mysqli_real_escape_string($conn, $_GET["id"]);
 // Ahora puedes eliminar el registro en la tabla `material`
 $borrar = "DELETE FROM material WHERE id_material = $productoborrar";
-mysqli_query($conexion, $borrar);
+mysqli_query($conn, $borrar);
 // Elimina los registros relacionados en la tabla `producto`
 $queryEliminarProducto = "DELETE FROM producto WHERE id_producto = $productoborrar";
-mysqli_query($conexion, $queryEliminarProducto);
+mysqli_query($conn, $queryEliminarProducto);
 
 
 

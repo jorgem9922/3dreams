@@ -17,7 +17,7 @@ include "../header.php"
 
                 <div class="card-header display-6">
 
-                Actualización de la reseña realizada con éxito
+                Actualización del diseño realizada con éxito
 
                 </div>
             </div>

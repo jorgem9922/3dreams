@@ -25,6 +25,7 @@ include "../header.php";
                         FROM producto p
                         INNER JOIN material m ON m.id_material = p.id_producto
                         INNER JOIN tipo_material tm ON tm.id_tipo_material = m.id_tipo_material
+                        INNER JOIN fabricantes fa ON fa.id_fabricante = p.id_fabricante
                         ORDER BY p.id_producto;
                         ";
                         
@@ -46,6 +47,7 @@ include "../header.php";
                                     <th scope="col">Modelo de Impresión</th>
                                     <th scope="col">Nombre del Material</th>
                                     <th scope="col">Tamaño</th>
+                                    <th scope="col">fabricante</th>
                                     <th scope="col">Fotografía</th>
                                 </tr>
                                 </thead>
@@ -64,6 +66,7 @@ include "../header.php";
                                         <td><?php echo $registro['Descripcion']; ?></td>
                                         <td><?php echo $registro['modelodeimpresion']; ?></td>
                                         <td><?php echo $registro['Nombrematerial']; ?></td>
+                                        <td><?php echo $registro['nombre_fabricante']; ?></td>
                                         <td><?php echo $registro['tamaño']; ?></td>
                                         <td>
                                             <?php 
