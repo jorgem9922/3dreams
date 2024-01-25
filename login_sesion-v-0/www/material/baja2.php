@@ -1,5 +1,5 @@
 <?php
-include "conexion.php";
+include "../conexion.php";
 mysqli_select_db($conexion, "dreams");
 
 // Obtén el id del material a eliminar

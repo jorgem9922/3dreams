@@ -1,17 +1,17 @@
 <?php
-include "conexion.php";
+include "../conexion.php";
 
-mysqli_select_db($conexion, "dreams");
-$identificador = mysqli_real_escape_string($conexion, $_POST["identificador"]);
-$nombre = mysqli_real_escape_string($conexion, $_POST["nombre"]);
-$marca = mysqli_real_escape_string($conexion, $_POST["marca"]);
-$referencia = mysqli_real_escape_string($conexion, $_POST["referencia"]);
-$precio = mysqli_real_escape_string($conexion, $_POST["precio"]);
-$color = mysqli_real_escape_string($conexion, $_POST["color"]);
-$peso = mysqli_real_escape_string($conexion, $_POST["peso"]);
+mysqli_select_db($conn, "productosbd");
+$identificador = mysqli_real_escape_string($conn, $_POST["identificador"]);
+$nombre = mysqli_real_escape_string($conn, $_POST["nombre"]);
+$marca = mysqli_real_escape_string($conn, $_POST["marca"]);
+$referencia = mysqli_real_escape_string($conn, $_POST["referencia"]);
+$precio = mysqli_real_escape_string($conn, $_POST["precio"]);
+$color = mysqli_real_escape_string($conn, $_POST["color"]);
+$peso = mysqli_real_escape_string($conn, $_POST["peso"]);
 // $descripcion = mysqli_real_escape_string($conexion, $_POST["descripcion"]);
 // $modelo_de_impresion = mysqli_real_escape_string($conexion, $_POST["modelodeimpresora"]);
-$material = mysqli_real_escape_string($conexion, $_POST["tipomaterial"]);
+$material = mysqli_real_escape_string($conn, $_POST["tipomaterial"]);
 // // $tamaño = mysqli_real_escape_string($conexion, $_POST["tamaño"]);
 
 $directorioSubida = "../imagenes/";
@@ -43,12 +43,13 @@ if (isset($_FILES['imagen'])) {
 }
 
 $almacenar = "INSERT INTO `producto` (`id_producto`,`nombre`, `marca`, `referencia`, `precio`, `fotografia`) VALUES ('$identificador','$nombre', '$marca', '$referencia', '$precio', '$nombreArchivo')";
-mysqli_query($conexion, $almacenar);
+mysqli_query($conn, $almacenar);
 
 
 
 $insertar = "INSERT INTO `material`  (id_material, `color`, `id_tipo_material`, `peso`) VALUES ($identificador,'$color', '$material', '$peso')";
-mysqli_query($conexion, $insertar);
+mysqli_query($conn, $insertar);
+
 
 header("Location: alta_ok.php");
 ?>
