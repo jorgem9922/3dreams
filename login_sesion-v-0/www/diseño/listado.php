@@ -15,7 +15,7 @@ include "../header.php";
 
             <div class="card">
                 <div class="card-header display-6">
-                    Listado de reseñas
+                    Listado de Diseño
                 </div>                
             </div>
 
@@ -23,7 +23,7 @@ include "../header.php";
                 <div class="col-md-10">
                     <div class="card">
                         <div class="card-header"> 
-                            Reseñas:
+                            Diseño:
                         </div>
                         <?php
                           mysqli_select_db($conn,"productosbd");
@@ -36,7 +36,7 @@ include "../header.php";
                           <table class="table table-hover">
                             <thead>
                               <tr>
-                                <th scope="col">Identificador Reseña</th>
+                                <th scope="col">Identificador Diseño</th>
                                 <th scope="col">Usuario</th>
                                 <th scope="col">Calificacion</th>
                                 <th scope="col">Titulo</th>
