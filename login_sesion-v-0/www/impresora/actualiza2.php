@@ -34,24 +34,24 @@ $registro = mysqli_fetch_row($registros);
                         <form class="p-4" method="POST" action="actualiza3.php?idmodifica=<?php echo $productoactualizar;?>&nombreimagen==<?php echo $registro[0];?>" enctype="multipart/form-data">
                         <!-- id -->
                         <div class="mb-3">
-                          <label for="" class="form-label">Id_fabricante</label>
+                          <label for="" class="form-label">Id</label>
                           <input type="number"
-                            class="form-control" name="id_fabricante" id="id_fabricante" autofocus required value="<?php echo $registro[0];?>" aria-describedby="helpId" placeholder="Introduce el ID">
+                            class="form-control" name="id_impresora" id="id_impresora" autofocus required value="<?php echo $registro[0];?>" aria-describedby="helpId" placeholder="Introduce el ID">
                           <small id="helpId" class="form-text text-muted">Id</small>
                         </div>
-                        <!-- nombre -->
+                        <!-- modelo -->
                         <div class="mb-3">
-                          <label for="" class="form-label">Nombre</label>
+                          <label for="" class="form-label">Modelo</label>
                           <input type="text"
-                            class="form-control" name="nombre" id="nombre"  required value="<?php echo $registro[1];?>" aria-describedby="helpId" placeholder="Introduce el Nombre">
-                          <small id="helpId" class="form-text text-muted">Nombre</small>
+                            class="form-control" name="Modelo" id="Modelo"  required value="<?php echo $registro[1];?>" aria-describedby="helpId" placeholder="Introduce el Nombre">
+                          <small id="helpId" class="form-text text-muted">Modelo</small>
                         </div>
-                        <!-- telefono -->
+                        <!-- color -->
                         <div class="mb-3">
-                          <label for="" class="form-label">telefono</label>
+                          <label for="" class="form-label">color</label>
                           <input type="number"
-                            class="form-control" name="telefono" id="telefono" autofocus required value="<?php echo $registro[2];?>" aria-describedby="helpId" placeholder="Introduce el telefono">
-                          <small id="helpId" class="form-text text-muted">telefono</small>
+                            class="form-control" name="color" id="color" autofocus required value="<?php echo $registro[2];?>" aria-describedby="helpId" placeholder="Introduce el color">
+                          <small id="helpId" class="form-text text-muted">color</small>
                         </div>
                         <!-- cp -->
                         <div class="mb-3">
@@ -61,8 +61,8 @@ $registro = mysqli_fetch_row($registros);
                         </div>
                         <!-- correo -->
                         <div class="mb-3">
-                          <label for="" class="form-label">Correo electrónico</label>
-                          <input type="twxt" class="form-control" name="correo_electronico" id="correo_electronico" required value="<?php echo $registro[4];?>" aria-describedby="helpId" placeholder="Introduce el correo electrónico">
+                          <label for="" class="form-label">Tamaño impresora </label>
+                          <input type="twxt" class="form-control" name="Tamaño_impresora" id="Tamaño_impresora" required value="<?php echo $registro[4];?>" aria-describedby="helpId" placeholder="Introduce el correo electrónico">
                           <small id="helpId" class="form-text text-muted">Correo</small>
                         </div>
 
