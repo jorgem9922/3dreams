@@ -34,9 +34,9 @@ $registro = mysqli_fetch_assoc($registros);
                         <form class="p-4" method="POST" action="actualiza3.php?id_reseña=<?php echo $productoactualizar;?>" enctype="multipart/form-data">
                         
                         <div class="mb-3">
-                          <label for="id_reseña" class="form-label"><b>Identificador</b></label>
+                          <label for="id_diseño" class="form-label"><b>Identificador</b></label>
                           <input type="number"
-                            class="form-control" name="id_reseña" id="id_reseña" autofocus required value="<?php echo $registro['id_reseña'] ?? '';?>" aria-describedby="helpId" placeholder="Introduce el ID">
+                            class="form-control" name="id_reseña" id="id_diseño" autofocus required value="<?php echo $registro['id_diseño'] ?? '';?>" aria-describedby="helpId" placeholder="Introduce el ID">
                           <small id="helpId" class="form-text text-muted">Identificador</small>
                         </div>
 
