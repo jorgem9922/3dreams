@@ -17,7 +17,7 @@ include "../header.php"
 
                 <div class="card-header display-6">
 
-                Actualización de fabricante realizada con éxito
+                Actualización de impresora realizada con éxito
 
                 </div>
             </div>
