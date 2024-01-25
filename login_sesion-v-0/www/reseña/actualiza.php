@@ -68,8 +68,7 @@ include "../header.php";
                                                 echo "<img width='100px' height='100px' src='../imagenes/{$registro['imagenes']}' "; 
                                                 ?>
                                             </td> 
-                                            <td> <a href="actualiza2.php?id=<?php echo $registro['id_reseña']; ?>"><i class="bi-pencil px-1" style="font-size: 2rem; color:green;"></i> </a></td> 
-                          
+                                          <td> <a href="actualiza2.php?id=<?php echo $registro['id_reseña']; ?>"><i class="bi-pencil px-1" style="font-size: 2rem; color:green;"></i> </a></td>                           
                               </tr>
                             
                               <?php
@@ -88,9 +87,6 @@ include "../header.php";
         </div>  
     </div>
 </div>
-
-
-
 
 <?php 
 include "../footer.php"

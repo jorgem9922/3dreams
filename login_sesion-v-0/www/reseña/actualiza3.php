@@ -1,63 +1,62 @@
 <?php
 session_start();
 $usuario = $_SESSION['usuario'];
-if(!isset($usuario)){
+if (!isset($usuario)) {
     header("Location: indexcrud.php");
     exit;
-} 
-include "../conexion.php";?>
+}
+include "../conexion.php";
+?>
+
 <?php
-    
-    $id_reseña = $_POST["id_reseña"];
-    $calificacion = $_POST["calificacion"];
-    $usuario = $_POST["usuario"];
-    $titulo = $_POST["titulo"];
-    $descripcion = $_POST["descripcion"];
-    $fecha_creacion = $_POST["fecha_creacion"];
-    $id_producto = $_POST["producto"];
+$id_reseña = $_POST["id_reseña"];
+$calificacion = $_POST["calificacion"];
+$usuario = $_POST["usuario"];
+$titulo = $_POST["titulo"];
+$descripcion = $_POST["descripcion"];
+$fecha_creacion = $_POST["fecha_creacion"];
+$id_producto = $_POST["producto"];
 
-    //var_dump ($_FILES['imagen']);
-    
-     
-    $directorioSubida = "../imagenes/";
-    $max_file_size="5120000";
-    $extensionesValidas=array("jpg","png","gif");
-    
-    if($_FILES['imagen']['name'] != ""){
-        $errores=0;
-        $nombreArchivo = $_FILES['imagen']['name'];
-        $filesize = $_FILES['imagen']['size'];
-        $directorioTemp = $_FILES['imagen']['tmp_name'];
-        $tipoArchivo = $_FILES['imagen']['type'];
-        $arrayArchivo = pathinfo ($nombreArchivo);
-        $extension = $arrayArchivo['extension'];
+// Initialize variables
+$descripcionNueva = ''; // Replace with the actual value you want
+$nombreimagen = ''; // Replace with the actual value you want
 
-       
-        if(!in_array($extension, $extensionesValidas)) {
-            echo "Extensión no válida";
-            $errores=1;
-        }
-        if($filesize > $max_file_size){
-            echo "La imagen debe de tener un tamaño inferior";
-            $errores= 1;
-        }
+// Handle file upload
+$directorioSubida = "../imagenes/";
+$max_file_size = "5120000";
+$extensionesValidas = array("jpg", "png", "gif");
 
-        if ($errores == 0 ){
+if (isset($_FILES['imagen']) && $_FILES['imagen']['name'] != "") {
+    $errores = 0;
+    $nombreArchivo = $_FILES['imagen']['name'];
+    $filesize = $_FILES['imagen']['size'];
+    $directorioTemp = $_FILES['imagen']['tmp_name'];
+    $tipoArchivo = $_FILES['imagen']['type'];
+    $arrayArchivo = pathinfo($nombreArchivo);
+    $extension = $arrayArchivo['extension'];
 
-            $nombreCompleto = $directorioSubida.$nombreArchivo;
-            //echo "Miguel: " . $nombreCompleto;
-            move_uploaded_file($directorioTemp, $nombreCompleto);
-        }
+    if (!in_array($extension, $extensionesValidas)) {
+        echo "Extensión no válida";
+        $errores = 1;
+    }
+    if ($filesize > $max_file_size) {
+        echo "La imagen debe de tener un tamaño inferior";
+        $errores = 1;
     }
 
-
-    if($_FILES['imagen']['name'] != ""){
-        $insertar = "UPDATE reseña SET id_reseña=$id_reseña, id_usuario='$usuario', id_producto = '$producto', titulo = '$titulo', descripcion = '$descripcion',fecha_creacion = '$fecha_creacion', imagen = '$nombreArchivo' WHERE id_reseña=$id_reseña";
+    if ($errores == 0) {
+        $nombreCompleto = $directorioSubida . $nombreArchivo;
+        move_uploaded_file($directorioTemp, $nombreCompleto);
+        $nombreimagen = $nombreArchivo; // Update the variable with the actual value
     }
-    else{
-        $insertar = "UPDATE reseña SET id_reseña=$id_reseña, id_usuario='$usuario', id_producto = '$producto', titulo = '$titulo', descripcion = '$descripcionNueva',fecha_creacion = '$fecha_creacion', imagen = '$nombreimagen' WHERE id_reseña=$id_reseña";   
-    }
+}
 
-    // echo $insertar;
-    mysqli_query($conn, $insertar);
-    header("Location:actualiza_ok.php");?>
+if ($_FILES['imagen']['name'] != "") {
+    $insertar = "UPDATE reseña SET id_reseña=$id_reseña, id_usuario='$usuario',calificacion='$calificacion', id_producto = '$id_producto', titulo = '$titulo', descripcion = '$descripcion', fecha_creacion = '$fecha_creacion', imagen = '$nombreimagen' WHERE id_reseña=$id_reseña";
+} else {
+    $insertar = "UPDATE reseña SET id_reseña=$id_reseña, id_usuario='$usuario', calificacion='$calificacion', id_producto = '$id_producto', titulo = '$titulo', descripcion = '$descripcion', fecha_creacion = '$fecha_creacion', imagen = '$nombreimagen' WHERE id_reseña=$id_reseña";
+}
+
+mysqli_query($conn, $insertar);
+header("Location:actualiza_ok.php");
+?>
