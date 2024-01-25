@@ -36,7 +36,7 @@ include "../header.php";
                           <table class="table table-hover">
                             <thead>
                               <tr>
-                                <th scope="col">Identificador Reseña</th>
+                                <th scope="col">Identificador Diseño</th>
                                 <th scope="col">Tamaño</th>
                                 <th scope="col">Alto</th>
                                 <th scope="col">Ancho</th>
