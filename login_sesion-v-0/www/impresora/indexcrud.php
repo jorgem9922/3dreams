@@ -15,7 +15,7 @@ include "../header.php";
             <div class="card">
             
                 <div class="card-header display-6">
-                    Fabricantes
+                    Impresoras
                 </div>
 
                 <div class="p-4">
@@ -23,10 +23,10 @@ include "../header.php";
                     <table class="table table-primary">
                         <thead>
                             <tr>
-                                <th scope="col">Alta de fabricantes</th>
-                                <th scope="col">Baja de fabricantes</th>
+                                <th scope="col">Añadir impresora</th>
+                                <th scope="col">Borrar impresora</th>
                                 <th scope="col">Actualización</th>
-                                <th scope="col">Listado</th>
+                                <th scope="col">Listado de impresoras</th>
                             </tr>
                         </thead>
                         <tbody>
