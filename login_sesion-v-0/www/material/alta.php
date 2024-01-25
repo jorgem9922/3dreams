@@ -1,5 +1,5 @@
 <?php 
-include "header.php"
+include "../header.php"
 ?>
 
 <div class="container my-5">
@@ -68,11 +68,11 @@ include "header.php"
                         <select name="tipomaterial" class="form-control">
                           <option selected disabled>Seleccione el tipo de material</option>
                           <?php
-                          include("conexion.php");
-                          mysqli_select_db($conexion, "dreams");
+                          include("../conexion.php");
+                          mysqli_select_db($conn, "productosbd");
                         $consultar = "SELECT * FROM tipo_material";
                         
-                        $sql = mysqli_query($conexion, $consultar);
+                        $sql = mysqli_query($conn, $consultar);
                           // $sql = $conexion->query("SELECT * FROM tipo_material");
                           // echo "hola";
                           while ($resultado = $sql->fetch_assoc()) {
@@ -111,5 +111,5 @@ include "header.php"
 
 
 <?php 
-include "footer.php"
+include "../footer.php"
 ?>

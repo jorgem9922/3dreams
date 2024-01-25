@@ -1,6 +1,6 @@
 <?php
-include "conexion.php";
-include "header.php";
+include "../conexion.php";
+include "../header.php";
 ?>
 
 <div class="container my-5">
@@ -20,7 +20,7 @@ include "header.php";
                         </div>
 
                         <?php
-                        mysqli_select_db($conexion, "dreams");
+                        mysqli_select_db($conn, "productosbd");
                         $consultar = "SELECT p.*, m.*, tm.*
                         FROM producto p
                         INNER JOIN material m ON m.id_material = p.id_producto
@@ -28,7 +28,7 @@ include "header.php";
                         ORDER BY p.id_producto;
                         ";
                         
-                        $registros = mysqli_query($conexion, $consultar);
+                        $registros = mysqli_query($conn, $consultar);
                         ?>
 
                         <div class="table-responsive">
@@ -55,7 +55,7 @@ include "header.php";
                                     ?>
                                     <tr class="align-middle">
                                         <td><?php echo $registro['id_producto']; ?></td>
-                                        <td><?php echo $registro['nombre']; ?></td>
+                                        <td><?php echo $registro['nombre_producto']; ?></td>
                                         <td><?php echo $registro['marca']; ?></td>
                                         <td><?php echo $registro['referencia']; ?></td>
                                         <td><?php echo $registro['precio']; ?></td>
@@ -86,5 +86,5 @@ include "header.php";
 </div>
 
 <?php
-include "footer.php"
+include "../footer.php"
 ?>

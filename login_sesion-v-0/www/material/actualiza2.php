@@ -1,8 +1,8 @@
 <?php 
-include "header.php";
-include "conexion.php";
+include "../header.php";
+include "../conexion.php";
 
-mysqli_select_db($conexion, "dreams");
+mysqli_select_db($conn, "productosbd");
 $productoactualizar = $_GET["id"];
 $seleccionar = "SELECT p.*, m.*, tm.*
 FROM producto p
@@ -113,5 +113,5 @@ if ($registro = mysqli_fetch_assoc($registros)) {
     echo "No se encontró el producto para actualizar.";
 }
 
-include "footer.php"
+include "../footer.php"
 ?>

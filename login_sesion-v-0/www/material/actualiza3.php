@@ -1,10 +1,10 @@
-<?php include "conexion.php";?>
+<?php include "../conexion.php";?>
 <?php
     
     $idm = $_GET["idmodifica"];
     // $nombreantiguo = $_GET["nombreimagen"];
 
-    mysqli_select_db($conexion, "dreams");
+    mysqli_select_db($conn, "productosbd");
     $nombre = $_POST["nombre"];
     $marca = $_POST["marca"];
     $referencia =  $_POST["referencia"];
@@ -63,5 +63,5 @@
     // $insertar = "UPDATE `usuario` SET `nombre` = '$nombre', `DNI` = '$dni', `correo_electronico` = '$correo_electronico', `ciudad` = '$ciudad', `apellido` = '$apellido' WHERE `usuario`.`id_usuario` = $idm";
     // echo $idm;
     // echo $nombre;
-    mysqli_query($conexion, $insertar);
+    mysqli_query($conn, $insertar);
     header("Location:actualiza_ok.php");?>

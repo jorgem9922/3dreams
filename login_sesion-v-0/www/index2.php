@@ -37,8 +37,7 @@ session_start();
                                 <th scope="col">reseñas</th>
                                 <th scope="col">fabricantes</th>
                                 <th scope="col">material</th>
-                                <th scope="col">impresoras </th>
-
+                                <th scope="col">Listado </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -46,8 +45,8 @@ session_start();
                                 <td scope="row"><a href="usuario/index2.php"><i class="bi-person-add px-3" style="font-size: 4rem; color:yellow;"></i></a></td>
                                 <td scope="row"><a href="reseña/index.php"><i class=" bi bi-star-fill dash px-3" style="font-size: 4rem; color:yellow;"></i></a></td>
                                 <td scope="row"><a href="fabricantes/indexcrud.php"><i class="bi-hammer px-3" style="font-size: 4rem; color:yellow;"></a></i></td>
-                                <td scope="row"><a href="material/index2.php"><i class=" bi bi-hypnotize dash px-3" style="font-size: 4rem; color:yellow;"></i></a></td>
-                                <td scope="row"><a href="impresora/indexcrud.php"><i class="bi-printer px-3" style="font-size: 4rem; color:yellow;"></i></a></td>
+                                <td scope="row"><a href="fabricantes/indexcrud.php"><i class="bi-hammer px-3" style="font-size: 4rem; color:yellow;"></a></i></td>
+                                <td scope="row"><a href="listado.php"><i class="bi-list px-3" style="font-size: 4rem; color:yellow;"></i></a></td>
                                 </tr>
                             
                         </tbody>

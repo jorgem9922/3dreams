@@ -1,6 +1,6 @@
 <?php 
-include "conexion.php";
-include "header.php";
+include "../conexion.php";
+include "../header.php";
 ?>
 
 <div class="container my-5">
@@ -20,7 +20,7 @@ include "header.php";
                             Productos:
                         </div>
                         <?php
-                        mysqli_select_db($conexion, "dreams");
+                        mysqli_select_db($conn, "productosbd");
                         $consultar = "SELECT p.*, m.*, tm.*
                         FROM producto p
                         INNER JOIN material m ON m.id_material = p.id_producto
@@ -96,5 +96,5 @@ include "header.php";
 
 
 <?php 
-include "footer.php"
+include "../footer.php"
 ?>
