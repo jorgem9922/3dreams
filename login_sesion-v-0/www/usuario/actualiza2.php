@@ -73,6 +73,11 @@ if ($registro = mysqli_fetch_assoc($registros)) {
                             class="form-control" name="correo_electronico" id="correo_electronico"  required aria-describedby="helpId" value="<?php echo $registro['correo_electronico'];?>" placeholder="Introduce el Nombre">
                           <small id="helpId" class="form-text text-muted">correo_electronico</small>
                         </div>
+                        <div class="mb-3">
+                        <input type="text"
+                            class="form-control"  required aria-describedby="helpId" value="<?php echo $registro['nombre_ciudad'];?>" placeholder="Introduce el Nombre">
+                          <small id="helpId" class="form-text text-muted">dni</small>
+                        </div>
                         <div>
                         <label for="">Ciudad</label>
                       <select name="ciudad" class="form-control">

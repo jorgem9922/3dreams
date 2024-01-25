@@ -48,7 +48,7 @@ if ($_FILES['imagen']['name'] != "") {
 if ($_FILES['imagen']['name'] != "") {
     $insertar = "UPDATE reseña SET id_reseña=$id_reseña, id_usuario='$usuario', id_producto = '$id_producto', titulo = '$titulo', descripcion = '$descripcion', fecha_creacion = '$fecha_creacion', imagen = '$nombreArchivo' WHERE id_reseña=$id_reseña";
 } else {
-    $insertar = "UPDATE reseña SET id_reseña=$id_reseña, id_usuario='$usuario', id_producto = '$id_producto', titulo = '$titulo', descripcion = '$descripcion', fecha_creacion = '$fecha_creacion' WHERE id_reseña=$id_reseña";
+    $insertar = "UPDATE reseña SET id_reseña=$id_reseña, id_usuario='$usuario', calificacion='$calificacion', id_producto = '$id_producto', titulo = '$titulo', descripcion = '$descripcion', fecha_creacion = '$fecha_creacion', imagen = '$nombreimagen' WHERE id_reseña=$id_reseña";
 }
 
 mysqli_query($conn, $insertar);
