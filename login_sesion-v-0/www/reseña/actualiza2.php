@@ -10,7 +10,7 @@ include "../conexion.php";
 
 mysqli_select_db($conn, "productosbd");
 $productoactualizar = $_GET["id"];
-$seleccionar = "SELECT r.id_reseña, r.calificacion, u.nombre AS usuario, d.nombre_producto, r.titulo, r.descripcion, r.fecha_creacion, r.imagenes FROM reseña r INNER JOIN usuario u ON r.id_usuario = u.id_usuario INNER JOIN producto d ON r.id_producto = d.id_producto WHERE r.id_reseña='$productoactualizar'";
+$seleccionar = "SELECT r.id_reseña, r.calificacion, u.nombre, d.nombre_producto, r.titulo, r.descripcion, r.fecha_creacion, r.imagenes FROM reseña r INNER JOIN usuario u ON r.id_usuario = u.id_usuario INNER JOIN producto d ON r.id_producto = d.id_producto WHERE r.id_reseña='$productoactualizar'";
 $registros = mysqli_query($conn, $seleccionar);
 $registro = mysqli_fetch_assoc($registros);
 ?>
@@ -43,7 +43,7 @@ $registro = mysqli_fetch_assoc($registros);
                         <div class="mb-3">
                           <label for="usuario" class="form-label"><b>Usuario</b></label>
                           <input type="text"
-                              class="form-control" name="usuario" id="usuario"  required value="<?php echo $registro['usuario'] ?? '';?>" aria-describedby="helpId" placeholder="Introduce el Nombre del Usuario">
+                              class="form-control" name="usuario" id="usuario"  required value="<?php echo $registro['nombre'] ?? '';?>" aria-describedby="helpId" placeholder="Introduce el Nombre del Usuario">
                           <small id="helpId" class="form-text text-muted">Nombre del Usuario</small>
                       </div>
 

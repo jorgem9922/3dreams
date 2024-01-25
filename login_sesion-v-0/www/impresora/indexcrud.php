@@ -5,7 +5,7 @@ if(!isset($usuario)){
     header("Location: indexcrud.php");
     exit;
 }
-include "../header.php"
+include "../header.php";
 ?>
 
 <div class="container my-5">
@@ -13,8 +13,9 @@ include "../header.php"
         <div class="col text-center">
 
             <div class="card">
+            
                 <div class="card-header display-6">
-                    Reseñas
+                    Impresoras
                 </div>
 
                 <div class="p-4">
@@ -22,18 +23,18 @@ include "../header.php"
                     <table class="table table-primary">
                         <thead>
                             <tr>
-                                <th scope="col">Añadir reseña</th>
-                                <th scope="col">Borrar reseña</th>
+                                <th scope="col">Añadir impresora</th>
+                                <th scope="col">Borrar impresora</th>
                                 <th scope="col">Actualización</th>
-                                <th scope="col">Reseñas de clientes</th>
+                                <th scope="col">Listado de impresoras</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="">
-                                <td scope="row"><a href="alta.php"><i class="bi-database-add px-3" style="font-size: 4rem; color:yellow;"></i></a></td>
-                                <td scope="row"><a href="baja.php"><i class="bi-database-dash px-3" style="font-size: 4rem; color:yellow;"></i></a></td>
-                                <td scope="row"><a href="actualiza.php"><i class="bi-database-check px-3" style="font-size: 4rem; color:yellow;"></a></i></td>
-                                <td scope="row"><a href="listado.php"><i class="bi-database-down px-3" style="font-size: 4rem; color:yellow;"></i></a></td>
+                                <td scope="row"><a href="alta.php"><i class="bi-database-add px-5" style="font-size: 6rem; color:green;"></i></a></td>
+                                <td scope="row"><a href="baja.php"><i class="bi-database-dash px-5" style="font-size: 6rem; color:red;"></i></a></td>
+                                <td scope="row"><a href="actualiza.php"><i class="bi-database-check px-5" style="font-size: 6rem; color:yellow;"></a></i></td>
+                                <td scope="row"><a href="listado.php"><i class="bi-database-down px-5" style="font-size: 6rem; color:blue;"></i></a></td>
                                 </tr>
                             
                         </tbody>
@@ -42,6 +43,7 @@ include "../header.php"
                 </div>
             </div>
             <a href="../index2.php"> <i class="bi-arrow-return-left px-3" style="font-size: 4rem; color:black;"></i> </a>
+
         </div>  
     </div>
 </div>

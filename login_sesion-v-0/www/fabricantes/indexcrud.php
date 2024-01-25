@@ -15,7 +15,7 @@ include "../header.php";
             <div class="card">
             
                 <div class="card-header display-6">
-                    Acciones sobre la base de datos
+                    Fabricantes
                 </div>
 
                 <div class="p-4">
@@ -31,10 +31,10 @@ include "../header.php";
                         </thead>
                         <tbody>
                             <tr class="">
-                                <td scope="row"><a href="alta.php"><i class="bi-database-add px-3" style="font-size: 4rem; color:green;"></i></a></td>
-                                <td scope="row"><a href="baja.php"><i class="bi-database-dash px-3" style="font-size: 4rem; color:red;"></i></a></td>
-                                <td scope="row"><a href="actualiza.php"><i class="bi-database-check px-3" style="font-size: 4rem; color:yellow;"></a></i></td>
-                                <td scope="row"><a href="listado.php"><i class="bi-database-down px-3" style="font-size: 4rem; color:blue;"></i></a></td>
+                                <td scope="row"><a href="alta.php"><i class="bi-database-add px-5" style="font-size: 6rem; color:green;"></i></a></td>
+                                <td scope="row"><a href="baja.php"><i class="bi-database-dash px-5" style="font-size: 6rem; color:red;"></i></a></td>
+                                <td scope="row"><a href="actualiza.php"><i class="bi-database-check px-5" style="font-size: 6rem; color:yellow;"></a></i></td>
+                                <td scope="row"><a href="listado.php"><i class="bi-database-down px-5" style="font-size: 6rem; color:blue;"></i></a></td>
                                 </tr>
                             
                         </tbody>

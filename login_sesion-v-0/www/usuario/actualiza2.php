@@ -13,8 +13,7 @@ include "../conexion.php";
 
 mysqli_select_db($conn, "productosbd");
 $usuarioactualizar = $_GET["id"];
-$seleccionar = "SELECT *FROM usuario
-
+$seleccionar = "SELECT * FROM usuario u inner join ciudad d on u.id_ciudad = d.id_ciudad
 WHERE id_usuario = $usuarioactualizar";
 $registros = mysqli_query($conn, $seleccionar);
 
@@ -74,10 +73,11 @@ if ($registro = mysqli_fetch_assoc($registros)) {
                             class="form-control" name="correo_electronico" id="correo_electronico"  required aria-describedby="helpId" value="<?php echo $registro['correo_electronico'];?>" placeholder="Introduce el Nombre">
                           <small id="helpId" class="form-text text-muted">correo_electronico</small>
                         </div>
+                        
                         <div>
                         <label for="">Ciudad</label>
                       <select name="ciudad" class="form-control">
-                          <option selected disabled>Seleccione la ciudad</option>
+                          <option selected value='<?php echo $registro['nombre_ciudad'];?>'><?php echo $registro['nombre_ciudad'];?></option>
                           <?php
                           include("../conexion.php");
                           mysqli_select_db($conn, "productosbd");
