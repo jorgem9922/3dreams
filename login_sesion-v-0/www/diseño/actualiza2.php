@@ -10,7 +10,7 @@ include "../conexion.php";
 
 mysqli_select_db($conn, "productosbd");
 $productoactualizar = $_GET["id"];
-$seleccionar = "SELECT r.id_reseña, r.calificacion, u.nombre, d.nombre_producto, r.titulo, r.descripcion, r.fecha_creacion, r.imagenes FROM reseña r INNER JOIN usuario u ON r.id_usuario = u.id_usuario INNER JOIN producto d ON r.id_producto = d.id_producto WHERE r.id_reseña='$productoactualizar'";
+$consultar= "SELECT * FROM diseño d INNER JOIN categoria c ON d.id_diseño = c.id_categoria";
 $registros = mysqli_query($conn, $seleccionar);
 $registro = mysqli_fetch_assoc($registros);
 ?>
@@ -21,7 +21,7 @@ $registro = mysqli_fetch_assoc($registros);
 
             <div class="card">
                 <div class="card-header display-6">
-                    Actualización de una reseña
+                    Actualización de un diseño
                 </div>                
             </div>
 
@@ -34,9 +34,9 @@ $registro = mysqli_fetch_assoc($registros);
                         <form class="p-4" method="POST" action="actualiza3.php?id_reseña=<?php echo $productoactualizar;?>" enctype="multipart/form-data">
                         
                         <div class="mb-3">
-                          <label for="id_reseña" class="form-label"><b>Identificador</b></label>
+                          <label for="id_diseño" class="form-label"><b>Identificador</b></label>
                           <input type="number"
-                            class="form-control" name="id_reseña" id="id_reseña" autofocus required value="<?php echo $registro['id_reseña'] ?? '';?>" aria-describedby="helpId" placeholder="Introduce el ID">
+                            class="form-control" name="id_reseña" id="id_diseño" autofocus required value="<?php echo $registro['id_diseño'] ?? '';?>" aria-describedby="helpId" placeholder="Introduce el ID">
                           <small id="helpId" class="form-text text-muted">Identificador</small>
                         </div>
 

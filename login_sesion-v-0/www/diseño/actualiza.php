@@ -27,7 +27,7 @@ include "../header.php";
                         </div>
                         <?php
                               mysqli_select_db($conn, "productosbd");
-                          $consultar= "SELECT * FROM reseña r INNER JOIN usuario u ON r.id_usuario = u.id_usuario INNER JOIN producto d ON r.id_producto = d.id_producto";
+                          $consultar= "SELECT * FROM diseño d INNER JOIN categoria c ON d.id_diseño = c.id_categoria";
 
                           $registros= mysqli_query($conn, $consultar);
 
@@ -36,15 +36,13 @@ include "../header.php";
                           <table class="table table-hover">
                             <thead>
                               <tr>
-                                <th scope="col">Identificador Reseña</th>
-                                <th scope="col">Usuario</th>
-                                <th scope="col">Calificacion</th>
-                                <th scope="col">Titulo</th>
-                                <th scope="col">Descripcion</th>
-                                <th scope="col">Producto</th> 
-                                <th scope="col">Fecha de creacion</th>                           
-                                <th scope="col">Imagen</th>
-                              
+                                <th scope="col">Identificador Diseño</th>
+                                <th scope="col">Tamaño</th>
+                                <th scope="col">Alto</th>
+                                <th scope="col">Ancho</th>
+                                <th scope="col">Identificacion Categoria</th>
+                                <th scope="col">Imagen</th> 
+                               
                               </tr>
                             </thead>
                             <tbody>
@@ -55,20 +53,18 @@ include "../header.php";
                               ?>
 
                               <tr class="align-middle">
-                                <td scope="row"><?php echo $registro['id_reseña']; ?></td>
-                                <td><?php echo $registro['nombre']; ?></td>
-                                <td><?php echo $registro['calificacion']; ?></td>
-                                <td><?php echo $registro['titulo']; ?></td>
-                                <td><?php echo $registro['descripcion']; ?></td> 
-                                <td><?php echo $registro['nombre_producto']; ?></td>  
-                                <td><?php echo $registro['fecha_creacion']; ?></td>     
+                                <td scope="row"><?php echo $registro['id_diseño']; ?></td>
+                                <td><?php echo $registro['Tamaño']; ?></td>
+                                <td><?php echo $registro['alto']; ?></td>
+                                <td><?php echo $registro['ancho']; ?></td>
+                                <td><?php echo $registro['id_categoria']; ?></td>    
                                                            
                                 <td>
                                                 <?php 
                                                 echo "<img width='100px' height='100px' src='../imagenes/{$registro['imagenes']}' "; 
                                                 ?>
                                             </td> 
-                                          <td> <a href="actualiza2.php?id=<?php echo $registro['id_reseña']; ?>"><i class="bi-pencil px-1" style="font-size: 2rem; color:green;"></i> </a></td>                           
+                                          <td> <a href="actualiza2.php?id=<?php echo $registro['id_diseño']; ?>"><i class="bi-pencil px-1" style="font-size: 2rem; color:green;"></i> </a></td>                           
                               </tr>
                             
                               <?php
