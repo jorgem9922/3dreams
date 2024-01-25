@@ -10,7 +10,7 @@ include "../conexion.php";
 
 mysqli_select_db($conn, "productosbd");
 $productoactualizar = $_GET["id"];
-$seleccionar = "SELECT * FROM reseña WHERE id_reseña='$productoactualizar'";
+$seleccionar = "SELECT * FROM reseña r INNER JOIN usuario u ON r.id_usuario = u.id_usuario INNER JOIN producto d ON r.id_producto = d.id_producto WHERE id_reseña='$productoactualizar'";
 $registros = mysqli_Query($conn, $seleccionar);
 $registro = mysqli_fetch_row($registros);
 ?>
@@ -31,48 +31,63 @@ $registro = mysqli_fetch_row($registros);
                         <div class="card-header"> 
                             Ingresar datos:
                         </div>
-                        <form class="p-4" method="POST" action="actualiza3.php?id_reseña=<?php echo $productoactualizar;?>&nombreimagen==<?php echo $registro[5];?>" enctype="multipart/form-data">
+                        <form class="p-4" method="POST" action="actualiza3.php?id_reseña=<?php echo $productoactualizar;?>" enctype="multipart/form-data">
                         
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Identificador</b></label>
                           <input type="number"
-                            class="form-control" name="id_reseña" id="id_reseña" autofocus required value="<?php echo $registro[0];?>" aria-describedby="helpId" placeholder="Introduce el ID">
+                            class="form-control" name="id_reseña" id="id_reseña" autofocus required value="<?php echo $registro['id_reseña'];?>" aria-describedby="helpId" placeholder="Introduce el ID">
                           <small id="helpId" class="form-text text-muted">Identificador</small>
                         </div>
 
                         <div class="mb-3">
-                          <label for="" class="form-label"><b>Nombre</b></label>
+                          <label for="" class="form-label"><b>Usuario</b></label>
                           <input type="text"
-                            class="form-control" name="nombre" id="nombre"  required value="<?php echo $registro[1];?>" aria-describedby="helpId" placeholder="Introduce el Nombre">
+                            class="form-control" name="usuario" id="usuario"  required value="<?php echo $registro['nombre'];?>" aria-describedby="helpId" placeholder="Introduce el Nombre">
+                          <small id="helpId" class="form-text text-muted">Nombre</small>
+                        </div>
+                        <div class="mb-3">
+                          <label for="" class="form-label"><b>Usuario</b></label>
+                          <input type="text"
+                            class="form-control" name="usuario" id="usuario"  required value="<?php echo $registro['nombre'];?>" aria-describedby="helpId" placeholder="Introduce el Nombre">
                           <small id="helpId" class="form-text text-muted">Nombre</small>
                         </div>
 
 
+
                         <div class="mb-3">
-                          <label for="" class="form-label"><b>Autor</b></label>
+                          <label for="" class="form-label"><b>Producto</b></label>
                           <input type="text"
-                            class="form-control" name="autor" id="autor"  required value="<?php echo $registro[2];?>" aria-describedby="helpId" placeholder="Introduce el Autor">
+                            class="form-control" name="producto" id="producto"  required value="<?php echo $registro['nombre_producto'];?>" aria-describedby="helpId" placeholder="Introduce el Autor">
                           <small id="helpId" class="form-text text-muted">Autor</small>
                         </div>
 
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Título</b></label>
                           <input type="text"
-                            class="form-control" name="titulo" id="titulo"  required value="<?php echo $registro[3];?>" aria-describedby="helpId" placeholder="Introduce el Título">
+                            class="form-control" name="titulo" id="titulo"  required value="<?php echo $registro['titulo'];?>" aria-describedby="helpId" placeholder="Introduce el Título">
                           <small id="helpId" class="form-text text-muted">Título</small>
                         </div>
 
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Descripcion</b></label>
                           <input type="text"
-                            class="form-control" name="descripcion" id="descripcion"  required value="<?php echo $registro[4];?>" aria-describedby="helpId" placeholder="Introduce el Título">
+                            class="form-control" name="descripcion" id="descripcion"  required value="<?php echo $registro['descripcion'];?>" aria-describedby="helpId" placeholder="Introduce el Título">
+                          <small id="helpId" class="form-text text-muted">Descripcion</small>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="" class="form-label"><b>fecha Creacion</b></label>
+                          <input type="text"
+                            class="form-control" name="fecha_creacion" id="fecha_creacion"  required value="<?php echo $registro['fecha_creacion'];?>" aria-describedby="helpId" placeholder="Introduce el Título">
                           <small id="helpId" class="form-text text-muted">Descripcion</small>
                         </div>
 
 
+
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Imagen Antigua</b></label>
-                          <?php  echo '<img width="100px" height="100px" src="../imagenes/'.$registro[5].'">';?>
+                          <?php  echo '<img width="100px" height="100px" src="../imagenes/'.$registro['imagenes'].'">';?>
                         </div>
 
                         <div class="mb-3">

@@ -61,16 +61,13 @@ include "../header.php";
                                 <td><?php echo $registro['titulo']; ?></td>
                                 <td><?php echo $registro['descripcion']; ?></td> 
                                 <td><?php echo $registro['nombre_producto']; ?></td>  
-                                <td><?php echo $registro['fecha_creacion']; ?></td>                              
+                                <td><?php echo $registro['fecha_creacion']; ?></td>     
+                                                           
                                 <td>
-                                    <?php 
-                                        if (isset($registro['imagen'])) {
-                                            echo "<img width='100px' height='100px' src='../imagenes/{$registro['imagen']}' alt='imagen'>"; 
-                                        } else {
-                                            echo "Sin imagen";
-                                        }
-                                    ?>
-                                </td>                                
+                                                <?php 
+                                                echo "<img width='100px' height='100px' src='../imagenes/{$registro['imagenes']}' "; 
+                                                ?>
+                                            </td>                           
                               </tr>
                               
                             

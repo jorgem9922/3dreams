@@ -8,15 +8,13 @@ if(!isset($usuario)){
 include "../conexion.php";?>
 <?php
     
-    // $idm = $_GET["idmodifica"];
-    $nombreantiguo = $_GET["nombreimagen"];
-
-    mysqli_select_db($conn, "productosbd");
     $id_reseña = $_POST["id_reseña"];
-    $nombre = $_POST["nombre"];
-    $autor = $_POST["autor"];
+    $calificacion = $_POST["calificacion"];
+    $usuario = $_POST["usuario"];
     $titulo = $_POST["titulo"];
     $descripcion = $_POST["descripcion"];
+    $fecha_creacion = $_POST["fecha_creacion"];
+    $id_producto = $_POST["id_producto"];
 
     //var_dump ($_FILES['imagen']);
     
@@ -51,10 +49,10 @@ include "../conexion.php";?>
     }
 
     if($_FILES['imagen']['name'] != ""){
-        $insertar = "UPDATE reseña SET id_reseña=$id_reseña, nombre='$nombre', autor = '$autor', titulo = '$titulo', descripcion = '$descripcion', imagen = '$nombreArchivo' WHERE id_reseña=$id_reseña";
+        $insertar = "UPDATE reseña SET id_reseña=$id_reseña, id_usuario='$usuario', id_producto = '$producto', titulo = '$titulo', descripcion = '$descripcion',fecha_creacion = '$fecha_creacion', imagen = '$nombreArchivo' WHERE id_reseña=$id_reseña";
     }
     else{
-        $insertar = "UPDATE reseña SET id_reseña=$id_reseña, nombre='$nombre', autor = '$autor', titulo = '$titulo', descripcion = '$descripcionNueva', imagen = '$nombreimagen' WHERE id_reseña=$id_reseña";   
+        $insertar = "UPDATE reseña SET id_reseña=$id_reseña, id_usuario='$usuario', id_producto = '$producto', titulo = '$titulo', descripcion = '$descripcionNueva',fecha_creacion = '$fecha_creacion', imagen = '$nombreimagen' WHERE id_reseña=$id_reseña";   
     }
 
     // echo $insertar;
