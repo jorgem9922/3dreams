@@ -38,6 +38,8 @@ session_start();
                                 <th scope="col">fabricantes</th>
                                 <th scope="col">material</th>
                                 <th scope="col">impresoras </th>
+                                <th scope="col">impresoras </th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -47,6 +49,8 @@ session_start();
                                 <td scope="row"><a href="fabricantes/indexcrud.php"><i class="bi-hammer px-3" style="font-size: 4rem; color:yellow;"></a></i></td>
                                 <td scope="row"><a href="material/index.php"><i class="bi-hypnotize px-3" style="font-size: 4rem; color:yellow;"></a></i></td>
                                 <td scope="row"><a href="impresora/indexcrud.php"><i class="bi-printer px-3" style="font-size: 4rem; color:yellow;"></i></a></td>
+                                <td scope="row"><a href="diseño/index.php"><i class="bi-files px-3" style="font-size: 4rem; color:yellow;"></i></a></td>
+
                                 </tr>
                             
                         </tbody>
