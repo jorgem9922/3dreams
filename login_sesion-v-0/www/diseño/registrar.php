@@ -3,7 +3,7 @@ include "../conexion.php";
 
 mysqli_select_db($conn, "productosbd");
 
-$id_reseña = $_POST["id_reseña"];
+$id_reseña = $_POST["id_diseño"];
 $calificacion = $_POST["calificacion"];
 $usuario = $_POST["usuario"];
 $titulo = $_POST["titulo"];
@@ -38,7 +38,7 @@ if (isset($_FILES['imagen'])) {
     }
 }
 
-$insertar = "INSERT INTO reseña (id_reseña, calificacion, id_usuario, titulo, descripcion, fecha_creacion, id_producto, imagenes) VALUES ($id_reseña, '$calificacion', '$usuario', '$titulo', '$descripcion', '$fecha_creacion', '$id_producto', '$nombreCompleto')";
+$insertar = "INSERT INTO diseño (id_diseño, Tamaño, alto, ancho, id_categoria, imagenes) VALUES ($id_diseño, '$Tamaño', '$alto', '$ancho', '$id_categoria', '$nombreCompleto')";
 
 mysqli_query($conn, $insertar);
 header("Location:alta_ok.php");
