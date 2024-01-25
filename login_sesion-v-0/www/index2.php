@@ -38,7 +38,7 @@ session_start();
                                 <th scope="col">fabricantes</th>
                                 <th scope="col">material</th>
                                 <th scope="col">impresoras </th>
-                                <th scope="col">impresoras </th>
+                                <th scope="col">Diseños </th>
 
                             </tr>
                         </thead>
