@@ -14,10 +14,11 @@ include "../conexion.php";?>
     $titulo = $_POST["titulo"];
     $descripcion = $_POST["descripcion"];
     $fecha_creacion = $_POST["fecha_creacion"];
-    $id_producto = $_POST["id_producto"];
+    $id_producto = $_POST["producto"];
 
     //var_dump ($_FILES['imagen']);
     
+     
     $directorioSubida = "../imagenes/";
     $max_file_size="5120000";
     $extensionesValidas=array("jpg","png","gif");
@@ -30,6 +31,7 @@ include "../conexion.php";?>
         $tipoArchivo = $_FILES['imagen']['type'];
         $arrayArchivo = pathinfo ($nombreArchivo);
         $extension = $arrayArchivo['extension'];
+
        
         if(!in_array($extension, $extensionesValidas)) {
             echo "Extensión no válida";
@@ -47,6 +49,7 @@ include "../conexion.php";?>
             move_uploaded_file($directorioTemp, $nombreCompleto);
         }
     }
+
 
     if($_FILES['imagen']['name'] != ""){
         $insertar = "UPDATE reseña SET id_reseña=$id_reseña, id_usuario='$usuario', id_producto = '$producto', titulo = '$titulo', descripcion = '$descripcion',fecha_creacion = '$fecha_creacion', imagen = '$nombreArchivo' WHERE id_reseña=$id_reseña";
