@@ -22,10 +22,10 @@ include "../header.php"
                     <table class="table table-primary">
                         <thead>
                             <tr>
-                                <th scope="col">Añadir reseña</th>
-                                <th scope="col">Borrar reseña</th>
+                                <th scope="col">Añadir diseño</th>
+                                <th scope="col">Borrar diseño</th>
                                 <th scope="col">Actualización</th>
-                                <th scope="col">Reseñas de clientes</th>
+                                <th scope="col">Reseñas de diseño</th>
                             </tr>
                         </thead>
                         <tbody>
