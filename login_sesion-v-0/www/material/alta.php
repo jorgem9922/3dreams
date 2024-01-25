@@ -77,7 +77,7 @@ include "../header.php"
                           // echo "hola";
                           while ($resultado = $sql->fetch_assoc()) {
                               echo "<option value='" . $resultado['id_tipo_material'] . "'>" . $resultado['Nombrematerial'] . "</option>";
-                              echo "hola";
+                              
                             }
                           ?>
                       </select>

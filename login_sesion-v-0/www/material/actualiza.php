@@ -27,7 +27,7 @@ include "../header.php";
                         INNER JOIN tipo_material tm ON tm.id_tipo_material = m.id_tipo_material
                         ORDER BY p.id_producto;";
 
-                        $registros = mysqli_query($conexion, $consultar);
+                        $registros = mysqli_query($conn, $consultar);
                         ?>
 
                         <div class="table-responsive">

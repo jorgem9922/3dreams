@@ -22,14 +22,14 @@ include "../header.php";
                             usuario:
                         </div>
                         <?php
-                        mysqli_select_db($conexion, "dreams");
+                        mysqli_select_db($conn, "productosbd");
                         $consultar = "SELECT p.*, m.*, tm.*
                         FROM producto p
                         INNER JOIN material m ON m.id_material = p.id_producto
                         INNER JOIN tipo_material tm ON tm.id_tipo_material = m.id_tipo_material
                         ORDER BY p.id_producto;";
 
-                        $registros = mysqli_query($conexion, $consultar);
+                        $registros = mysqli_query($conn, $consultar);
                         ?>
 
                         <div class="table-responsive">
