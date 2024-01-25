@@ -10,7 +10,7 @@ INNER JOIN material m ON m.id_material = p.id_producto
 INNER JOIN tipo_material tm ON tm.id_tipo_material = m.id_tipo_material
 WHERE p.id_producto = $productoactualizar
 ORDER BY p.id_producto;";
-$registros = mysqli_query($conexion, $seleccionar);
+$registros = mysqli_query($conn, $seleccionar);
 
 if ($registro = mysqli_fetch_assoc($registros)) {
 ?>
@@ -35,7 +35,7 @@ if ($registro = mysqli_fetch_assoc($registros)) {
 
                             <div class="mb-3">
                                 <label for="" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" name="nombre" id="nombre" required value="<?php echo $registro['nombre'];?>" aria-describedby="helpId" placeholder="Introduce el Nombre">
+                                <input type="text" class="form-control" name="nombre" id="nombre" required value="<?php echo $registro['nombre_producto'];?>" aria-describedby="helpId" placeholder="Introduce el Nombre">
                                 <small id="helpId" class="form-text text-muted">Nombre</small>
                             </div>
                             <div class="mb-3">
@@ -69,10 +69,10 @@ if ($registro = mysqli_fetch_assoc($registros)) {
                                 <select name="tipomaterial" class="form-control">
                                     <option selected>Seleccione el tipo de material</option>
                                     <?php
-                                    include("conexion.php");
-                                    mysqli_select_db($conexion, "dreams");
+                                    include("../conexion.php");
+                                    mysqli_select_db($conn, "productosbd");
                                     $consultar = "SELECT * FROM tipo_material";
-                                    $sql = mysqli_query($conexion, $consultar);
+                                    $sql = mysqli_query($conn, $consultar);
 
                                     echo "<option selected value='" . $registro['id_tipo_material'] . "'>" . $registro['Nombrematerial'] . "</option>";
 

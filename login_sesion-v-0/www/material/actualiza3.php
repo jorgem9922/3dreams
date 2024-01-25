@@ -48,13 +48,13 @@
 
     if ($_FILES['imagen']['name'] != "") {
         $insertar = "UPDATE producto p JOIN material m ON p.id_producto = m.id_material 
-                     SET p.nombre = '$nombre', p.marca = '$marca', p.referencia = '$referencia', 
+                     SET p.nombre_producto = '$nombre', p.marca = '$marca', p.referencia = '$referencia', 
                          p.precio = '$precio', p.fotografia = '$nombreArchivo', m.color= '$color', m.peso='$peso' ,
                           m.id_tipo_material='$material'
                      WHERE p.id_producto = $idm";
     } else {
         $insertar = "UPDATE producto p JOIN material m ON p.id_producto =m.id_material
-                     SET p.nombre = '$nombre', p.marca = '$marca', p.referencia = '$referencia', 
+                     SET p.nombre_producto = '$nombre', p.marca = '$marca', p.referencia = '$referencia', 
                          p.precio = '$precio', p.fotografia = '$nombreantiguo', m.color= '$color', m.peso='$peso' , 
                          m.id_tipo_material='$material'
                      WHERE p.id_producto = $idm";
