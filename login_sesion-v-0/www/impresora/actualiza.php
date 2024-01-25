@@ -57,7 +57,8 @@ include "../header.php";
 
 
                               <tr class="align-middle">
-                                <td scope="row"><?php echo $registro['id_impresora']; ?></td>
+                                <td scope="row"><?php echo $registro[0]; ?></td>
+                                <td><?php echo $registro['id_impresora']; ?></td>
                                 <td><?php echo $registro['modelo']; ?></td>
                                 <td><?php echo $registro['color']; ?></td>
                                 <td><?php echo $registro['tamañocamax']; ?></td>

@@ -9,8 +9,8 @@ include "../header.php";
 include "conexioncrud.php";
 
 mysqli_Select_db($conexion, "productosbd");
-$productoactualizar = $_GET["id"];
-$seleccionar = "SELECT * FROM fabricantes WHERE id_fabricante='$productoactualizar'";
+$productoactualizar = $_GET["id_impresora"];
+$seleccionar = "SELECT * FROM impresora WHERE id_impresora='$productoactualizar'";
 $registros = mysqli_Query($conexion, $seleccionar);
 $registro = mysqli_fetch_row($registros);
 ?>
