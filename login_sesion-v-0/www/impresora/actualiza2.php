@@ -53,10 +53,10 @@ $registro = mysqli_fetch_row($registros);
                             class="form-control" name="color" id="color" autofocus required value="<?php echo $registro[2];?>" aria-describedby="helpId" placeholder="Introduce el color">
                           <small id="helpId" class="form-text text-muted">color</small>
                         </div>
-                        <!-- cp -->
+                        <!-- tamaño x -->
                         <div class="mb-3">
                           <label for="" class="form-label">CP</label>
-                          <input type="number" class="form-control" name="codigo_postal" id="codgo_postal" required value="<?php echo $registro[3];?>" aria-describedby="helpId" placeholder="Introduce el codigo postal">
+                          <input type="number" class="form-control" name="tamañocamax" id="codgo_postal" required value="<?php echo $registro[3];?>" aria-describedby="helpId" placeholder="Introduce el codigo postal">
                           <small id="helpId" class="form-text text-muted">CP</small>
                         </div>
                         <!-- correo -->
