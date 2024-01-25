@@ -10,7 +10,7 @@ include "../conexion.php";
 
 mysqli_select_db($conn, "productosbd");
 $productoactualizar = $_GET["id"];
-$seleccionar = "SELECT r.id_reseña, r.calificacion, u.nombre, d.nombre_producto, r.titulo, r.descripcion, r.fecha_creacion, r.imagenes FROM reseña r INNER JOIN usuario u ON r.id_usuario = u.id_usuario INNER JOIN producto d ON r.id_producto = d.id_producto WHERE r.id_reseña='$productoactualizar'";
+$consultar= "SELECT * FROM diseño d INNER JOIN categoria c ON d.id_diseño = c.id_categoria";
 $registros = mysqli_query($conn, $seleccionar);
 $registro = mysqli_fetch_assoc($registros);
 ?>
@@ -21,7 +21,7 @@ $registro = mysqli_fetch_assoc($registros);
 
             <div class="card">
                 <div class="card-header display-6">
-                    Actualización de una reseña
+                    Actualización de un diseño
                 </div>                
             </div>
 
