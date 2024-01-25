@@ -1,7 +1,5 @@
 <?php include "conexioncrud.php";
 
-
-    
     $idm = $_GET["idmodifica"];
     //$nombreantiguo = $_GET["fotografia"];
 
@@ -30,7 +28,6 @@
         $extension = $arrayArchivo['extension'];
 
        
-       
         if(!in_array($extension, $extensionesValidas)) {
             echo "Extensión no válida";
             $errores=1;
@@ -47,22 +44,13 @@
             move_uploaded_file($directorioTemp, $nombreCompleto);
         }
     }
-
     if($_FILES['fotografia']['name'] != ""){
         $insertar = "UPDATE `fabricantes` SET `id_fabricante`=$id_fabricante,`nombre`='$nombre',`telefono`=$telefono, `codigo_postal`=$codigo_postal, `correo_electronico`='$correo_electronico',`fotografia`='$nombreArchivo' WHERE `fabricantes`.`id_fabricante`=$idm";
     }
     else{
         $insertar = "UPDATE `fabricantes` SET `id_fabricante`=$id_fabricante,`nombre`='$nombre',`telefono`=$telefono, `codigo_postal`=$codigo_postal, `correo_electronico`='$correo_electronico',`fotografia`='$nombreantiguo' WHERE `fabricantes`.`id_fabricante`=$idm";
     };  
-    // echo $nombre;
-    // echo $telefono;
-    // echo $codigo_postal;
-    // echo $correo_electronico;
-    // echo $id_fabricante;
-    // echo $idm;
     
-
-
     mysqli_query($conexion, $insertar);
     header("Location:actualiza_ok.php");
     ?>
