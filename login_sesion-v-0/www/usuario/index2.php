@@ -1,9 +1,4 @@
 <?php 
-
-/* *********************************************************************** */
-/* *********************  Programa principal  **************************** */
-/* **************** Menu de selección de opciones ************************ */
-/* *********************************************************************** */
 session_start();
     
     if (!isset($_SESSION['usuario']) || $_SESSION['usuario'] === null) {
@@ -28,7 +23,7 @@ session_start();
 
             <div class="card">
                 <div class="card-header display-6">
-                    Acciones sobre la base de datos
+                  Usuarios
                 </div>
 
                 <div class="p-4">

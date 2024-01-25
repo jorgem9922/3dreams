@@ -14,7 +14,7 @@ include "../header.php"
 
             <div class="card">
                 <div class="card-header display-6">
-                    Acciones sobre la base de datos
+                    Reseñas
                 </div>
 
                 <div class="p-4">
