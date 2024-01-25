@@ -36,30 +36,30 @@ $registro = mysqli_fetch_row($registros);
                         <div class="mb-3">
                           <label for="" class="form-label">Id</label>
                           <input type="number"
-                            class="form-control" name="id_impresora" id="id_impresora" autofocus required value="<?php echo $registro[0];?>" aria-describedby="helpId" placeholder="Introduce el ID">
+                            class="form-control" name="id_impresora" id="id_impresora" autofocus required value="<?php echo $registro['id_impresora'];?>" aria-describedby="helpId" placeholder="Introduce el ID">
                           <small id="helpId" class="form-text text-muted">Id</small>
                         </div>
                         <!-- modelo -->
                         <div class="mb-3">
                           <label for="" class="form-label">Modelo</label>
                           <input type="text"
-                            class="form-control" name="Modelo" id="Modelo"  required value="<?php echo $registro[1];?>" aria-describedby="helpId" placeholder="Introduce el Nombre">
+                            class="form-control" name="Modelo" id="Modelo"  required value="<?php echo $registro['Modelo'];?>" aria-describedby="helpId" placeholder="Introduce el Nombre">
                           <small id="helpId" class="form-text text-muted">Modelo</small>
                         </div>
                         <!-- color -->
                         <div class="mb-3">
                           <label for="" class="form-label">color</label>
                           <input type="number"
-                            class="form-control" name="color" id="color" autofocus required value="<?php echo $registro[2];?>" aria-describedby="helpId" placeholder="Introduce el color">
+                          class="form-control" name="color" id="color" autofocus required value="<?php echo $registro['color'];?>" aria-describedby="helpId" placeholder="Introduce el color">
                           <small id="helpId" class="form-text text-muted">color</small>
                         </div>
                         <!-- tamaño x -->
                         <div class="mb-3">
                           <label for="" class="form-label">CP</label>
-                          <input type="number" class="form-control" name="tamañocamax" id="codgo_postal" required value="<?php echo $registro[3];?>" aria-describedby="helpId" placeholder="Introduce el codigo postal">
-                          <small id="helpId" class="form-text text-muted">CP</small>
+                          <input type="number" class="form-control" name="tamañocamax" id="tamañocamax" required value="<?php echo $registro['tamañocamax'];?>" aria-describedby="helpId" placeholder="Introduce el tamaño de la cama en el eje x">
+                          <small id="helpId" class="form-text text-muted">tamañocamax</small>
                         </div>
-                        <!-- correo -->
+                        <!-- tamañoy -->
                         <div class="mb-3">
                           <label for="" class="form-label">Tamaño impresora </label>
                           <input type="twxt" class="form-control" name="Tamaño_impresora" id="Tamaño_impresora" required value="<?php echo $registro[4];?>" aria-describedby="helpId" placeholder="Introduce el correo electrónico">
