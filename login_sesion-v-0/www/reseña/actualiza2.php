@@ -80,7 +80,6 @@ $registro = mysqli_fetch_assoc($registros);
                               class="form-control" name="fecha_creacion" id="fecha_creacion"  required value="<?php echo $registro['fecha_creacion'] ?? '';?>" aria-describedby="helpId" placeholder="Introduce la Fecha de Creación">
                           <small id="helpId" class="form-text text-muted">Fecha de Creación</small>
                       </div>
-
                       <div class="mb-3">
                           <label for="" class="form-label">Imagen Antigua</label>
                           <?php  echo '<img width="100px" height="100px" src="../imagenes/'.$registro['imagenes'].'">';?>
