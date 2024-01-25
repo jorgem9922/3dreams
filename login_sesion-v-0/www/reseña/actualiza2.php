@@ -10,7 +10,7 @@ include "../conexion.php";
 
 mysqli_select_db($conn, "productosbd");
 $productoactualizar = $_GET["id"];
-$seleccionar = "SELECT r.id_reseña, r.calificacion, u.nombre AS usuario, d.nombre_producto, r.titulo, r.descripcion, r.fecha_creacion, r.imagenes FROM reseña r INNER JOIN usuario u ON r.id_usuario = u.id_usuario INNER JOIN producto d ON r.id_producto = d.id_producto WHERE r.id_reseña='$productoactualizar'";
+$seleccionar = "SELECT r.id_reseña, r.calificacion, u.nombre, d.nombre_producto, r.titulo, r.descripcion, r.fecha_creacion, r.imagenes FROM reseña r INNER JOIN usuario u ON r.id_usuario = u.id_usuario INNER JOIN producto d ON r.id_producto = d.id_producto WHERE r.id_reseña='$productoactualizar'";
 $registros = mysqli_query($conn, $seleccionar);
 $registro = mysqli_fetch_assoc($registros);
 ?>
@@ -43,7 +43,7 @@ $registro = mysqli_fetch_assoc($registros);
                         <div class="mb-3">
                           <label for="usuario" class="form-label"><b>Usuario</b></label>
                           <input type="text"
-                              class="form-control" name="usuario" id="usuario"  required value="<?php echo $registro['usuario'] ?? '';?>" aria-describedby="helpId" placeholder="Introduce el Nombre del Usuario">
+                              class="form-control" name="usuario" id="usuario"  required value="<?php echo $registro['nombre'] ?? '';?>" aria-describedby="helpId" placeholder="Introduce el Nombre del Usuario">
                           <small id="helpId" class="form-text text-muted">Nombre del Usuario</small>
                       </div>
 
@@ -82,20 +82,16 @@ $registro = mysqli_fetch_assoc($registros);
                       </div>
 
                       <div class="mb-3">
-                          <label for="imagen_antigua" class="form-label"><b>Imagen Antigua</b></label>
-                          <?php  
-                            if (isset($registro['imagenes'])) {
-                                echo '<img width="100px" height="100px" src="../imagenes/'.$registro['imagenes'].'">';
-                            }
-                          ?>
-                      </div>
+                          <label for="" class="form-label">Imagen Antigua</label>
+                          <?php  echo '<img width="100px" height="100px" src="../imagenes/'.$registro['imagenes'].'">';?>
+                        </div>
 
-                      <div class="mb-3">
-                          <label for="imagen_nueva" class="form-label"><b>Imagen Nueva</b></label>
+                        <div class="mb-3">
+                          <label for="" class="form-label">Imagen</label>
                           <input type="file"
-                              class="form-control" name="imagen_nueva" id="imagen_nueva" accept="image/*">
-                          <small id="helpId" class="form-text text-muted">Imagen Nueva</small>
-                      </div>
+                            class="form-control" name="imagen" id="imagen" required accept="image/*">
+                          <small id="helpId" class="form-text text-muted">Imagen</small>
+                        </div>
 
                       <div class="d-grid">
                           <input type="submit" class="btn btn-primary" value="Actualizar">

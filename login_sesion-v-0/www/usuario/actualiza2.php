@@ -13,8 +13,7 @@ include "../conexion.php";
 
 mysqli_select_db($conn, "productosbd");
 $usuarioactualizar = $_GET["id"];
-$seleccionar = "SELECT *FROM usuario
-
+$seleccionar = "SELECT * FROM usuario u inner join ciudad d on u.id_ciudad = d.id_ciudad
 WHERE id_usuario = $usuarioactualizar";
 $registros = mysqli_query($conn, $seleccionar);
 
