@@ -10,8 +10,8 @@ include "../conexion.php";
 mysqli_select_db($conn, "productosbd");
 
 
-$reseñaborrar = $_GET["id"];
-$borrar="DELETE FROM reseña WHERE id_reseña = '$reseñaborrar'";
+$diseñoborrar = $_GET["id"];
+$borrar="DELETE FROM diseño WHERE id_diseño = '$diseñoborrar'";
 mysqli_Query($conn, $borrar);
 header("Location: baja_ok.php");
 ?>

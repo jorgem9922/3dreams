@@ -15,7 +15,7 @@ include "../header.php";
 
             <div class="card">
                 <div class="card-header display-6">
-                    Actualización de la reseña
+                    Actualización de la diseño
                 </div>                
             </div>
 
@@ -23,25 +23,33 @@ include "../header.php";
                 <div class="col-md-10">
                     <div class="card">
                         <div class="card-header"> 
-                            Reseñas:
+                            Diseño:
                         </div>
                         <?php
-                              mysqli_select_db($conn, "productosbd");
-                          $consultar= "SELECT * FROM diseño d INNER JOIN categoria c ON d.id_diseño = c.id_categoria";
-
-                          $registros= mysqli_query($conn, $consultar);
+                             mysqli_select_db($conn, "productosbd");
+                             $consultar = "SELECT * FROM diseño d 
+                             INNER JOIN producto p ON d.id_diseño = p.id_producto 
+                             INNER JOIN categoria c ON d.id_categoria = c.id_categoria 
+                             INNER JOIN fabricantes f ON p.id_fabricante = f.id_fabricante"; 
+                             $registros = mysqli_query($conn, $consultar);
 
                         ?>
                        <div class="table-responsive">
                           <table class="table table-hover">
                             <thead>
                               <tr>
-                                <th scope="col">Identificador Diseño</th>
-                                <th scope="col">Tamaño</th>
-                                <th scope="col">Alto</th>
-                                <th scope="col">Ancho</th>
-                                <th scope="col">Identificacion Categoria</th>
-                                <th scope="col">Imagen</th> 
+                                        <th scope="col">ID producto</th>
+                                        <th scope="col">Nombre Producto</th>
+                                        <th scope="col">Marca</th>
+                                        <th scope="col">Referencia</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col">Tamaño</th>
+                                        <th scope="col">Alto</th>
+                                        <th scope="col">Ancho</th>
+                                        <th scope="col">Descripcion</th>
+                                        <th scope="col">Nombre de categoria</th>
+                                        <th scope="col">Nombre Fabricante</th>
+                                        <th scope="col">Imagenes</th> 
                                
                               </tr>
                             </thead>
@@ -53,18 +61,24 @@ include "../header.php";
                               ?>
 
                               <tr class="align-middle">
-                                <td scope="row"><?php echo $registro['id_diseño']; ?></td>
-                                <td><?php echo $registro['Tamaño']; ?></td>
-                                <td><?php echo $registro['alto']; ?></td>
-                                <td><?php echo $registro['ancho']; ?></td>
-                                <td><?php echo $registro['id_categoria']; ?></td>    
+                                            <td><?php echo $registro['id_producto']; ?></td>
+                                            <td><?php echo $registro['nombre_producto']; ?></td>
+                                            <td><?php echo $registro['marca']; ?></td>
+                                            <td><?php echo $registro['referencia']; ?></td>
+                                            <td><?php echo $registro['precio']; ?></td>
+                                            <td><?php echo $registro['nombre_fabricante']; ?></td>
+                                            <td><?php echo $registro['id_producto']; ?></td>
+                                            <td><?php echo $registro['Tamaño']; ?></td>
+                                            <td><?php echo $registro['alto']; ?></td>
+                                            <td><?php echo $registro['ancho']; ?></td>
+                                            <td><?php echo $registro['nombre_categoria']; ?></td> 
                                                            
                                 <td>
                                                 <?php 
                                                 echo "<img width='100px' height='100px' src='../imagenes/{$registro['imagenes']}' "; 
                                                 ?>
                                             </td> 
-                                          <td> <a href="actualiza2.php?id=<?php echo $registro['id_diseño']; ?>"><i class="bi-pencil px-1" style="font-size: 2rem; color:green;"></i> </a></td>                           
+                                          <td> <a href="actualiza2.php?id=<?php echo $registro['id_producto']; ?>"><i class="bi-pencil px-1" style="font-size: 2rem; color:green;"></i> </a></td>                           
                               </tr>
                             
                               <?php

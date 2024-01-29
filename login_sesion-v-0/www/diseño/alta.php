@@ -1,11 +1,11 @@
-<?php 
+<?php
 session_start();
 $usuario = $_SESSION['usuario'];
-if(!isset($usuario)){
+if (!isset($usuario)) {
     header("Location: indexcrud.php");
     exit;
 }
-include "../header.php"
+include "../header.php";
 ?>
 
 <div class="container my-5">
@@ -14,7 +14,7 @@ include "../header.php"
 
             <div class="card">
                 <div class="card-header display-6">
-                    Reseñas
+                    Diseño
                 </div>                
             </div>
 
@@ -27,88 +27,116 @@ include "../header.php"
                         <form class="p-4" method="POST" action="registrar.php" enctype="multipart/form-data">
                         
                         <div class="mb-3">
-                          <label for="" class="form-label"><b>Identificador</b></label>
-                          <input type="number"
-                            class="form-control" name="id_reseña" id="id_reseña" autofocus required aria-describedby="helpId" placeholder="Introduce el ID">
-                          <small id="helpId" class="form-text text-muted">Identificador</small>
-                        </div>
-
-                        <div class="mb-3">
-                          <label for="" class="form-label"><b>Calificacion</b></label>
+                          <label for="" class="form-label"><b>Id producto</b></label>
                           <input type="text"
-                            class="form-control" name="calificacion" id="calificacion"  required aria-describedby="helpId" placeholder="Introduce el Nombre">
-                          <small id="helpId" class="form-text text-muted">Calificacion</small>
+                            class="form-control" name="id_producto" id="id_producto"  required aria-describedby="helpId" placeholder="Altura">
+                          <small id="helpId" class="form-text text-muted">Id producto</small>
                         </div>
 
-                       <div> <label for="">Usuario</label>
-                      <select name="usuario" class="form-control">
-                          <option selected disabled>Seleccione el usuario</option>
-                          <?php
-                          include("../conexion.php");
-                          mysqli_select_db($conn, "productosbd");
-                          $consultar = "SELECT * FROM usuario";
+                        <div class="mb-3">
+                          <label for="" class="form-label"><b>Nombre Producto</b></label>
+                          <input type="text"
+                            class="form-control" name="nombre_producto" id="nombre_producto"  required aria-describedby="helpId" placeholder="Altura">
+                          <small id="helpId" class="form-text text-muted">Nombre Producto</small>
+                        </div>
 
-                          $sql = mysqli_query($conn, $consultar);
+                        <div class="mb-3">
+                          <label for="" class="form-label"><b>Marca</b></label>
+                          <input type="text"
+                            class="form-control" name="marca" id="marca"  required aria-describedby="helpId" placeholder="Altura">
+                          <small id="helpId" class="form-text text-muted">Marca</small>
+                        </div>
 
-                          // Verifica si hay resultados antes de recorrerlos
-                          if ($sql) {
-                              while ($resultado = mysqli_fetch_assoc($sql)) {
-                                  echo "<option value='" . $resultado['id_usuario'] . "'>" . $resultado['nombre'] . "</option>";
+                        <div class="mb-3">
+                          <label for="" class="form-label"><b>Referencia</b></label>
+                          <input type="text"
+                            class="form-control" name="referencia" id="referencia"  required aria-describedby="helpId" placeholder="Anchura">
+                          <small id="helpId" class="form-text text-muted">Referencia</small>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="" class="form-label"><b>Precio</b></label>
+                          <input type="text"
+                            class="form-control" name="precio" id="precio"  required aria-describedby="helpId" placeholder="Anchura">
+                          <small id="helpId" class="form-text text-muted">Precio</small>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="" class="form-label"><b>Tamaño</b></label>
+                          <input type="text"
+                            class="form-control" name="Tamaño" id="Tamaño"  required aria-describedby="helpId" placeholder="Anchura">
+                          <small id="helpId" class="form-text text-muted">Tamaño</small>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="" class="form-label"><b>Alto</b></label>
+                          <input type="text"
+                            class="form-control" name="alto" id="alto"  required aria-describedby="helpId" placeholder="Anchura">
+                          <small id="helpId" class="form-text text-muted">Alto</small>
+                        </div>
+
+                        
+                        <div class="mb-3">
+                          <label for="" class="form-label"><b>Ancho</b></label>
+                          <input type="text"
+                            class="form-control" name="ancho" id="ancho"  required aria-describedby="helpId" placeholder="Anchura">
+                          <small id="helpId" class="form-text text-muted">Ancho</small>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="">Nombre de la categoria</label>
+                          <select name="nombre_categoria" class="form-control">
+                              <option selected disabled>Seleccione la categoria</option>
+                              <?php
+                              include("../conexion.php");
+                              mysqli_select_db($conn, "productosbd");
+                              $consultarUsuario = "SELECT * FROM categoria";
+
+                              $sqlUsuario = mysqli_query($conn, $consultarUsuario);
+
+                              // Verifica si hay resultados antes de recorrerlos
+                              if ($sqlUsuario) {
+                                  while ($resultadoUsuario = mysqli_fetch_assoc($sqlUsuario)) {
+                                      echo "<option value='" . $resultadoUsuario['id_categoria'] . "'>" . $resultadoUsuario['nombre_categoria'] . "</option>";
+                                  }
+                              } else {
+                                  echo "Error en la consulta: " . mysqli_error($conn);
                               }
-                          } else {
-                              echo "Error en la consulta: " . mysqli_error($conn);
-                          }
-                          ?>
-                      </select>
+                              ?>
+                          </select>
                         </div>
 
                         <div class="mb-3">
-                          <label for="" class="form-label"><b>Titulo</b></label>
-                          <textarea class="form-control" name="titulo" id="titulo" rows="3"></textarea>
-                        </div>
+                          <label for="">Nombre del fabricante</label>
+                          <select name="nombre_fabricante" class="form-control">
+                              <option selected disabled>Seleccione el fabricante</option>
+                              <?php
+                              include("../conexion.php");
+                              mysqli_select_db($conn, "productosbd");
+                              $consultarUsuario = "SELECT * FROM fabricantes";
 
-                        <div class="mb-3">
-                          <label for="" class="form-label"><b>Descripción</b></label>
-                          <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
-                        </div>
+                              $sqlUsuario = mysqli_query($conn, $consultarUsuario);
 
-                        <div class="mb-3">
-                          <label for="" class="form-label"><b>Fecha de creacion</b></label>
-                          <input type="date"
-                            class="form-control" name="fecha_creacion" id="fecha_creacion"  required aria-describedby="helpId" placeholder="Introduce el Nombre">
-                        </div>
-
-
-                        <div> <label for="">Producto</label>
-                      <select name="id_producto" class="form-control">
-                          <option selected disabled>Seleccione el producto</option>
-                          <?php
-                          include("../conexion.php");
-                          mysqli_select_db($conn, "productosbd");
-                          $consultar = "SELECT * FROM producto";
-
-                          $sql = mysqli_query($conn, $consultar);
-
-                          // Verifica si hay resultados antes de recorrerlos
-                          if ($sql) {
-                              while ($resultado = mysqli_fetch_assoc($sql)) {
-                                  echo "<option value='" . $resultado['id_producto'] . "'>" . $resultado['nombre_producto'] . "</option>";
+                              // Verifica si hay resultados antes de recorrerlos
+                              if ($sqlUsuario) {
+                                  while ($resultadoUsuario = mysqli_fetch_assoc($sqlUsuario)) {
+                                      echo "<option value='" . $resultadoUsuario['id_fabricante'] . "'>" . $resultadoUsuario['nombre_fabricante'] . "</option>";
+                                  }
+                              } else {
+                                  echo "Error en la consulta: " . mysqli_error($conn);
                               }
-                          } else {
-                              echo "Error en la consulta: " . mysqli_error($conn);
-                          }
-                          ?>
-                      </select>
+                              ?>
+                          </select>
                         </div>
 
 
+                       
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Imagen</b></label>
                           <input type="file"
                             class="form-control" name="imagen" id="imagen" required accept="image/*">
                           <small id="helpId" class="form-text text-muted">Imagen</small>
                         </div>
-
 
                         <div class="d-grid">
                             <input type="submit" class="btn btn-primary" value="Enviar reseña">
@@ -123,9 +151,6 @@ include "../header.php"
         </div>  
     </div>
 </div>
-
-
-
 
 <?php 
 include "../footer.php"
