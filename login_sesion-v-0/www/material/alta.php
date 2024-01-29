@@ -64,6 +64,25 @@ include "../header.php"
                           <input type="text" class="form-control" name="peso" id="peso" required placeholder="Introduce el Peso">
                         </div>
                         <div class="mb-3">
+                        <label for="" >fabricante</label>
+                        <select name="tipomaterial" class="form-control">
+                          <option selected disabled>Seleccione el tipo de material</option>
+                          <?php
+                          include("../conexion.php");
+                          mysqli_select_db($conn, "productosbd");
+                        $consultar = "SELECT * FROM fabricante";
+                        
+                        $sql = mysqli_query($conn, $consultar);
+                          // $sql = $conexion->query("SELECT * FROM tipo_material");
+                          // echo "hola";
+                          while ($resultado = $sql->fetch_assoc()) {
+                              echo "<option value='" . $resultado['id_fabricante'] . "'>" . $resultado['Nombre_fabricante'] . "</option>";
+                              
+                            }
+                          ?>
+                      </select>
+
+                        <div class="mb-3">
                         <label for="" >Tipo de Material</label>
                         <select name="tipomaterial" class="form-control">
                           <option selected disabled>Seleccione el tipo de material</option>

@@ -21,7 +21,7 @@ include "../header.php";
 
                         <?php
                         mysqli_select_db($conn, "productosbd");
-                        $consultar = "SELECT p.*, m.*, tm.*
+                        $consultar = "SELECT *
                         FROM producto p
                         INNER JOIN material m ON m.id_material = p.id_producto
                         INNER JOIN tipo_material tm ON tm.id_tipo_material = m.id_tipo_material
@@ -66,8 +66,8 @@ include "../header.php";
                                         <td><?php echo $registro['Descripcion']; ?></td>
                                         <td><?php echo $registro['modelodeimpresion']; ?></td>
                                         <td><?php echo $registro['Nombrematerial']; ?></td>
-                                        <td><?php echo $registro['nombre_fabricante']; ?></td>
                                         <td><?php echo $registro['tamaño']; ?></td>
+                                        <td><?php echo $registro['nombre_fabricante']; ?></td>
                                         <td>
                                             <?php 
                                             echo "<img width='100px' height='100px' src='../imagenes/{$registro['fotografia']}' alt='Imagen de producto'>"; 
