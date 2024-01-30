@@ -14,7 +14,7 @@ $productoactualizar = $_GET["id"];
                          INNER JOIN producto p ON d.id_diseño = p.id_producto 
                          INNER JOIN categoria c ON d.id_categoria = c.id_categoria 
                          INNER JOIN fabricantes f ON p.id_fabricante = f.id_fabricante
-                         WHERE p.id_producto = $productoactualizar"; 
+                         WHERE p.id_producto = $productoactualizar "; 
                          $registros = mysqli_query($conn, $consultar);
                          
 if ($registro = mysqli_fetch_assoc($registros)) {

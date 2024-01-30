@@ -18,34 +18,47 @@ $directorioSubida = "../imagenes/";
 $max_file_size = "5120000";
 $extensionesValidas = array("jpg", "png", "gif");
 
-if ($_FILES['imagen']['name'] != "") {
-    $errores = 0;
+
+if($_FILES['imagen']['name'] != ""){
+    $errores=0;
     $nombreArchivo = $_FILES['imagen']['name'];
     $filesize = $_FILES['imagen']['size'];
     $directorioTemp = $_FILES['imagen']['tmp_name'];
     $tipoArchivo = $_FILES['imagen']['type'];
-    $arrayArchivo = pathinfo($nombreArchivo);
+    $arrayArchivo = pathinfo ($nombreArchivo);
     $extension = $arrayArchivo['extension'];
 
-    if (!in_array($extension, $extensionesValidas)) {
+   
+    if(!in_array($extension, $extensionesValidas)) {
         echo "Extensión no válida";
-        $errores = 1;
+        $errores=1;
+    }
+    if($filesize > $max_file_size){
+        echo "La imagen debe de tener un tamaño inferior";
+        $errores= 1;
     }
 
-    if ($filesize > $max_file_size) {
-        echo "La imagen debe tener un tamaño inferior";
-        $errores = 1;
-    }
+    if ($errores == 0 ){
 
-    if ($errores == 0) {
-        $nombreCompleto = $directorioSubida . $nombreArchivo;
-        //move_uploaded_file($directorioTemp, $nombreCompleto);
+        $nombreCompleto = $directorioSubida.$nombreArchivo;
+        //echo "Miguel: " . $nombreCompleto;
+        move_uploaded_file($directorioTemp, $nombreCompleto);
     }
-
-    $insertar = "UPDATE producto SET id_producto=$id_producto, nombre_producto='$nombre_producto', marca = '$marca', referencia = '$referencia', precio = '$precio', nombre_fabricante = '$nombre_fabricante', Tamaño = '$Tamaño', alto = '$alto', ancho = '$ancho', nombre_categoria = '$nombre_categoria', fotografia = '$nombreArchivo' WHERE id_producto=$id_producto";
+}
+if ($_FILES['imagen']['name'] != "") {
+    $insertar = "UPDATE producto p JOIN diseño d ON p.id_producto = d.id_diseño
+                 SET p.nombre_producto = '$nombre', p.marca = '$marca', p.referencia = '$referencia', 
+                     p.precio = '$precio', p.fotografia = '$nombreArchivo', d.Tamaño= '$Tamaño', d.alto='$alto' ,
+                      id_fabricante = $fabricante, d.ancho='$ancho', d.nombre_categoria $nombre_categoria
+                 WHERE p.id_producto = $idm";
 } else {
-    // Actualizar sin imagen
-    $insertar = "UPDATE producto SET id_producto=$id_producto, nombre_producto='$nombre_producto', marca = '$marca', referencia = '$referencia', precio = '$precio', nombre_fabricante = '$nombre_fabricante', Tamaño = '$Tamaño', alto = '$alto', ancho = '$ancho', nombre_categoria = '$nombre_categoria' WHERE id_producto=$id_producto";
+    $insertar = "UPDATE producto p JOIN diseño d ON p.id_producto =d.id_diseño
+     SET p.nombre_producto = '$nombre', p.marca = '$marca', p.referencia = '$referencia', 
+                     p.precio = '$precio', p.fotografia = '$nombreantiguo', d.Tamaño= '$Tamaño', d.alto='$alto' ,
+                      id_fabricante = $fabricante, d.ancho='$ancho', d.nombre_categoria $nombre_categoria
+                 WHERE p.id_producto = $idm";
+
+
 }
 
 mysqli_query($conn, $insertar);
