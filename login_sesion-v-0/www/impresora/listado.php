@@ -41,11 +41,20 @@ include "../header.php";
                             <thead>
                               <tr>
                                 <th scope="col">Identificador </th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Teléfono</th>
-                                <th scope="col">Código postal</th>
-                                <th scope="col">Correo electrónico</th>
-                              
+                                <th scope="col">nombre</th>
+                                <th scope="col">marca</th>
+                                <th scope="col">referencia</th>
+                                <th scope="col">precio</th>
+                                <th scope="col">color</th>
+                                <th scope="col">peso</th>
+                                <th scope="col">descripción</th>
+
+                                <th scope="col">modelo</th>
+                                
+                                <th scope="col"> Tamaño Impresora</th>
+                                <th scope="col"> tamaño cama x</th>
+                                <th scope="col"> tamaño cama y</th>
+
                               </tr>
                             </thead>
                             
@@ -57,12 +66,19 @@ include "../header.php";
 
 
                               <tr class="align-middle">
-                                <td scope="row"><?php echo $registro[0]; ?></td>
-                                <td><?php echo $registro[1]; ?></td>
-                                <td><?php echo $registro[2]; ?></td>
-                                <td><?php echo $registro[3]; ?></td>
-                                <td><?php echo $registro[4]; ?></td>
-                                <td><?php echo '<img width="100px" height="100px" src="../imagenes/'. $registro[5]. '">'; ?>  </td>
+                              <td><?php echo $registro['id_producto']; ?></td>
+                                        <td><?php echo $registro['nombre_producto']; ?></td>
+                                        <td><?php echo $registro['marca']; ?></td>
+                                        <td><?php echo $registro['referencia']; ?></td>
+                                        <td><?php echo $registro['precio']; ?></td>
+                                        <td><?php echo $registro['color']; ?></td>
+                                        <td><?php echo $registro['peso']; ?></td>
+                                        <td><?php echo $registro['Descripcion']; ?></td>
+                                        <td><?php echo $registro['modelodeimpresion']; ?></td>
+                                        <td><?php echo $registro['Nombrematerial']; ?></td>
+                                        <td><?php echo $registro['tamaño']; ?></td>
+                                        <td><?php echo $registro['nombre_fabricante']; ?></td>
+                                <td><?php echo '<img width="100px" height="100px" src="../imagenes/'. $registro['fotografia']. '">'; ?>  </td>
                               </tr>
                               
                             
