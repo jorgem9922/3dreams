@@ -21,10 +21,11 @@ include "../header.php";
                         </div>
                         <?php
                         mysqli_select_db($conn, "productosbd");
-                        $consultar = "SELECT p.*, m.*, tm.*
+                        $consultar = "SELECT *
                         FROM producto p
                         INNER JOIN material m ON m.id_material = p.id_producto
                         INNER JOIN tipo_material tm ON tm.id_tipo_material = m.id_tipo_material
+                        INNER JOIN fabricantes fa ON fa.id_fabricante = p.id_fabricante
                         ORDER BY p.id_producto;";
 
                         $registros = mysqli_query($conn, $consultar);
@@ -45,6 +46,7 @@ include "../header.php";
                                     <th scope="col">Modelo de Impresión</th>
                                     <th scope="col">Nombre del Material</th>
                                     <th scope="col">Tamaño</th>
+                                    <th scope="col">fabricante</th>
                                     <th scope="col">Fotografía</th>
                                     <th scope="col">actualizar</th>
                                     <!-- Agrega más columnas según tus necesidades -->
@@ -56,7 +58,7 @@ include "../header.php";
                                     ?>
                                     <tr class="align-middle">
                                         <td><?php echo $registro['id_producto']; ?></td>
-                                        <td><?php echo $registro['nombre']; ?></td>
+                                        <td><?php echo $registro['nombre_producto']; ?></td>
                                         <td><?php echo $registro['marca']; ?></td>
                                         <td><?php echo $registro['referencia']; ?></td>
                                         <td><?php echo $registro['precio']; ?></td>
@@ -65,6 +67,7 @@ include "../header.php";
                                         <td><?php echo $registro['Descripcion']; ?></td>
                                         <td><?php echo $registro['modelodeimpresion']; ?></td>
                                         <td><?php echo $registro['Nombrematerial']; ?></td>
+                                        <td><?php echo $registro['nombre_fabricante']; ?></td>
                                         <td><?php echo $registro['tamaño']; ?></td>
                                         <td>
                                         <?php 
