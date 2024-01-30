@@ -15,7 +15,7 @@ include "../header.php";
 
             <div class="card">
                 <div class="card-header display-6">
-                    Listado de fabricantes
+                    Listado de impresoras
                 </div>                
             </div>
 
