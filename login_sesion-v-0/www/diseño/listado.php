@@ -30,7 +30,8 @@ include "../header.php";
                         $consultar = "SELECT * FROM diseño d 
                         INNER JOIN producto p ON d.id_diseño = p.id_producto 
                         INNER JOIN categoria c ON d.id_categoria = c.id_categoria 
-                        INNER JOIN fabricantes f ON p.id_fabricante = f.id_fabricante"; 
+                        INNER JOIN fabricantes f ON p.id_fabricante = f.id_fabricante
+                        order by p.id_producto"; 
                         $registros = mysqli_query($conn, $consultar);
 
                         if (!$registros) {

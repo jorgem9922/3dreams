@@ -4,6 +4,7 @@ include "../conexion.php";
 mysqli_select_db($conn, "productosbd");
 
 $id_diseño = $_POST["id_producto"];
+
 $nombre_producto = $_POST["nombre_producto"];
 $marca = $_POST["marca"];
 $referencia = $_POST["referencia"];
@@ -47,7 +48,7 @@ if (isset($_FILES['imagen'])) {
 $insertardos = "INSERT INTO producto (id_producto ,nombre_producto ,marca , referencia,precio ,id_fabricante, imagenes)  VALUES ('$id_diseño', '$nombre_producto', '$marca', '$referencia', '$precio', '$nombre_fabricante','$nombreCompleto')";
 mysqli_query($conn, $insertardos);
 
-$insertar = "INSERT INTO diseño (id_diseño, tamaño, alto, ancho, id_categoria)  VALUES ('$id_diseño', '$tamaño', '$alto', '$ancho', '$nombre_categoria')";
+$insertar = "INSERT INTO diseño (id_diseño, Tamaño, alto, ancho, id_categoria)  VALUES ('$id_diseño', '$tamaño', '$alto', '$ancho', '$nombre_categoria')";
 mysqli_query($conn, $insertar);
 
 
