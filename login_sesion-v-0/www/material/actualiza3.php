@@ -11,6 +11,7 @@
     $precio =$_POST["precio"];
     $color = $_POST["color"];
     $peso = $_POST["peso"];
+    $fabricante = $_POST["fabricante"];
     // $descripcion = mysqli_real_escape_string($conexion, $_POST["descripcion"]);
     // $modelo_de_impresion = mysqli_real_escape_string($conexion, $_POST["modelodeimpresora"]);
     $material =$_POST["tipomaterial"];
@@ -50,13 +51,13 @@
         $insertar = "UPDATE producto p JOIN material m ON p.id_producto = m.id_material 
                      SET p.nombre_producto = '$nombre', p.marca = '$marca', p.referencia = '$referencia', 
                          p.precio = '$precio', p.fotografia = '$nombreArchivo', m.color= '$color', m.peso='$peso' ,
-                          m.id_tipo_material='$material'
+                          id_fabricante = $fabricante, m.id_tipo_material='$material'
                      WHERE p.id_producto = $idm";
     } else {
         $insertar = "UPDATE producto p JOIN material m ON p.id_producto =m.id_material
                      SET p.nombre_producto = '$nombre', p.marca = '$marca', p.referencia = '$referencia', 
                          p.precio = '$precio', p.fotografia = '$nombreantiguo', m.color= '$color', m.peso='$peso' , 
-                         m.id_tipo_material='$material'
+                         id_fabricante = $fabricante, m.id_tipo_material='$material'
                      WHERE p.id_producto = $idm";
     }
     

@@ -4,10 +4,11 @@ include "../conexion.php";
 
 mysqli_select_db($conn, "productosbd");
 $productoactualizar = $_GET["id"];
-$seleccionar = "SELECT p.*, m.*, tm.*
+$seleccionar = "SELECT *
 FROM producto p
 INNER JOIN material m ON m.id_material = p.id_producto
 INNER JOIN tipo_material tm ON tm.id_tipo_material = m.id_tipo_material
+INNER JOIN fabricantes fa ON fa.id_fabricante = p.id_fabricante
 WHERE p.id_producto = $productoactualizar
 ORDER BY p.id_producto;";
 $registros = mysqli_query($conn, $seleccionar);
@@ -82,6 +83,24 @@ if ($registro = mysqli_fetch_assoc($registros)) {
                                     ?>
                                 </select>
                             </div>
+                            <div class="mb-3">
+                        <label for="" >fabricante</label>
+                        <select name="fabricante" class="form-control">
+                          <option selected disabled>Seleccione el tipo de material</option>
+                          <?php
+                          include("../conexion.php");
+                          mysqli_select_db($conn, "productosbd");
+                        $consultar = "SELECT * FROM fabricantes";
+                        $sql = mysqli_query($conn, $consultar);
+                          
+                          echo "<option selected value='" . $registro['id_fabricante'] . "'>" . $registro['nombre_fabricante'] . "</option>";
+                          while ($resultado = $sql->fetch_assoc()) {
+                              echo "<option value='" . $resultado['id_fabricante'] . "'>" . $resultado['nombre_fabricante'] . "</option>";
+                              
+                            }
+                          ?>
+                      </select>
+                          </div>
 
                             <div class="mb-3">
                                 <label for="" class="form-label">Imagen Antigua</label>

@@ -65,22 +65,23 @@ include "../header.php"
                         </div>
                         <div class="mb-3">
                         <label for="" >fabricante</label>
-                        <select name="tipomaterial" class="form-control">
+                        <select name="fabricante" class="form-control">
                           <option selected disabled>Seleccione el tipo de material</option>
                           <?php
                           include("../conexion.php");
                           mysqli_select_db($conn, "productosbd");
-                        $consultar = "SELECT * FROM fabricante";
+                        $consultar = "SELECT * FROM fabricantes";
                         
                         $sql = mysqli_query($conn, $consultar);
                           // $sql = $conexion->query("SELECT * FROM tipo_material");
                           // echo "hola";
                           while ($resultado = $sql->fetch_assoc()) {
-                              echo "<option value='" . $resultado['id_fabricante'] . "'>" . $resultado['Nombre_fabricante'] . "</option>";
+                              echo "<option value='" . $resultado['id_fabricante'] . "'>" . $resultado['nombre_fabricante'] . "</option>";
                               
                             }
                           ?>
                       </select>
+                          </div>
 
                         <div class="mb-3">
                         <label for="" >Tipo de Material</label>
