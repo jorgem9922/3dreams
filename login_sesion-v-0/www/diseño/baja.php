@@ -52,7 +52,7 @@ include "../header.php";
                                         <th scope="col">Alto</th>
                                         <th scope="col">Ancho</th>
                                         <th scope="col">Nombre Categoria</th>
-                                        <th scope="col">Imagenes</th>
+                                        <th scope="col">Fotografia</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -72,7 +72,7 @@ include "../header.php";
                                             <td><?php echo $registro['ancho']; ?></td>
                                             <td><?php echo $registro['nombre_categoria']; ?></td>
 
-                                            <td><?php echo '<img width="100px" height="100px" src="../imagenes/' . $registro['imagenes'] . '">'; ?></td>
+                                            <td><?php echo '<img width="100px" height="100px" src="../imagenes/' . $registro['fotografia'] . '">'; ?></td>
                                             <td><a href="baja2.php?id=<?php echo $registro['id_producto']; ?>"><i class="bi-trash px-1" style="font-size: 2rem; color:red;"></i></a></td>
                                         </tr>
                                     <?php

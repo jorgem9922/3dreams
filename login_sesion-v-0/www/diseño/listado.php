@@ -53,7 +53,7 @@ include "../header.php";
                                         <th scope="col">Descripcion</th>
                                         <th scope="col">Nombre de categoria</th>
                                         <th scope="col">Nombre Fabricante</th>
-                                        <th scope="col">Imagenes</th> 
+                                        <th scope="col">Fotografia</th> 
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -76,7 +76,7 @@ include "../header.php";
                                                                        
                                 <td>
                                                 <?php 
-                                                echo "<img width='100px' height='100px' src='../imagenes/{$registro['imagenes']}' "; 
+                                                echo "<img width='100px' height='100px' src='../imagenes/{$registro['fotografia']}' "; 
                                                 ?>
                                             </td>   
                                         </tr>

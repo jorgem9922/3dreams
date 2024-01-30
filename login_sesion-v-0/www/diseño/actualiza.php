@@ -49,7 +49,7 @@ include "../header.php";
                                         <th scope="col">Descripcion</th>
                                         <th scope="col">Nombre de categoria</th>
                                         <th scope="col">Nombre Fabricante</th>
-                                        <th scope="col">Imagenes</th> 
+                                        <th scope="col">Fotografia</th> 
                                
                               </tr>
                             </thead>
@@ -75,7 +75,7 @@ include "../header.php";
                                                            
                                 <td>
                                                 <?php 
-                                                echo "<img width='100px' height='100px' src='../imagenes/{$registro['imagenes']}' "; 
+                                                echo "<img width='100px' height='100px' src='../imagenes/{$registro['fotografia']}' "; 
                                                 ?>
                                             </td> 
                                           <td> <a href="actualiza2.php?id=<?php echo $registro['id_producto']; ?>"><i class="bi-pencil px-1" style="font-size: 2rem; color:green;"></i> </a></td>                           

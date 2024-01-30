@@ -45,7 +45,7 @@ if (isset($_FILES['imagen'])) {
         move_uploaded_file($directorioTemp, $nombreCompleto);
     }
 }
-$insertardos = "INSERT INTO producto (id_producto ,nombre_producto ,marca , referencia,precio ,id_fabricante, imagenes)  VALUES ('$id_diseño', '$nombre_producto', '$marca', '$referencia', '$precio', '$nombre_fabricante','$nombreCompleto')";
+$insertardos = "INSERT INTO producto (id_producto ,nombre_producto ,marca , referencia,precio ,id_fabricante, fotografia)  VALUES ('$id_diseño', '$nombre_producto', '$marca', '$referencia', '$precio', '$nombre_fabricante','$nombreCompleto')";
 mysqli_query($conn, $insertardos);
 
 $insertar = "INSERT INTO diseño (id_diseño, Tamaño, alto, ancho, id_categoria)  VALUES ('$id_diseño', '$tamaño', '$alto', '$ancho', '$nombre_categoria')";

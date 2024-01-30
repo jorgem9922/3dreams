@@ -42,7 +42,7 @@ if ($_FILES['imagen']['name'] != "") {
         //move_uploaded_file($directorioTemp, $nombreCompleto);
     }
 
-    $insertar = "UPDATE producto SET id_producto=$id_producto, nombre_producto='$nombre_producto', marca = '$marca', referencia = '$referencia', precio = '$precio', nombre_fabricante = '$nombre_fabricante', Tamaño = '$Tamaño', alto = '$alto', ancho = '$ancho', nombre_categoria = '$nombre_categoria', imagenes = '$nombreArchivo' WHERE id_producto=$id_producto";
+    $insertar = "UPDATE producto SET id_producto=$id_producto, nombre_producto='$nombre_producto', marca = '$marca', referencia = '$referencia', precio = '$precio', nombre_fabricante = '$nombre_fabricante', Tamaño = '$Tamaño', alto = '$alto', ancho = '$ancho', nombre_categoria = '$nombre_categoria', fotografia = '$nombreArchivo' WHERE id_producto=$id_producto";
 } else {
     // Actualizar sin imagen
     $insertar = "UPDATE producto SET id_producto=$id_producto, nombre_producto='$nombre_producto', marca = '$marca', referencia = '$referencia', precio = '$precio', nombre_fabricante = '$nombre_fabricante', Tamaño = '$Tamaño', alto = '$alto', ancho = '$ancho', nombre_categoria = '$nombre_categoria' WHERE id_producto=$id_producto";
