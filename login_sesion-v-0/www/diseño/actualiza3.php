@@ -50,5 +50,6 @@ if ($_FILES['imagen']['name'] != "") {
 
 mysqli_query($conn, $insertar);
 
+
 header("Location: actualiza_ok.php");
 ?>

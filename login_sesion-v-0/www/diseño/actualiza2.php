@@ -13,11 +13,12 @@ $productoactualizar = $_GET["id"];
                          $consultar = "SELECT * FROM diseño d 
                          INNER JOIN producto p ON d.id_diseño = p.id_producto 
                          INNER JOIN categoria c ON d.id_categoria = c.id_categoria 
-                         INNER JOIN fabricantes f ON p.id_fabricante = f.id_fabricante"; 
+                         INNER JOIN fabricantes f ON p.id_fabricante = f.id_fabricante
+                         WHERE p.id_producto = $productoactualizar"; 
                          $registros = mysqli_query($conn, $consultar);
                          
+if ($registro = mysqli_fetch_assoc($registros)) {
 ?>
-
 <div class="container my-5">
     <div class="row">
         <div class="col text-center">
@@ -39,49 +40,49 @@ $productoactualizar = $_GET["id"];
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Id producto</b></label>
                           <input type="text"
-                            class="form-control" name="id_producto" id="id_producto"  required aria-describedby="helpId" placeholder="Altura">
+                            class="form-control" name="id_producto" id="id_producto"  required aria-describedby="helpId" value="<?php echo $registro['id_producto'];?>" placeholder="Altura">
                           <small id="helpId" class="form-text text-muted">Id producto</small>
                         </div>
 
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Nombre Producto</b></label>
                           <input type="text"
-                            class="form-control" name="nombre_producto" id="nombre_producto"  required aria-describedby="helpId" placeholder="Nombre del producto">
+                            class="form-control" name="nombre_producto" id="nombre_producto"  required aria-describedby="helpId" value="<?php echo $registro['nombre_producto'];?>"placeholder="Nombre del producto">
                           <small id="helpId" class="form-text text-muted">Nombre Producto</small>
                         </div>
 
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Marca</b></label>
                           <input type="text"
-                            class="form-control" name="marca" id="marca"  required aria-describedby="helpId" placeholder="Altura">
+                            class="form-control" name="marca" id="marca"  required aria-describedby="helpId" value="<?php echo $registro['marca'];?>"placeholder="Altura">
                           <small id="helpId" class="form-text text-muted">Marca</small>
                         </div>
 
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Referencia</b></label>
                           <input type="text"
-                            class="form-control" name="referencia" id="referencia"  required aria-describedby="helpId" placeholder="Anchura">
+                            class="form-control" name="referencia" id="referencia"  required aria-describedby="helpId" value="<?php echo $registro['referencia'];?>" placeholder="Anchura">
                           <small id="helpId" class="form-text text-muted">Referencia</small>
                         </div>
 
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Precio</b></label>
                           <input type="text"
-                            class="form-control" name="precio" id="precio"  required aria-describedby="helpId" placeholder="Anchura">
+                            class="form-control" name="precio" id="precio"  required aria-describedby="helpId" value="<?php echo $registro['precio'];?>"placeholder="Anchura">
                           <small id="helpId" class="form-text text-muted">Precio</small>
                         </div>
 
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Tamaño</b></label>
                           <input type="text"
-                            class="form-control" name="Tamaño" id="Tamaño"  required aria-describedby="helpId" placeholder="Anchura">
+                            class="form-control" name="Tamaño" id="Tamaño"  required aria-describedby="helpId" value="<?php echo $registro['Tamaño'];?>" placeholder="Anchura">
                           <small id="helpId" class="form-text text-muted">Tamaño</small>
                         </div>
 
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Alto</b></label>
                           <input type="text"
-                            class="form-control" name="alto" id="alto"  required aria-describedby="helpId" placeholder="Anchura">
+                            class="form-control" name="alto" id="alto"  required aria-describedby="helpId" value="<?php echo $registro['alto'];?>" placeholder="Anchura">
                           <small id="helpId" class="form-text text-muted">Alto</small>
                         </div>
 
@@ -89,7 +90,7 @@ $productoactualizar = $_GET["id"];
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Ancho</b></label>
                           <input type="text"
-                            class="form-control" name="ancho" id="ancho"  required aria-describedby="helpId" placeholder="Anchura">
+                            class="form-control" name="ancho" id="ancho"  required aria-describedby="helpId" value="<?php echo $registro['ancho'];?>" placeholder="Anchura">
                           <small id="helpId" class="form-text text-muted">Ancho</small>
                         </div>
 
@@ -138,7 +139,10 @@ $productoactualizar = $_GET["id"];
                               ?>
                           </select>
                         </div>
-                       
+                        <div class="mb-3">
+                                <label for="" class="form-label">Imagen Antigua</label>
+                                <?php  echo '<img width="100px" height="100px" src="../imagenes/'.$registro['fotografia'].'">';?>
+                            </div>
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Imagen</b></label>
                           <input type="file"
@@ -159,6 +163,11 @@ $productoactualizar = $_GET["id"];
   </div>
 </div>
 
-<?php 
+<?php
+} else {
+    echo "No se encontró el producto para actualizar.";
+}
+
 include "../footer.php"
 ?>
+
