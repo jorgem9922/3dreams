@@ -61,9 +61,10 @@ include "../header.php";
                                 <td><?php echo $registro['id_impresora']; ?></td>
                                 <td><?php echo $registro['modelo']; ?></td>
                                 <td><?php echo $registro['color']; ?></td>
+                                <td><?php echo $registro['tamaño_impresora']; ?></td>
                                 <td><?php echo $registro['tamañocamax']; ?></td>
                                 <td><?php echo $registro['tamañoy']; ?></td>
-                                <td><?php echo $registro['imagenantigua']; ?></td>
+                                <td><?php echo $registro['fotografia']; ?></td>
 
                                 <td><?php echo '<img width="100px" height="100px" src="../imagenes/'. $registro[5]. '">'; ?>  </td>
                                 <td> <a href="actualiza2.php?id=<?php echo $registro[0]; ?>"><i class="bi-pencil px-1" style="font-size: 2rem; color:green;"></i> </a></td>  

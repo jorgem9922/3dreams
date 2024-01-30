@@ -24,55 +24,55 @@ include "../header.php";
                         <div class="card-header"> 
                             Ingresar datos:
                         </div>
-                        <form class="p-4" method="POST" action="registrar.php" enctype="multipart/form-data">
-                      <!-- id en forms -->
-                        <label for="" class="form-label">id_fabricante</label>
-                          <input type="number"
-                            class="form-control" name="id_fabricante" id="id_fabricante" required aria-describedby="helpId" placeholder="Introduce el id">
-                          <small id="helpId" class="form-text text-muted">id del fabricante</small>
-                        </div>
-                        <!-- nombre en forms -->
+                        <form class="p-4" method="POST" action="actualiza3.php?idmodifica=<?php echo $productoactualizar;?>&nombreimagen==<?php echo $registro[0];?>" enctype="multipart/form-data">
+                        <!-- id -->
                         <div class="mb-3">
-                          <label for="" class="form-label">Nombre</label>
+                          <label for="" class="form-label">Id</label>
+                          <input type="number"
+                            class="form-control" name="id_impresora" id="id_impresora" autofocus required value="<?php echo $registro['id_impresora'];?>" aria-describedby="helpId" placeholder="Introduce el ID">
+                          <small id="helpId" class="form-text text-muted">Id</small>
+                        </div>
+                        <!-- modelo -->
+                        <div class="mb-3">
+                          <label for="" class="form-label">Modelo</label>
                           <input type="text"
-                            class="form-control" name="nombre" id="nombre"  required aria-describedby="helpId" placeholder="Introduce el Nombre">
-                          <small id="helpId" class="form-text text-muted">Nombre</small>
+                            class="form-control" name="Modelo" id="Modelo"  required value="<?php echo $registro['Modelo'];?>" aria-describedby="helpId" placeholder="Introduce el Nombre">
+                          <small id="helpId" class="form-text text-muted">Modelo</small>
                         </div>
-                        <!-- telefono en forms -->
+                        <!-- color -->
                         <div class="mb-3">
-                          <label for="" class="form-label">telefono</label>
+                          <label for="" class="form-label">color</label>
                           <input type="number"
-                            class="form-control" name="telefono" id="telefono" required aria-describedby="helpId" placeholder="Introduce el telefono">
-                          <small id="helpId" class="form-text text-muted">Teléfono</small>
+                          class="form-control" name="color" id="color" autofocus required value="<?php echo $registro['color'];?>" aria-describedby="helpId" placeholder="Introduce el color">
+                          <small id="helpId" class="form-text text-muted">color</small>
                         </div>
-                        <!-- codigo postal en forms -->
+                        <!-- tamaño impresora -->
                         <div class="mb-3">
-                          <label for="" class="form-label">Código postal</label>
-                          <input type="number"
-                            class="form-control" name="codigo_postal" id="codigo_postal" required aria-describedby="helpId" placeholder="Introduce el pcódigo postal">
-                          <small id="helpId" class="form-text text-muted">Código postal</small>
+                          <label for="" class="form-label">Tamaño  </label>
+                          <input type="twxt" class="form-control" name="Tamaño_impresora" id="Tamaño_impresora" required value="<?php echo $registro['tamaño_impresora'];?>" aria-describedby="helpId" placeholder="Introduce el correo electrónico">
+                          <small id="helpId" class="form-text text-muted">Tamaño</small>
                         </div>
-                        <!-- correo en forms -->
+                        <!-- tamañocamax -->
                         <div class="mb-3">
-                          <label for="" class="form-label">correo</label>
-                          <input type="text"
-                            class="form-control" name="correo_electronico" id="correo_electronico"  required aria-describedby="helpId" placeholder="Introduce el correo">
-                          <small id="helpId" class="form-text text-muted">Correo electrónico</small>
+                          <label for="" class="form-label">tamañocamax</label>
+                          <input type="number" class="form-control" name="tamañocamax" id="tamañocamax" required value="<?php echo $registro['tamañocamax'];?>" aria-describedby="helpId" placeholder="Introduce el tamaño de la cama en el eje x">
+                          <small id="helpId" class="form-text text-muted">tamañocamax</small>
                         </div>
-                          <!-- imagen en forms -->
+                        <!-- tamañocamay -->
                         <div class="mb-3">
-                          <label for="" class="form-label">Imagen</label>
-                          <input type="file"
-                            class="form-control" name="fotografia" id="fotografia" required accept="image/*">
-                          <small id="helpId" class="form-text text-muted">fotografia</small>
-                        </div>
-                        <!-- boton de submit -->
-                        <div class="d-grid">
-                            <input type="submit" class="btn btn-primary" value="Dar de alta">
+                          <label for="" class="form-label">tamañocamay  </label>
+                          <input type="twxt" class="form-control" name="tamañocamay" id="tamañocamay" required value="<?php echo $registro['tamañocamay'];?>" aria-describedby="helpId" placeholder="Introduce el tamaño de la cama en el eje y">
+                          <small id="helpId" class="form-text text-muted">tamañocamay</small>
                         </div>
 
+                      <!-- imagen  -->
+                        <div class="mb-3">
+                          <label for="" class="form-label">Imagen </label>
+                          <?php  echo '<img width="100px" height="100px" src="../imagenes/'.$registro['imagen'].'">';
+                          ?>
+                        </div>
+                    
                         
-
                         </form>
 
                     </div>

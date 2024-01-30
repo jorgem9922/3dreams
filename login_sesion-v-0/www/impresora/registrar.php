@@ -9,11 +9,12 @@ $usuario = $_SESSION['usuario'];
 
 
     mysqli_select_db($conexion, "productosbd");
-    $id_fabricante=$_POST["id_fabricante"];
-    $nombre = $_POST["nombre"];
-    $telefono = $_POST["telefono"];
-    $codigo_postal = $_POST["codigo_postal"];
-    $correo_electronico =$_POST ["correo_electronico"];
+    $id_impresora=$_POST["id_impresora"];
+    $modelo = $_POST["modelo"];
+    $color = $_POST["color"];
+    $tamaño_impresora = $_POST["tamaño_impresora"];
+    $tamañocamax =$_POST ["yamañocamax"];
+    $tamañocamay =$_POST ["yamañocamay"];
     //var_dump ($_FILES['imagen']);
     $directorioSubida = "../imagenes/";
     $max_file_size="5120000";
@@ -44,7 +45,7 @@ $usuario = $_SESSION['usuario'];
             move_uploaded_file($directorioTemp, $nombreCompleto);
         }
     }
-    $insertar="INSERT INTO `fabricantes` (`id_fabricante`, `nombre`, `telefono`, `codigo_postal`, `correo_electronico`,`fotografia`) VALUES ($id_fabricante,'$nombre', $telefono, $codigo_postal, '$correo_electronico', '$nombreArchivo')";
+    $insertar="INSERT INTO `impresora` (`id_impresora`, `modelo`, `color`, `tamaño_impresora`, `tamañocamax`, `tamañocamay`, `fotografia`) VALUES ($id_impresora,'$modelo', $color, $tamaño_impresora, '$tamañocamax' ,'$tamañocamax'',$nombreArchivo')";
     mysqli_query($conexion, $insertar);
    
      header("Location:alta_ok.php");?>
