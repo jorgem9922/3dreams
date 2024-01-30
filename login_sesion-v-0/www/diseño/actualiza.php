@@ -67,6 +67,8 @@ include "../header.php";
                                             <td><?php echo $registro['referencia']; ?></td>
                                             <td><?php echo $registro['precio']; ?></td>
                                             <td><?php echo $registro['nombre_fabricante']; ?></td>
+
+                                            
                                             <td><?php echo $registro['id_producto']; ?></td>
                                             <td><?php echo $registro['Tamaño']; ?></td>
                                             <td><?php echo $registro['alto']; ?></td>

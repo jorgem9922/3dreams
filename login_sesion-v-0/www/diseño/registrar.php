@@ -50,7 +50,8 @@ mysqli_query($conn, $insertardos);
 
 $insertar = "INSERT INTO diseño (id_diseño, Tamaño, alto, ancho, id_categoria)  VALUES ('$id_diseño', '$tamaño', '$alto', '$ancho', '$nombre_categoria')";
 mysqli_query($conn, $insertar);
-
+// echo $insertardos;
+// echo $insertar;
 
 header("Location: alta_ok.php");
 ?>
