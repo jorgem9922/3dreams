@@ -28,10 +28,10 @@ include "../header.php";
                         <?php
                           mysqli_select_db($conexion,"productosbd");
                           $consultar = "SELECT *
-                          FROM producto p
-                          INNER JOIN impresora i ON i.id_impresora = p.id_producto
-                          INNER JOIN fabricantes fa ON fa.id_fabricante = p.id_fabricante
-                          ORDER BY p.id_producto;
+                          FROM impresora i
+                          INNER JOIN producto p ON i.id_impresora=p.id_producto 
+                          INNER JOIN fabricantes f ON f.id_fabricante=p.id_fabricante
+                          
                           ";
                           $registros= mysqli_query($conexion, $consultar);
 
@@ -41,19 +41,18 @@ include "../header.php";
                             <thead>
                               <tr>
                                 <th scope="col">Identificador </th>
-                                <th scope="col">nombre</th>
-                                <th scope="col">marca</th>
-                                <th scope="col">referencia</th>
-                                <th scope="col">precio</th>
-                                <th scope="col">color</th>
-                                <th scope="col">peso</th>
-                                <th scope="col">descripción</th>
-
                                 <th scope="col">modelo</th>
-                                
-                                <th scope="col"> Tamaño Impresora</th>
-                                <th scope="col"> tamaño cama x</th>
-                                <th scope="col"> tamaño cama y</th>
+                                <th scope="col">marca</th>
+                                <th scope="col">color</th>
+                                <th scope="col">tamaño_impresora</th>
+                                <th scope="col">tamañocamax</th>
+                                <th scope="col">tamañocamay</th>
+                                <th scope="col">id_producto</th>
+                                <th scope="col">id_pedido</th>
+                                <th scope="col">nombre_producto</th>
+                                <th scope="col">marca</th>
+                                <th scope="col">referencha</th>
+                                <th scope="col">fotografia</th>
 
                               </tr>
                             </thead>
@@ -66,18 +65,18 @@ include "../header.php";
 
 
                               <tr class="align-middle">
-                              <td><?php echo $registro['id_producto']; ?></td>
+                              <td><?php echo $registro['id_impresora']; ?></td>
+                                        <td><?php echo $registro['modelo']; ?></td>
+                                        <td><?php echo $registro['marca']; ?></td>
+                                        <td><?php echo $registro['color']; ?></td>
+                                        <td><?php echo $registro['tamaño_impresora']; ?></td>
+                                        <td><?php echo $registro['tamañocamax']; ?></td>
+                                        <td><?php echo $registro['tamañocamay']; ?></td>
+                                        <td><?php echo $registro['id_producto']; ?></td>
+                                        <td><?php echo $registro['id_pedido']; ?></td>
                                         <td><?php echo $registro['nombre_producto']; ?></td>
                                         <td><?php echo $registro['marca']; ?></td>
-                                        <td><?php echo $registro['referencia']; ?></td>
-                                        <td><?php echo $registro['precio']; ?></td>
-                                        <td><?php echo $registro['color']; ?></td>
-                                        <td><?php echo $registro['peso']; ?></td>
-                                        <td><?php echo $registro['Descripcion']; ?></td>
-                                        <td><?php echo $registro['modelodeimpresion']; ?></td>
-                                        <td><?php echo $registro['Nombrematerial']; ?></td>
-                                        <td><?php echo $registro['tamaño']; ?></td>
-                                        <td><?php echo $registro['nombre_fabricante']; ?></td>
+                                        <td><?php echo $registro['referencha']; ?></td>
                                 <td><?php echo '<img width="100px" height="100px" src="../imagenes/'. $registro['fotografia']. '">'; ?>  </td>
                               </tr>
                               
