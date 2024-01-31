@@ -9,12 +9,12 @@ $usuario = $_SESSION['usuario'];
 
 
     mysqli_select_db($conexion, "productosbd");
-    $id_impresora=$_POST["id_impresora"];
-    $modelo = $_POST["modelo"];
-    $color = $_POST["color"];
-    $tamaño_impresora = $_POST["tamaño_impresora"];
-    $tamañocamax =$_POST ["yamañocamax"];
-    $tamañocamay =$_POST ["yamañocamay"];
+    $id_impresora= isset($_POST["id_impresora"]) ? $_POST["id_impresora"] : '';
+    $modelo = isset($_POST["modelo"]) ? $_POST["modelo"] : '';
+    $color = isset($_POST["color"]) ? $_POST["color"] : '';
+    $tamaño_impresora = isset($_POST["tamaño_impresora"]) ? $_POST["tamaño_impresora"] : '';
+    $tamañocamax = isset($_POST["yamañocamax"]) ? $_POST["yamañocamax"] : '';
+    $tamañocamay = isset($_POST["yamañocamay"]) ? $_POST["yamañocamay"] : '';
     //var_dump ($_FILES['imagen']);
     $directorioSubida = "../imagenes/";
     $max_file_size="5120000";

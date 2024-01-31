@@ -28,10 +28,10 @@ include "../header.php";
                         <?php
                           mysqli_select_db($conexion,"productosbd");
                           $consultar = "SELECT *
-                          FROM producto p
-                          INNER JOIN impresora i ON i.id_impresora = p.id_producto
-                          INNER JOIN fabricantes fa ON fa.id_fabricante = p.id_fabricante
-                          ORDER BY p.id_producto;
+                          FROM impresora i
+                          INNER JOIN producto p ON i.id_impresora=p.id_producto 
+                          INNER JOIN fabricantes f ON f.id_fabricante=p.id_fabricante
+                          
                           ";
                           $registros= mysqli_query($conexion, $consultar);
 
@@ -41,28 +41,44 @@ include "../header.php";
                             <thead>
                               <tr>
                                 <th scope="col">Identificador </th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Teléfono</th>
-                                <th scope="col">Código postal</th>
-                                <th scope="col">Correo electrónico</th>
-                              
+                                <th scope="col">modelo</th>
+                                <th scope="col">marca</th>
+                                <th scope="col">color</th>
+                                <th scope="col">tamaño_impresora</th>
+                                <th scope="col">tamañocamax</th>
+                                <th scope="col">tamañocamay</th>
+                                <th scope="col">id_producto</th>
+                                <th scope="col">id_pedido</th>
+                                <th scope="col">nombre_producto</th>
+                                <th scope="col">marca</th>
+                                <th scope="col">referencha</th>
+                                <th scope="col">fotografia</th>
+
                               </tr>
                             </thead>
                             
                               <?php
 
-                                while($registro=mysqli_fetch_row($registros)){
+                                while($registro=mysqli_fetch_assoc($registros)){
 
                               ?>
 
 
                               <tr class="align-middle">
-                                <td scope="row"><?php echo $registro[0]; ?></td>
-                                <td><?php echo $registro[1]; ?></td>
-                                <td><?php echo $registro[2]; ?></td>
-                                <td><?php echo $registro[3]; ?></td>
-                                <td><?php echo $registro[4]; ?></td>
-                                <td><?php echo '<img width="100px" height="100px" src="../imagenes/'. $registro[5]. '">'; ?>  </td>
+
+                              <td><?php echo $registro['id_impresora']; ?></td>
+                                        <td><?php echo $registro['modelo']; ?></td>
+                                        <td><?php echo $registro['marca']; ?></td>
+                                        <td><?php echo $registro['color']; ?></td>
+                                        <td><?php echo $registro['tamaño_impresora']; ?></td>
+                                        <td><?php echo $registro['tamañocamax']; ?></td>
+                                        <td><?php echo $registro['tamañocamay']; ?></td>
+                                        <td><?php echo $registro['id_producto']; ?></td>
+                                        <td><?php echo $registro['id_pedido']; ?></td>
+                                        <td><?php echo $registro['nombre_producto']; ?></td>
+                                        <td><?php echo $registro['marca']; ?></td>
+                                        <td><?php echo $registro['referencia']; ?></td>
+                                <td><?php echo '<img width="100px" height="100px" src="../imagenes/'. $registro['fotografia']. '">'; ?>  </td>
                               </tr>
                               
                             
