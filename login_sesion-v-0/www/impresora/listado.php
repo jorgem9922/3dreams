@@ -65,6 +65,7 @@ include "../header.php";
 
 
                               <tr class="align-middle">
+
                               <td><?php echo $registro['id_impresora']; ?></td>
                                         <td><?php echo $registro['modelo']; ?></td>
                                         <td><?php echo $registro['marca']; ?></td>
