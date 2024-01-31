@@ -47,20 +47,20 @@ if($_FILES['imagen']['name'] != ""){
 }
 if ($_FILES['imagen']['name'] != "") {
     $insertar = "UPDATE producto p JOIN diseño d ON p.id_producto = d.id_diseño
-                 SET p.nombre_producto = '$nombre', p.marca = '$marca', p.referencia = '$referencia', 
+                 SET p.nombre_producto = '$nombre_producto', p.marca = '$marca', p.referencia = '$referencia', 
                      p.precio = '$precio', p.fotografia = '$nombreArchivo', d.Tamaño= '$Tamaño', d.alto='$alto' ,
-                      id_fabricante = $fabricante, d.ancho='$ancho', d.nombre_categoria $nombre_categoria
-                 WHERE p.id_producto = $idm";
+                      p.id_fabricante = $nombre_fabricante, d.ancho='$ancho', d.id_categoria = $nombre_categoria
+                 WHERE p.id_producto = $id_producto";
+                 
 } else {
     $insertar = "UPDATE producto p JOIN diseño d ON p.id_producto =d.id_diseño
-     SET p.nombre_producto = '$nombre', p.marca = '$marca', p.referencia = '$referencia', 
+     SET p.nombre_producto = '$nombre_producto', p.marca = '$marca', p.referencia = '$referencia', 
                      p.precio = '$precio', p.fotografia = '$nombreantiguo', d.Tamaño= '$Tamaño', d.alto='$alto' ,
-                      id_fabricante = $fabricante, d.ancho='$ancho', d.nombre_categoria $nombre_categoria
-                 WHERE p.id_producto = $idm";
+                      p.id_fabricante = $nombre_fabricante, d.ancho='$ancho', d.id_categoria = $nombre_categoria
+                 WHERE p.id_producto = $id_producto";
 
 
 }
-
 mysqli_query($conn, $insertar);
 
 
