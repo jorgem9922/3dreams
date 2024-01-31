@@ -59,7 +59,7 @@ include "../header.php";
                             
                               <?php
 
-                                while($registro=mysqli_fetch_row($registros)){
+                                while($registro=mysqli_fetch_assoc($registros)){
 
                               ?>
 
