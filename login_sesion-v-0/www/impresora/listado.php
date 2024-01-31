@@ -77,7 +77,7 @@ include "../header.php";
                                         <td><?php echo $registro['id_pedido']; ?></td>
                                         <td><?php echo $registro['nombre_producto']; ?></td>
                                         <td><?php echo $registro['marca']; ?></td>
-                                        <td><?php echo $registro['referencha']; ?></td>
+                                        <td><?php echo $registro['referencia']; ?></td>
                                 <td><?php echo '<img width="100px" height="100px" src="../imagenes/'. $registro['fotografia']. '">'; ?>  </td>
                               </tr>
                               
