@@ -53,7 +53,6 @@ include "../header.php";
                                     <th scope="col">Tamaño</th>
                                     <th scope="col">Fotografía</th>
                                     <th scope="col">borrar</th>
-                                    <!-- Agrega más columnas según tus necesidades -->
                                 </tr>
                                 </thead>
                                 <tbody>
