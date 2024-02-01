@@ -23,10 +23,10 @@ include "../header.php";
                     <table class="table table-primary">
                         <thead>
                             <tr>
-                                <th scope="col">Añadir impresora</th>
-                                <th scope="col">Borrar impresora</th>
-                                <th scope="col">Actualización</th>
-                                <th scope="col">Listado de impresoras</th>
+                                <th scope="col" style="text-align: center;">Añadir impresora</th>
+                                <th scope="col" style="text-align: center;">Borrar impresora</th>
+                                <th scope="col" style="text-align: center;">Actualización</th>
+                                <th scope="col" style="text-align: center;">Listado de impresoras</th>
                             </tr>
                         </thead>
                         <tbody>

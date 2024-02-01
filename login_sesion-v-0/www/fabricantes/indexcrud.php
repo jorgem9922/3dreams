@@ -23,10 +23,10 @@ include "../header.php";
                     <table class="table table-primary">
                         <thead>
                             <tr>
-                                <th scope="col">Alta de fabricantes</th>
-                                <th scope="col">Baja de fabricantes</th>
-                                <th scope="col">Actualización</th>
-                                <th scope="col">Listado</th>
+                                <th scope="col" style="text-align: center;">Alta de fabricantes</th>
+                                <th scope="col" style="text-align: center;">Baja de fabricantes</th>
+                                <th scope="col" style="text-align: center;">Actualización</th>
+                                <th scope="col" style="text-align: center;">Listado</th>
                             </tr>
                         </thead>
                         <tbody>
