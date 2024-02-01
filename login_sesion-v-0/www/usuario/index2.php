@@ -31,10 +31,10 @@ session_start();
                     <table class="table table-primary">
                         <thead>
                             <tr>
-                                <th scope="col">Alta de usuario</th>
-                                <th scope="col">Baja de usuario</th>
-                                <th scope="col">actualizar</th>
-                                <th scope="col">Listado </th>
+                                <th scope="col" style="text-align: center;">Alta de usuario</th>
+                                <th scope="col" style="text-align: center;">Baja de usuario</th>
+                                <th scope="col" style="text-align: center;">actualizar</th>
+                                <th scope="col" style="text-align: center;">Listado </th>
                             </tr>
                         </thead>
                         <tbody>

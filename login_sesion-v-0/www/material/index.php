@@ -21,10 +21,10 @@ include "../header.php";
                     <table class="table table-primary">
                         <thead>
                             <tr>
-                                <th scope="col">Alta de material</th>
-                                <th scope="col">Baja de material</th>
-                                <th scope="col">Actualización</th>
-                                <th scope="col">Listado</th>
+                                <th scope="col" style="text-align: center;">Alta de material</th>
+                                <th scope="col" style="text-align: center;">Baja de material</th>
+                                <th scope="col" style="text-align: center;">Actualización</th>
+                                <th scope="col" style="text-align: center;">Listado</th>
                             </tr>
                         </thead>
                         <tbody>

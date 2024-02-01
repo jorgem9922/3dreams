@@ -31,14 +31,16 @@ session_start();
                 <div class="p-4">
                 <div class="table-responsive">
                     <table class="table table-primary">
-                        <thead>
-                            <tr>
-                                <th scope="col">usuario</th>
-                                <th scope="col">reseñas</th>
-                                <th scope="col">fabricantes</th>
-                                <th scope="col">material</th>
-                                <th scope="col">impresoras </th>
-                                <th scope="col">Diseños </th>
+                        <thead >
+                        
+                            <tr class="listadocrudgeneral122">
+                                
+                                <th scope="col" style="text-align: center;">usuario</th>
+                                <th scope="col" style="text-align: center;">reseñas</th>
+                                <th scope="col" style="text-align: center;">fabricantes</th>
+                                <th scope="col" style="text-align: center;">material</th>
+                                <th scope="col" style="text-align: center;">impresoras </th>
+                                <th scope="col" style="text-align: center;">Diseños </th>
 
                             </tr>
                         </thead>
