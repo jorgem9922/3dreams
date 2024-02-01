@@ -29,7 +29,12 @@ include "../header.php";
                         </div>
                         <?php
                           mysqli_select_db($conexion,"productosbd");
-                          $consultar= "SELECT * FROM fabricantes";
+                          $consultar= "SELECT *
+                          FROM impresora i
+                          INNER JOIN producto p ON i.id_impresora=p.id_producto 
+                          INNER JOIN fabricantes f ON f.id_fabricante=p.id_fabricante
+                          
+                          ";
 
                           $registros= mysqli_query($conexion, $consultar);
 
