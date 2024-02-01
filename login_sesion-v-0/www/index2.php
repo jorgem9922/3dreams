@@ -25,7 +25,7 @@ session_start();
 
             <div class="card">
                 <div class="card-header display-6">
-                    Acciones sobre la base de datos
+                    Bienvenido
                 </div>
 
                 <div class="p-4">
