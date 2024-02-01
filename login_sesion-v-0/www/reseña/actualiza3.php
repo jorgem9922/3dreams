@@ -1,7 +1,7 @@
 <?php include "../conexion.php"; 
 
 mysqli_select_db($conn, "productosbd");
-$idm = $_POST["id"];
+$idm = $_GET["idmodifica"];
 $id_reseña = $_POST["id_reseña"];
 $calificacion = $_POST["calificacion"];
 $usuario = $_POST["usuario"];

@@ -31,7 +31,7 @@ $registro = mysqli_fetch_assoc($registros);
                         <div class="card-header"> 
                             Ingresar datos:
                         </div>
-                        <form class="p-4" method="POST" action="actualiza3.php?id=<?php echo $productoactualizar;?>" enctype="multipart/form-data">
+                        <form class="p-4" method="POST" action="actualiza3.php?idmodifica=<?php echo $productoactualizar;?>" enctype="multipart/form-data">
                         
                         <div class="mb-3">
                           <label for="id_reseña" class="form-label"><b>Identificador</b></label>
