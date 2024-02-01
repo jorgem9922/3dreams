@@ -33,7 +33,6 @@ include "../header.php";
                           FROM impresora i
                           INNER JOIN producto p ON i.id_impresora=p.id_producto 
                           INNER JOIN fabricantes f ON f.id_fabricante=p.id_fabricante
-                          
                           ";
 
                           $registros= mysqli_query($conexion, $consultar);
