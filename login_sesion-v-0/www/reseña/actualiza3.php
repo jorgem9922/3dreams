@@ -1,6 +1,7 @@
 <?php include "../conexion.php"; 
 
 mysqli_select_db($conn, "productosbd");
+$idm = $_POST["id"];
 $id_reseña = $_POST["id_reseña"];
 $calificacion = $_POST["calificacion"];
 $usuario = $_POST["usuario"];
@@ -41,9 +42,9 @@ $id_producto = $_POST["id_producto"];
     }
 
     if ($_FILES['imagen']['name'] != "") {
-        $insertar = "UPDATE reseña SET id_reseña=$id_reseña, id_usuario='$usuario', id_producto = '$id_producto', titulo = '$titulo', descripcion = '$descripcion',fecha_creacion = '$fecha_creacion', imagenes = '$nombreArchivo' WHERE id_reseña=$id_reseña";
+        $insertar = "UPDATE reseña SET id_reseña=$id_reseña, id_usuario='$usuario', id_producto = '$id_producto', titulo = '$titulo', descripcion = '$descripcion',fecha_creacion = '$fecha_creacion', imagenes = '$nombreArchivo' WHERE id_reseña=$idm";
     } else {
-        $insertar = "UPDATE reseña SET id_reseña=$id_reseña, id_usuario='$usuario', id_producto = '$id_producto', titulo = '$titulo', descripcion = '$descripcion',fecha_creacion = '$fecha_creacion' WHERE id_reseña=$id_reseña";
+        $insertar = "UPDATE reseña SET id_reseña=$id_reseña, id_usuario='$usuario', id_producto = '$id_producto', titulo = '$titulo', descripcion = '$descripcion',fecha_creacion = '$fecha_creacion' WHERE id_reseña=$idm";
     }
 
     mysqli_query($conn, $insertar);
