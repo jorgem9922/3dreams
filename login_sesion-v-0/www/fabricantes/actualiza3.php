@@ -60,9 +60,6 @@
     // echo $correo_electronico;
     // echo $id_fabricante;
     // echo $idm;
-    
-
-
     mysqli_query($conexion, $insertar);
     header("Location:actualiza_ok.php");
     ?>
