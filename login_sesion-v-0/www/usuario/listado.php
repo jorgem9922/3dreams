@@ -30,7 +30,7 @@ include "../header.php";
                         </div>
                         <?php
                         mysqli_select_db($conn, "productosbd");
-                        $consultar = "SELECT * FROM usuario u inner join ciudad d on u.id_ciudad = d.id_ciudad";
+                        $consultar = "SELECT * FROM usuario u inner join ciudad d on u.id_ciudad = d.id_ciudad order by id_usuario";
                         $registros = mysqli_query($conn, $consultar);
                         ?>
                         <div class="table-responsive">
