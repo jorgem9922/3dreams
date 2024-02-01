@@ -49,10 +49,10 @@
     }
 
     if($_FILES['fotografia']['name'] != ""){
-        $insertar = "UPDATE `fabricantes` SET `id_fabricante`=$id_fabricante,`nombre`='$nombre',`telefono`=$telefono, `codigo_postal`=$codigo_postal, `correo_electronico`='$correo_electronico',`fotografia`='$nombreArchivo' WHERE `fabricantes`.`id_fabricante`=$idm";
+        $insertar = "UPDATE `fabricantes` SET `id_fabricante`=$id_fabricante,`nombre_fabricante`='$nombre',`telefono`=$telefono, `codigo_postal`=$codigo_postal, `correo_electronico`='$correo_electronico',`fotografia_fabricante`='$nombreArchivo' WHERE `fabricantes`.`id_fabricante`=$idm";
     }
     else{
-        $insertar = "UPDATE `fabricantes` SET `id_fabricante`=$id_fabricante,`nombre`='$nombre',`telefono`=$telefono, `codigo_postal`=$codigo_postal, `correo_electronico`='$correo_electronico',`fotografia`='$nombreantiguo' WHERE `fabricantes`.`id_fabricante`=$idm";
+        $insertar = "UPDATE `fabricantes` SET `id_fabricante`=$id_fabricante,`nombre_fabricante`='$nombre',`telefono`=$telefono, `codigo_postal`=$codigo_postal, `correo_electronico`='$correo_electronico',`fotografia_fabricante`='$nombreantiguo' WHERE `fabricantes`.`id_fabricante`=$idm";
     };  
     // echo $nombre;
     // echo $telefono;
@@ -60,6 +60,9 @@
     // echo $correo_electronico;
     // echo $id_fabricante;
     // echo $idm;
+    
+
+
     mysqli_query($conexion, $insertar);
     header("Location:actualiza_ok.php");
     ?>

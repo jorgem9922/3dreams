@@ -111,7 +111,7 @@ if ($registro = mysqli_fetch_assoc($registros)) {
                         </div> -->
                         <div class="mb-3">
                           <label for="" class="form-label">Imagen Antigua</label>
-                          <?php  echo '<img width="100px" height="100px" src="../imagenes/'.$registro['fotografia'].'">';?>
+                          <?php  echo '<img width="100px" height="100px" src="../imagenes/'.$registro['fotografia_usuario'].'">';?>
                         </div>
 
                         <div class="mb-3">

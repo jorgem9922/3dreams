@@ -1,6 +1,12 @@
 
 
 <?php 
+session_start();
+$usuario = $_SESSION['usuario'];
+if(!isset($usuario)){
+    header("Location: indexcrud.php");
+    exit;
+}
 include "../conexion.php";
 include "../header.php";
 ?>
@@ -70,7 +76,7 @@ include "../header.php";
                                         <td><?php echo $registro['tamaño']; ?></td>
                                         <td>
                                         <?php 
-                                         echo "<img width='100px' height='100px' src='../imagenes/{$registro['fotografia']}' alt='Imagen de producto'>"; 
+                                         echo "<img width='100px' height='100px' src='../imagenes/{$registro['fotografia_producto']}' alt='Imagen de producto'>"; 
                                       
                                         ?></td>
                                         <td> <a href="baja2.php?id=<?php echo $registro['id_producto']; ?>"><i class="bi-trash px-1" style="font-size: 2rem; color:red;"></i> </a></td> 

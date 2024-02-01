@@ -24,6 +24,7 @@ include "../header.php";
                         <div class="card-header"> 
                             Ingresar datos:
                         </div>
+                        <div class="mb-3">
                         <form class="p-4" method="POST" action="registrar.php" enctype="multipart/form-data">
                       <!-- id en forms -->
                         <label for="" class="form-label">id_fabricante</label>

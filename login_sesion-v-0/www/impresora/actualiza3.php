@@ -3,33 +3,33 @@
 
     
     $idm = $_GET["idmodifica"];
+    mysqli_select_db($conexion, "productosbd");
     //$nombreantiguo = $_GET["fotografia"];
 
-    mysqli_select_db($conexion, "productosbd");
-    $id_fabricante=$_POST["id_fabricante"];
-    $nombre = $_POST["nombre"];
-    $telefono = $_POST["telefono"];
-    $codigo_postal = $_POST["codigo_postal"];
-    $correo_electronico =$_POST ["correo_electronico"];
-    //var_dump ($_FILES['imagen']);
-    $directorioSubida = "imagenes/";
-    $max_file_size="5120000";
-    $extensionesValidas=array("jpg","png","gif");
-    
+  
+    $nombre = $_POST["nombre_producto"];
+    $marca = $_POST["marca"];
+    $referencia = $_POST["referencia"];
+    $precio = $_POST["precio"];
+    // $id_impresora=$_POST["id_impresora"];
+    $modelo = $_POST["modelo"];
+    $color = $_POST["color"];
+    $tamaño_impresora = $_POST["tamaño_impresora"];
+    $tamañocamax =$_POST ["tamañocamax"];
+    $tamañocamay =$_POST ["tamañocamay"]; 
+    $fabricante =$_POST ["fabricante"];
     $directorioSubida = "../imagenes/";
     $max_file_size="5120000";
     $extensionesValidas=array("jpg","png","gif");
-    
-    if($_FILES['fotografia']['name'] != ""){
+    if($_FILES['imagen']['name'] != ""){
         $errores=0;
-        $nombreArchivo = $_FILES['fotografia']['name'];
-        $filesize = $_FILES['fotografia']['size'];
-        $directorioTemp = $_FILES['fotografia']['tmp_name'];
-        $tipoArchivo = $_FILES['fotografia']['type'];
+        $nombreArchivo = $_FILES['imagen']['name'];
+        $filesize = $_FILES['imagen']['size'];
+        $directorioTemp = $_FILES['imagen']['tmp_name'];
+        $tipoArchivo = $_FILES['imagen']['type'];
         $arrayArchivo = pathinfo ($nombreArchivo);
         $extension = $arrayArchivo['extension'];
 
-       
        
         if(!in_array($extension, $extensionesValidas)) {
             echo "Extensión no válida";
@@ -48,21 +48,45 @@
         }
     }
 
-    if($_FILES['fotografia']['name'] != ""){
-        $insertar = "UPDATE `fabricantes` SET `id_fabricante`=$id_fabricante,`nombre`='$nombre',`telefono`=$telefono, `codigo_postal`=$codigo_postal, `correo_electronico`='$correo_electronico',`fotografia`='$nombreArchivo' WHERE `fabricantes`.`id_fabricante`=$idm";
+
+    if ($_FILES['imagen']['name'] != "") {
+       $actualizar = "UPDATE `producto`  p
+    INNER JOIN `impresora` i ON p.`id_producto` = i.`id_impresora`
+    SET
+        p.`nombre_producto` = '$nombre',
+        p.`marca` = '$marca',
+        p.`referencia` = '$referencia',
+        p.`precio` = '$precio',
+        p.`fotografia_producto` = '$nombreArchivo',
+        p.`id_fabricante` = $fabricante,
+        i.`modelo` = '$modelo',
+        i.`color` = $color,
+        i.`tamaño_impresora` = $tamaño_impresora,
+        i.`tamañocamax` = '$tamañocamax',
+        i.`tamañocamay` = '$tamañocamay'
+    WHERE p.`id_producto` = '$idm'";
+
+    } else {
+       $actualizar = "UPDATE `producto` p
+    INNER JOIN `impresora`  i ON p.`id_producto` = i.`id_impresora`
+    SET
+        p.`nombre_producto` = '$nombre',
+        p.`marca` = '$marca',
+        p.`referencia` = '$referencia',
+        p.`precio` = '$precio',
+        p.`fotografia_producto` = '$nombreantiguo',
+        p.`id_fabricante` = $fabricante,
+        i.`modelo` = '$modelo',
+        i.`color` = $color,
+        i.`tamaño_impresora` = $tamaño_impresora,
+        i.`tamañocamax` = '$tamañocamax',
+        i.`tamañocamay` = '$tamañocamay'
+    WHERE p.`id_producto` = '$idm'";
     }
-    else{
-        $insertar = "UPDATE `fabricantes` SET `id_fabricante`=$id_fabricante,`nombre`='$nombre',`telefono`=$telefono, `codigo_postal`=$codigo_postal, `correo_electronico`='$correo_electronico',`fotografia`='$nombreantiguo' WHERE `fabricantes`.`id_fabricante`=$idm";
-    };  
-    // echo $nombre;
-    // echo $telefono;
-    // echo $codigo_postal;
-    // echo $correo_electronico;
-    // echo $id_fabricante;
-    // echo $idm;
-    
+  
+    mysqli_query($conexion, $actualizar);
 
-
-    mysqli_query($conexion, $insertar);
     header("Location:actualiza_ok.php");
     ?>
+    
+

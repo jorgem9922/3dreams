@@ -55,7 +55,7 @@ include "../header.php";
                                 <td><?php echo $registro['titulo']; ?></td>
                                 <td><?php echo $registro['descripcion']; ?></td> 
                                 <td><?php echo $registro['nombre_producto']; ?></td> 
-                                <td><?php echo '<img width="100px" height="100px" src="../imagenes/'. $registro['imagenes']. '">'; ?></td>
+                                <td><?php echo '<img width="100px" height="100px" src="../imagenes/'. $registro['fotografia_reseña']. '">'; ?></td>
                                 <td> <a href="baja2.php?id=<?php echo $registro['id_reseña']; ?>"><i class="bi-trash px-1" style="font-size: 2rem; color:red;"></i> </a></td>  
                               </tr>
                               <?php

@@ -43,7 +43,7 @@ if (isset($_FILES['imagen']) && isset($_FILES['imagen']['name'])) {
     }
 }
 
-$almacenar = "INSERT INTO `producto` (`id_producto`, `nombre_producto`, `marca`, `referencia`, `precio`, `fotografia`,id_fabricante) VALUES ('$identificador','$nombre', '$marca', '$referencia', '$precio', '$nombreArchivo',$fabricante)";
+$almacenar = "INSERT INTO `producto` (`id_producto`, `nombre_producto`, `marca`, `referencia`, `precio`, `fotografia_producto`,id_fabricante) VALUES ('$identificador','$nombre', '$marca', '$referencia', '$precio', '$nombreArchivo',$fabricante)";
 mysqli_query($conn, $almacenar);
 
 $insertar = "INSERT INTO `material`  (id_material, `color`, `id_tipo_material`, `peso`) VALUES ($identificador,'$color', '$material', '$peso')";

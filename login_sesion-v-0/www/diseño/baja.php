@@ -31,7 +31,7 @@ include "../header.php";
                          $consultar = "SELECT * FROM diseño d 
                          INNER JOIN producto p ON d.id_diseño = p.id_producto 
                          INNER JOIN categoria c ON d.id_categoria = c.id_categoria 
-                         INNER JOIN fabricantes f ON p.id_fabricante = f.id_fabricante"; 
+                         INNER JOIN fabricantes f ON p.id_fabricante = f.id_fabricante order by p.id_producto"; 
                          $registros = mysqli_query($conn, $consultar);
                         if (!$registros) {
                             die('Error: ' . mysqli_error($conn));
@@ -72,7 +72,7 @@ include "../header.php";
                                             <td><?php echo $registro['ancho']; ?></td>
                                             <td><?php echo $registro['nombre_categoria']; ?></td>
 
-                                            <td><?php echo '<img width="100px" height="100px" src="../imagenes/' . $registro['fotografia'] . '">'; ?></td>
+                                            <td><?php echo '<img width="100px" height="100px" src="../imagenes/' . $registro['fotografia_producto'] . '">'; ?></td>
                                             <td><a href="baja2.php?id=<?php echo $registro['id_producto']; ?>"><i class="bi-trash px-1" style="font-size: 2rem; color:red;"></i></a></td>
                                         </tr>
                                     <?php

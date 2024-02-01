@@ -15,9 +15,7 @@
     $directorioSubida = "../imagenes/";
     $max_file_size="5120000";
     $extensionesValidas=array("jpg","png","gif");
-    if ($dni < 60000 || $dni > 80000) {
-        echo "El DNI debe estar en el rango de 60000 a 800000";
-    }
+   
     if(isset($_FILES['imagen'])){
         $errores=0;
         $nombreArchivo = $_FILES['imagen']['name'];
@@ -45,7 +43,7 @@
         }
     }
 
-   $insertar="INSERT INTO `usuario` (`id_usuario`, `nombre`, `DNI`, `correo_electronico`, `id_ciudad`, `apellido`,`fotografia`) VALUES ($identificador, '$nombre', '$dni', '$correo_electronico', '$ciudad', '$apellido','$nombreArchivo');";
+   $insertar="INSERT INTO `usuario` (`id_usuario`, `nombre`, `DNI`, `correo_electronico`, `id_ciudad`, `apellido`,`fotografia_usuario`) VALUES ($identificador, '$nombre', '$dni', '$correo_electronico', '$ciudad', '$apellido','$nombreArchivo');";
     mysqli_query($conn, $insertar);
     header("Location:alta_ok.php");
     ?>

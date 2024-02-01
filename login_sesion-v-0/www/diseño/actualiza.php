@@ -78,7 +78,7 @@ include "../header.php";
                                                            
                                 <td>
                                                 <?php 
-                                                echo "<img width='100px' height='100px' src='../imagenes/{$registro['fotografia']}' "; 
+                                                echo "<img width='100px' height='100px' src='../imagenes/{$registro['fotografia_producto']}' "; 
                                                 ?>
                                             </td> 
                                           <td> <a href="actualiza2.php?id=<?php echo $registro['id_producto']; ?>"><i class="bi-pencil px-1" style="font-size: 2rem; color:green;"></i> </a></td>                           

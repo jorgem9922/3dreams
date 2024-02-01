@@ -6,15 +6,20 @@ if(!isset($usuario)){
     exit;
 }
 $usuario = $_SESSION['usuario'];
-
-
     mysqli_select_db($conexion, "productosbd");
-    $id_impresora= isset($_POST["id_impresora"]) ? $_POST["id_impresora"] : '';
-    $modelo = isset($_POST["modelo"]) ? $_POST["modelo"] : '';
-    $color = isset($_POST["color"]) ? $_POST["color"] : '';
-    $tamaño_impresora = isset($_POST["tamaño_impresora"]) ? $_POST["tamaño_impresora"] : '';
-    $tamañocamax = isset($_POST["yamañocamax"]) ? $_POST["yamañocamax"] : '';
-    $tamañocamay = isset($_POST["yamañocamay"]) ? $_POST["yamañocamay"] : '';
+    
+    $identificador = $_POST["id_producto"];
+    $nombre = $_POST["nombre_producto"];
+    $marca = $_POST["marca"];
+    $referencia = $_POST["referencia"];
+    $precio = $_POST["precio"];
+    // $id_impresora=$_POST["id_impresora"];
+    $modelo = $_POST["modelo"];
+    $color = $_POST["color"];
+    $tamaño_impresora = $_POST["tamaño_impresora"];
+    $tamañocamax =$_POST ["tamañocamax"];
+    $tamañocamay =$_POST ["tamañocamay"];
+    $fabricante =$_POST ["fabricante"];
     //var_dump ($_FILES['imagen']);
     $directorioSubida = "../imagenes/";
     $max_file_size="5120000";
@@ -45,7 +50,9 @@ $usuario = $_SESSION['usuario'];
             move_uploaded_file($directorioTemp, $nombreCompleto);
         }
     }
-    $insertar="INSERT INTO `impresora` (`id_impresora`, `modelo`, `color`, `tamaño_impresora`, `tamañocamax`, `tamañocamay`, `fotografia`) VALUES ($id_impresora,'$modelo', $color, $tamaño_impresora, '$tamañocamax' ,'$tamañocamax'',$nombreArchivo')";
+    $almacenar = "INSERT INTO `producto` (`id_producto`, `nombre_producto`, `marca`, `referencia`, `precio`, `fotografia_producto`,id_fabricante) VALUES ('$identificador','$nombre', '$marca', '$referencia', '$precio', '$nombreArchivo',$fabricante)";
+mysqli_query($conexion, $almacenar);
+    $insertar="INSERT INTO `impresora` (`id_impresora`, `modelo`, `color`, `tamaño_impresora`, `tamañocamax`, `tamañocamay`) VALUES ($identificador,'$modelo', $color, $tamaño_impresora, '$tamañocamax' ,'$tamañocamax')";
     mysqli_query($conexion, $insertar);
    
      header("Location:alta_ok.php");?>

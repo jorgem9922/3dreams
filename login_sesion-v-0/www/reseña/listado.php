@@ -65,7 +65,7 @@ include "../header.php";
                                                            
                                 <td>
                                                 <?php 
-                                                echo "<img width='100px' height='100px' src='../imagenes/{$registro['imagenes']}' "; 
+                                                echo "<img width='100px' height='100px' src='../imagenes/{$registro['fotografia_reseña']}' "; 
                                                 ?>
                                             </td>                           
                               </tr>

@@ -48,12 +48,12 @@
     if ($_FILES['imagen']['name'] != "") {
         $insertar = "UPDATE usuario  
                      SET nombre = '$nombre',apellido = '$apellido',  DNI = '$dni', id_ciudad = '$ciudad', 
-                     correo_electronico = '$correo_electronico', fotografia = '$nombreArchivo'
+                     correo_electronico = '$correo_electronico', fotografia_usuario = '$nombreArchivo'
                      WHERE id_usuario = $idm";
     } else {
         $insertar = "UPDATE usuario 
                      SET nombre = '$nombre' ,apellido = '$apellido', DNI = '$dni', id_ciudad = '$ciudad', 
-                     correo_electronico = '$correo_electronico', fotografia = '$nombreantiguo'
+                     correo_electronico = '$correo_electronico', fotografia_usuario = '$nombreantiguo'
                      WHERE id_usuario = $idm";
     }
     

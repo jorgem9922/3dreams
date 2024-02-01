@@ -65,7 +65,7 @@ include "../header.php";
                                     <td><?php echo $registro['DNI']; ?></td>
                                         <td>
                                         <?php 
-                                         echo "<img width='100px' height='100px' src='../imagenes/{$registro['fotografia']}' alt='Imagen de producto'>"; 
+                                         echo "<img width='100px' height='100px' src='../imagenes/{$registro['fotografia_usuario']}' alt='Imagen de producto'>"; 
                                       
                                         ?></td>
                                         <td> <a href="baja2.php?id=<?php echo $registro['id_usuario']; ?>"><i class="bi-trash px-1" style="font-size: 2rem; color:red;"></i> </a></td> 

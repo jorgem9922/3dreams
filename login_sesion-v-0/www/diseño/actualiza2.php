@@ -37,12 +37,7 @@ if ($registro = mysqli_fetch_assoc($registros)) {
                         </div>
                         <form class="p-4" method="POST" action="actualiza3.php?idmodifica=<?php echo $productoactualizar;?>" enctype="multipart/form-data">
                         
-                        <div class="mb-3">
-                          <label for="" class="form-label"><b>Id producto</b></label>
-                          <input type="text"
-                            class="form-control" name="id_producto" id="id_producto"  required aria-describedby="helpId" value="<?php echo $registro['id_producto'];?>" placeholder="Altura">
-                          <small id="helpId" class="form-text text-muted">Id producto</small>
-                        </div>
+                        
 
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Nombre Producto</b></label>
@@ -141,7 +136,7 @@ if ($registro = mysqli_fetch_assoc($registros)) {
                         </div>
                         <div class="mb-3">
                                 <label for="" class="form-label">Imagen Antigua</label>
-                                <?php  echo '<img width="100px" height="100px" src="../imagenes/'.$registro['fotografia'].'">';?>
+                                <?php  echo '<img width="100px" height="100px" src="../imagenes/'.$registro['fotografia_producto'].'">';?>
                             </div>
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Imagen</b></label>

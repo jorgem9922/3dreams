@@ -10,7 +10,7 @@ include "../conexion.php";
 
 mysqli_select_db($conn, "productosbd");
 $productoactualizar = $_GET["id"];
-$seleccionar = "SELECT r.id_reseña, r.calificacion, u.nombre, d.nombre_producto, r.titulo, r.descripcion, r.fecha_creacion, r.imagenes FROM reseña r INNER JOIN usuario u ON r.id_usuario = u.id_usuario INNER JOIN producto d ON r.id_producto = d.id_producto WHERE r.id_reseña='$productoactualizar'";
+$seleccionar = "SELECT * FROM reseña r INNER JOIN usuario u ON r.id_usuario = u.id_usuario INNER JOIN producto d ON r.id_producto = d.id_producto WHERE r.id_reseña='$productoactualizar'";
 $registros = mysqli_query($conn, $seleccionar);
 $registro = mysqli_fetch_assoc($registros);
 ?>
@@ -112,7 +112,7 @@ $registro = mysqli_fetch_assoc($registros);
                       </div>
                       <div class="mb-3">
                           <label for="" class="form-label">Imagen Antigua</label>
-                          <?php  echo '<img width="100px" height="100px" src="../imagenes/'.$registro['imagenes'].'">';?>
+                          <?php  echo '<img width="100px" height="100px" src="../imagenes/'.$registro['fotografia_reseña'].'">';?>
                         </div>
 
                         <div class="mb-3">

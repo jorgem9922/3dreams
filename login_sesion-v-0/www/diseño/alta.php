@@ -29,49 +29,49 @@ include "../header.php";
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Id producto</b></label>
                           <input type="text"
-                            class="form-control" name="id_producto" id="id_producto"  required aria-describedby="helpId" placeholder="Altura">
+                            class="form-control" name="id_producto" id="id_producto"  required aria-describedby="helpId" placeholder="Id producto">
                           <small id="helpId" class="form-text text-muted">Id producto</small>
                         </div>
 
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Nombre Producto</b></label>
                           <input type="text"
-                            class="form-control" name="nombre_producto" id="nombre_producto"  required aria-describedby="helpId" placeholder="Altura">
+                            class="form-control" name="nombre_producto" id="nombre_producto"  required aria-describedby="helpId" placeholder="Nombre Producto">
                           <small id="helpId" class="form-text text-muted">Nombre Producto</small>
                         </div>
 
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Marca</b></label>
                           <input type="text"
-                            class="form-control" name="marca" id="marca"  required aria-describedby="helpId" placeholder="Altura">
+                            class="form-control" name="marca" id="marca"  required aria-describedby="helpId" placeholder="marca">
                           <small id="helpId" class="form-text text-muted">Marca</small>
                         </div>
 
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Referencia</b></label>
                           <input type="text"
-                            class="form-control" name="referencia" id="referencia"  required aria-describedby="helpId" placeholder="Anchura">
+                            class="form-control" name="referencia" id="referencia"  required aria-describedby="helpId" placeholder="referencia">
                           <small id="helpId" class="form-text text-muted">Referencia</small>
                         </div>
 
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Precio</b></label>
                           <input type="text"
-                            class="form-control" name="precio" id="precio"  required aria-describedby="helpId" placeholder="Anchura">
+                            class="form-control" name="precio" id="precio"  required aria-describedby="helpId" placeholder="Precio">
                           <small id="helpId" class="form-text text-muted">Precio</small>
                         </div>
 
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Tamaño</b></label>
                           <input type="text"
-                            class="form-control" name="Tamaño" id="Tamaño"  required aria-describedby="helpId" placeholder="Anchura">
+                            class="form-control" name="Tamaño" id="Tamaño"  required aria-describedby="helpId" placeholder="Tamño">
                           <small id="helpId" class="form-text text-muted">Tamaño</small>
                         </div>
 
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Alto</b></label>
                           <input type="text"
-                            class="form-control" name="alto" id="alto"  required aria-describedby="helpId" placeholder="Anchura">
+                            class="form-control" name="alto" id="alto"  required aria-describedby="helpId" placeholder="Alto">
                           <small id="helpId" class="form-text text-muted">Alto</small>
                         </div>
 
@@ -79,7 +79,7 @@ include "../header.php";
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Ancho</b></label>
                           <input type="text"
-                            class="form-control" name="ancho" id="ancho"  required aria-describedby="helpId" placeholder="Anchura">
+                            class="form-control" name="ancho" id="ancho"  required aria-describedby="helpId" placeholder="Ancho">
                           <small id="helpId" class="form-text text-muted">Ancho</small>
                         </div>
 

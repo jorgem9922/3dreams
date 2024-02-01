@@ -1,13 +1,12 @@
 <?php 
-
-/* *********************************************************************** */
-/* *********************  Programa principal  **************************** */
-/* **************** Menu de selección de opciones ************************ */
-/* *********************************************************************** */
-
-include "../header.php"
+session_start();
+$usuario = $_SESSION['usuario'];
+if(!isset($usuario)){
+    header("Location: indexcrud.php");
+    exit;
+}
+include "../header.php";
 ?>
-
 <div class="container my-5">
     <div class="row">
         <div class="col text-center">
@@ -41,6 +40,7 @@ include "../header.php"
                 </div>
                 </div>
             </div>
+            <a href="../index2.php"> <i class="bi-arrow-return-left px-3" style="font-size: 4rem; color:black;"></i> </a>
 
         </div>  
     </div>

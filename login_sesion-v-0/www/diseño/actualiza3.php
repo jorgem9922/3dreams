@@ -2,14 +2,14 @@
 include "../conexion.php"; 
 
 mysqli_select_db($conn, "productosbd");
-
-$id_producto = $_POST["id_producto"];
 $idm = $_GET["idmodifica"];
+
+
 $nombre_producto = $_POST["nombre_producto"];
 $marca = $_POST["marca"];
 $referencia = $_POST["referencia"];
 $precio = $_POST["precio"];
-$nombre_fabricante = $_POST["nombre_fabricante"];
+$fabricante = $_POST["nombre_fabricante"];
 $Tamaño = $_POST["Tamaño"];
 $alto = $_POST["alto"]; // Cambiado de "ancho" a "alto"
 $ancho = $_POST["ancho"];
@@ -49,19 +49,20 @@ if($_FILES['imagen']['name'] != ""){
 if ($_FILES['imagen']['name'] != "") {
     $insertar = "UPDATE producto p JOIN diseño d ON p.id_producto = d.id_diseño
                  SET p.nombre_producto = '$nombre_producto', p.marca = '$marca', p.referencia = '$referencia', 
-                     p.precio = '$precio', p.fotografia = '$nombreArchivo', d.Tamaño= '$Tamaño', d.alto='$alto' ,
-                      p.id_fabricante = $nombre_fabricante, d.ancho='$ancho', d.id_categoria = $nombre_categoria
+                     p.precio = '$precio', p.fotografia_producto = '$nombreArchivo', d.Tamaño= '$Tamaño', d.alto='$alto' ,
+                      id_fabricante = $fabricante, d.ancho='$ancho', d.id_categoria=$nombre_categoria
                  WHERE p.id_producto = $idm";
-                 
+           
 } else {
     $insertar = "UPDATE producto p JOIN diseño d ON p.id_producto =d.id_diseño
      SET p.nombre_producto = '$nombre_producto', p.marca = '$marca', p.referencia = '$referencia', 
-                     p.precio = '$precio', p.fotografia = '$nombreantiguo', d.Tamaño= '$Tamaño', d.alto='$alto' ,
-                      p.id_fabricante = $nombre_fabricante, d.ancho='$ancho', d.id_categoria = $nombre_categoria
+                     p.precio = '$precio', p.fotografia_producto = '$nombreantiguo', d.Tamaño= '$Tamaño', d.alto='$alto' ,
+                      id_fabricante = $fabricante, d.ancho='$ancho', d.id_categoria=$nombre_categoria
                  WHERE p.id_producto = $idm";
 
 
 }
+
 mysqli_query($conn, $insertar);
 
 

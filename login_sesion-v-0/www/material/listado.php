@@ -1,7 +1,14 @@
 <?php
+session_start();
+$usuario = $_SESSION['usuario'];
+if(!isset($usuario)){
+    header("Location: indexcrud.php");
+    exit;
+}
 include "../conexion.php";
 include "../header.php";
 ?>
+
 
 <div class="container my-5">
     <div class="row">
@@ -70,7 +77,7 @@ include "../header.php";
                                         <td><?php echo $registro['nombre_fabricante']; ?></td>
                                         <td>
                                             <?php 
-                                            echo "<img width='100px' height='100px' src='../imagenes/{$registro['fotografia']}' alt='Imagen de producto'>"; 
+                                            echo "<img width='100px' height='100px' src='../imagenes/{$registro['fotografia_producto']}' alt='Imagen de producto'>"; 
                                             ?>
                                         </td>
                                     </tr>

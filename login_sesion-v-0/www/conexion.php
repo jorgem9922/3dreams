@@ -3,11 +3,11 @@
 	Suscribete a : https://www.youtube.com/ProgramandoBrothers y comparte los vídeos.
 	Recuerda: "EL CONOCIMIENTO SE COMPARTE, POR MÁS POCO QUE SEA".
 	*/
-// 	$servidor = "db";
-// $usuario = "root";
-// $password ="test";
+	$servidor = "db";
+$usuario = "root";
+$password ="test";
 
-// $conexion = mysqli_connect($servidor, $usuario, $password) or die ("Error de conexión");
+$conexion = mysqli_connect($servidor, $usuario, $password) or die ("Error de conexión");
 
 
 
