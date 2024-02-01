@@ -46,7 +46,7 @@
 <header class="navbar navbar-inverse" role="banner">
         <div class="navbar-header">            
             <a class="navbar-brand" href="principal.php">
-                <img src="/imagenes/logo.png" width="50px" height="50px"alt="logo" />Programando Brother's
+                <img src="/imagenes/logo.png" width="50px" height="50px"alt="logo" />Tu imaginacion cobra vida
             </a>
         </div>
         <ul class="nav navbar-nav pull-right hidden-xs">                       
