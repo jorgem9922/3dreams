@@ -62,10 +62,11 @@
                     Bienvenido<?php echo ": ".$_SESSION['usuario'] ?>
                 </a>                
             </li>  
-            <li><i class="bi bi-cart-dash"></i></li>           
             <li class="settings hidden-xs hidden-sm">
                 <a href="cerrarSesion.php" role="button">
                     <i class="icon-share-alt"></i>
+                    <li><i class="bi-cart-dash px-3" ></i></li>           
+
                 </a>
             </li>
         </ul>
