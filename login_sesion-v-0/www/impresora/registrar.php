@@ -50,9 +50,11 @@ $usuario = $_SESSION['usuario'];
             move_uploaded_file($directorioTemp, $nombreCompleto);
         }
     }
-    $almacenar = "INSERT INTO `producto` (`id_producto`, `nombre_producto`, `marca`, `referencia`, `precio`, `fotografia_producto`,id_fabricante) VALUES ('$identificador','$nombre', '$marca', '$referencia', '$precio', '$nombreArchivo',$fabricante)";
+    $almacenar = "INSERT INTO `producto` (`id_producto`, `nombre_producto`, `marca`, `referencia`, `precio`, `id_fabricante`, `fotografia_producto`)values('$identificador','$nombre', '$marca', '$referencia', '$precio',$fabricante,'$nombreArchivo')";
 mysqli_query($conexion, $almacenar);
+
     $insertar="INSERT INTO `impresora` (`id_impresora`, `modelo`, `color`, `tamaño_impresora`, `tamañocamax`, `tamañocamay`) VALUES ($identificador,'$modelo', $color, $tamaño_impresora, '$tamañocamax' ,'$tamañocamax')";
     mysqli_query($conexion, $insertar);
-   
-     header("Location:alta_ok.php");?>
+
+     header("Location:alta_ok.php");
+     ?>
