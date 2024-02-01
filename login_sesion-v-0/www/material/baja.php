@@ -58,7 +58,7 @@ include "../header.php";
                                     ?>
                                      <tr class="align-middle">
                                         <td><?php echo $registro['id_producto']; ?></td>
-                                        <td><?php echo $registro['nombre']; ?></td>
+                                        <td><?php echo $registro['nombre_producto']; ?></td>
                                         <td><?php echo $registro['marca']; ?></td>
                                         <td><?php echo $registro['referencia']; ?></td>
                                         <td><?php echo $registro['precio']; ?></td>
