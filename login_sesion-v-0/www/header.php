@@ -61,7 +61,8 @@
                 <a href="#" class="dropdown-toggle hidden-xs hidden-sm" data-toggle="dropdown">
                     Bienvenido<?php echo ": ".$_SESSION['usuario'] ?>
                 </a>                
-            </li>             
+            </li>  
+            <li><i class="bi bi-cart-dash"></i></li>           
             <li class="settings hidden-xs hidden-sm">
                 <a href="cerrarSesion.php" role="button">
                     <i class="icon-share-alt"></i>
