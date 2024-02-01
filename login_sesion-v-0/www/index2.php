@@ -33,7 +33,7 @@ session_start();
                     <table class="table table-primary">
                         <thead >
                         
-                            <tr class="listadocrudgeneral122">
+                            <tr>
                                 
                                 <th scope="col" style="text-align: center;">usuario</th>
                                 <th scope="col" style="text-align: center;">reseñas</th>
