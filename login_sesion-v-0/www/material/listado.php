@@ -70,7 +70,7 @@ include "../header.php";
                                         <td><?php echo $registro['nombre_fabricante']; ?></td>
                                         <td>
                                             <?php 
-                                            echo "<img width='100px' height='100px' src='../imagenes/{$registro['m.fotografia']}' alt='Imagen de producto'>"; 
+                                            echo "<img width='100px' height='100px' src='../imagenes/{$registro['fotografia']}' alt='Imagen de producto'>"; 
                                             ?>
                                         </td>
                                     </tr>
