@@ -44,12 +44,12 @@ session_start();
                         </thead>
                         <tbody>
                             <tr class="">
-                                <td scope="row"><a href="usuario/index2.php"><i class="bi-person-add px-3" style="font-size: 4rem; color:yellow;"></i></a></td>
+                                <td scope="row"><a href="usuario/index2.php"><i class="bi-person-add px-3" style="font-size: 4rem; color:orange;"></i></a></td>
                                 <td scope="row"><a href="reseña/index.php"><i class=" bi bi-star-fill dash px-3" style="font-size: 4rem; color:yellow;"></i></a></td>
-                                <td scope="row"><a href="fabricantes/indexcrud.php"><i class="bi-hammer px-3" style="font-size: 4rem; color:yellow;"></a></i></td>
-                                <td scope="row"><a href="material/index.php"><i class="bi-hypnotize px-3" style="font-size: 4rem; color:yellow;"></a></i></td>
-                                <td scope="row"><a href="impresora/indexcrud.php"><i class="bi-printer px-3" style="font-size: 4rem; color:yellow;"></i></a></td>
-                                <td scope="row"><a href="diseño/index.php"><i class="bi-files px-3" style="font-size: 4rem; color:yellow;"></i></a></td>
+                                <td scope="row"><a href="fabricantes/indexcrud.php"><i class="bi-hammer px-3" style="font-size: 4rem; color:brown;"></a></i></td>
+                                <td scope="row"><a href="material/index.php"><i class="bi-hypnotize px-3" style="font-size: 4rem; color:green;"></a></i></td>
+                                <td scope="row"><a href="impresora/indexcrud.php"><i class="bi-printer px-3" style="font-size: 4rem; color:red;"></i></a></td>
+                                <td scope="row"><a href="diseño/index.php"><i class="bi-files px-3" style="font-size: 4rem; color:grey;"></i></a></td>
 
                                 </tr>
                             
