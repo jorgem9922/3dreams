@@ -26,41 +26,46 @@ include "../header.php";
                         </div>
                          <div class="mb-3">
                         <form class="p-4" method="POST" action="registrar.php" enctype="multipart/form-data">
-                      <!-- id producto -->
-                        <label for="" class="form-label">id_producto</label>
+                     
+                        <!-- id producto -->
+                        <label for="" class="form-label">Id_producto</label>
                           <input type="number"
                             class="form-control" name="id_producto" id="id_producto" required aria-describedby="helpId" placeholder="Introduce el id">
                           <small id="helpId" class="form-text text-muted">id_producto</small>
                         </div>
+                       
                         <!-- nombre en forms -->
                         <div class="mb-3">
                         <form class="p-4" method="POST" action="registrar.php" enctype="multipart/form-data">
-                      <!-- id producto -->
-                        <label for="" class="form-label">nombre del producto</label>
+                     
+                        <!-- id producto -->
+                        <label for="" class="form-label">Nombre del producto</label>
                           <input type="number"
-                            class="form-control" name="nombre_producto" id="nombre_producto" required aria-describedby="helpId" placeholder="Introduce el id">
+                            class="form-control" name="nombre_producto" id="nombre_producto" required aria-describedby="helpId" placeholder="Introduce el nombre del producto">
                           <small id="helpId" class="form-text text-muted">id_producto</small>
                         </div>
+                       
                         <!--  nombre del producto  -->
                         <div class="mb-3">
-                          <label for="" class="form-label">marca</label>
+                          <label for="" class="form-label">Marca</label>
                           <input type="number"
-                            class="form-control" name="marca" id="marca" required aria-describedby="helpId" placeholder="Introduce el telefono">
+                            class="form-control" name="marca" id="marca" required aria-describedby="helpId" placeholder="Introduce la marca">
                           <small id="helpId" class="form-text text-muted">marca </small>
                         </div>
+                      
                         <!-- codigo postal en forms -->
                         <div class="mb-3">
-                          <label for="" class="form-label">referencia</label>
+                          <label for="" class="form-label">Referencia</label>
                           <input type="number"
-                            class="form-control" name="referencia" id="referencia" required aria-describedby="helpId" placeholder="Introduce el pcódigo postal">
+                            class="form-control" name="referencia" id="referencia" required aria-describedby="helpId" placeholder="Introduce la referencia">
                           <small id="helpId" class="form-text text-muted">referencia</small>
                         </div>
                         
                         <!-- correo en forms -->
                         <div class="mb-3">
-                          <label for="" class="form-label">precio</label>
+                          <label for="" class="form-label">Precio</label>
                           <input type="numeric"
-                            class="form-control" name="precio" id="precio"  required aria-describedby="helpId" placeholder="Introduce el correo">
+                            class="form-control" name="precio" id="precio"  required aria-describedby="helpId" placeholder="Introduce el precio">
                           <small id="helpId" class="form-text text-muted">Correo precio</small>
                         </div>
                         <div class="mb-3">

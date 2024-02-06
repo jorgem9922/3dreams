@@ -43,14 +43,14 @@ include "../header.php";
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Marca</b></label>
                           <input type="text"
-                            class="form-control" name="marca" id="marca"  required aria-describedby="helpId" placeholder="marca">
+                            class="form-control" name="marca" id="marca"  required aria-describedby="helpId" placeholder="Marca">
                           <small id="helpId" class="form-text text-muted">Marca</small>
                         </div>
 
                         <div class="mb-3">
                           <label for="" class="form-label"><b>Referencia</b></label>
                           <input type="text"
-                            class="form-control" name="referencia" id="referencia"  required aria-describedby="helpId" placeholder="referencia">
+                            class="form-control" name="referencia" id="referencia"  required aria-describedby="helpId" placeholder="Referencia">
                           <small id="helpId" class="form-text text-muted">Referencia</small>
                         </div>
 
