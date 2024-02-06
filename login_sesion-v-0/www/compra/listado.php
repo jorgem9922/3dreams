@@ -10,14 +10,14 @@ include "header.php";
 
 
             
-                        <?php
-                          mysqli_select_db($conn,"dreams3");
-                          $consultar= "SELECT * FROM usuario";
+    <?php
+        mysqli_select_db($conn,"dreams3");
+        $consultar= "SELECT * FROM usuario";
 
-                          $registros= mysqli_query($conn, $consultar);
+        $registros= mysqli_query($conn, $consultar);
 
-                        ?>
-                        <div class="user-container-wrapper">
+    ?>
+    <div class="user-container-wrapper">
     <?php while ($registro = mysqli_fetch_assoc($registros)) { ?>
         <div class="user-container">
             <div class="user-info">
