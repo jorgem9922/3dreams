@@ -125,12 +125,12 @@ header img {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 20000px;
+    padding: 20px;
     width: 100%;
 }
 
 .productos {
-    width: 100%; /* Cambié el ancho a 20% para que haya espacio suficiente para 5 elementos en una fila */
+    width: 250px; /* Cambié el ancho a 20% para que haya espacio suficiente para 5 elementos en una fila */
     margin: 0 2%; /* Agregué un margen a cada elemento para espaciarlos un poco */
 }
 
