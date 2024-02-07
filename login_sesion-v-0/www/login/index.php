@@ -33,7 +33,31 @@
 					<input type="text" class="input" id="user_name" name="nombre" autocomplete="off" placeholder="Username">
 					<input type="text" class="input" id="user_name" name="apellido" autocomplete="off" placeholder="apellido">
 					<input type="email" class="input" id="user_email" name="correo" autocomplete="off" placeholder="Email">
+					<input type="text" class="input" id="dni" name="dni" autocomplete="off" placeholder="dni">
+					
+                        <label for="ciudad">Ciudad</label>
+                      <select name="ciudad" class="form-control">
+                          <option selected disabled>Seleccione la ciudad</option>
+                          <?php
+                          include("conexion.php");
+                          mysqli_select_db($conn, "productosbd");
+                          $consultar = "SELECT * FROM ciudad";
+
+                          $sql = mysqli_query($conn, $consultar);
+
+                          // Verifica si hay resultados antes de recorrerlos
+                          if ($sql) {
+                              while ($resultado = mysqli_fetch_assoc($sql)) {
+                                  echo "<option value='" . $resultado['id_ciudad'] . "'>" . $resultado['nombre_ciudad'] . "</option>";
+                              }
+                          } else {
+                              echo "Error en la consulta: " . mysqli_error($conn);
+                          }
+                          ?>
+                      </select>
+                     
 					<input type="text" class="input" id="user_pass" name="contra" autocomplete="off" placeholder="Password">
+					
 					
 					<input type="submit" class="button" value="Sign Up">
 				</form><!--.login-form-->
