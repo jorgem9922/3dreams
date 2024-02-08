@@ -8,8 +8,12 @@ if (!isset($_SESSION['nombre']) || $_SESSION['nombre'] === null) {
     
 }
 $usuario = $_SESSION['nombre'];
-
+$registros = 10;
+ $pagina=$_GET['pagina'];
+$contador = 1;
+ 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -23,7 +27,10 @@ $usuario = $_SESSION['nombre'];
 
 </head>
 <body>
-
+<?php 
+if ($total_registros) {
+                while ($personas = mysqli_fetch_array($resultados, MYSQLI_ASSOC)) {
+                ?>
     <header class="container-fluid">
         <div>
         </div>
@@ -73,7 +80,16 @@ $usuario = $_SESSION['nombre'];
             </li>
         </ul>
           </nav>
-          
+          <?php 
+
+          $contador++;
+                }
+             } else {
+              echo "<font color='darkgray'>(sin resultados)</font>";
+            }
+ 
+            mysqli_free_result($resultados);
+            ?>
     </header>
    
 
