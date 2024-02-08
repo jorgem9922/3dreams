@@ -40,7 +40,7 @@
         if ($errores == 0 ){
 
             $nombreCompleto = $directorioSubida.$nombreArchivo;
-            //echo "Miguel: " . $nombreCompleto;
+            
             move_uploaded_file($directorioTemp, $nombreCompleto);
         }
     }
