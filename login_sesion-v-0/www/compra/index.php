@@ -8,22 +8,10 @@ if (!isset($_SESSION['nombre']) || $_SESSION['nombre'] === null) {
     
 }
 $usuario = $_SESSION['nombre'];
-//$registros nos entrega la cantidad de registros a mostrar.
 $registros = 10;
- 
-//$contador como su nombre lo indica el contador.
+ $pagina=$_GET['pagina'];
 $contador = 1;
  
-/**
- * Se inicia la paginación, si el valor de $pagina es 0 le asigna el valor 1 e $inicio entra con valor 0.
- * si no es la pagina 1 entonces $inicio sera igual al numero de pagina menos 1 multiplicado por la cantidad de registro
- */
-if (!$pagina) {
-    $inicio = 0;
-    $pagina = 1;
-} else {
-    $inicio = ($pagina - 1) * $registros;
-}
 ?>
 
 

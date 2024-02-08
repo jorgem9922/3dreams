@@ -23,6 +23,7 @@
 					<label for="remember_me">Remember me</label>
 
 					<input type="submit" class="button" value="Login">
+
 				</form><!--.login-form-->
 				<div class="help-text">
 					<p>Forget your password?</a></p>
