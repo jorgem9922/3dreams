@@ -1,3 +1,15 @@
+<?php 
+include "../login/conexion.php";
+mysqli_select_db($conn, "productosbd");
+session_start();
+if (!isset($_SESSION['nombre']) || $_SESSION['nombre'] === null) {
+    header("Location: index.php");
+    exit;
+    
+}
+$usuario = $_SESSION['nombre'];
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

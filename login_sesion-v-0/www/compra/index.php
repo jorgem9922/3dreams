@@ -1,5 +1,14 @@
 <?php 
-include "../conexion.php";
+include "../login/conexion.php";
+mysqli_select_db($conn, "productosbd");
+session_start();
+if (!isset($_SESSION['nombre']) || $_SESSION['nombre'] === null) {
+    header("Location: index.php");
+    exit;
+    
+}
+$usuario = $_SESSION['nombre'];
+
 ?>
 
 <!DOCTYPE html>
@@ -40,6 +49,27 @@ include "../conexion.php";
             </div>
             
           </nav>
+          <ul class="nav navbar-nav pull-right hidden-xs">                       
+            <li class="notification-dropdown hidden-xs hidden-sm">
+                <a href="#" class="trigger">
+                    <i class="icon-user"></i>
+                </a>
+                <div class="pop-dialog">                    
+                </div>
+            </li>
+            <li class="dropdown open">
+                <a href="#" class="dropdown-toggle hidden-xs hidden-sm" data-toggle="dropdown">
+                    Bienvenido<?php echo ": ".$_SESSION['nombre'] ?>
+                </a>                
+            </li>  
+            <li class="settings hidden-xs hidden-sm">
+                <a href="cerrarSesion.php" role="button">
+                    <i class="icon-share-alt"></i>
+                    <li><i class="bi-cart-dash px-3" ></i></li>           
+
+                </a>
+            </li>
+        </ul>
     </header>
    
 
@@ -59,7 +89,6 @@ include "../conexion.php";
                 <p><strong>Marca:</strong> <?php echo $registro['marca']; ?></p>
                 <p><strong>referencia:</strong> <?php echo $registro['referencia']; ?></p>
                 <p><strong>Precio:</strong> <?php echo $registro['precio']; ?></p>
-                <p><strong>Ciudad:</strong> <?php echo $registro['ciudad']; ?></p>
                  <a href="producto_especifico.php?id=<?php echo $registro['id_producto']; ?>" class="btn btn-primary">Detalles</a>
             </div>
           <?php } ?>
