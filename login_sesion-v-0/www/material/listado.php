@@ -7,6 +7,23 @@ if(!isset($usuario)){
 }
 include "../conexion.php";
 include "../header.php";
+
+$pagina=$_GET['pagina'];
+$registro = 10;
+ 
+//$contador como su nombre lo indica el contador.
+$contador = 1;
+ 
+/**
+ * Se inicia la paginación, si el valor de $pagina es 0 le asigna el valor 1 e $inicio entra con valor 0.
+ * si no es la pagina 1 entonces $inicio sera igual al numero de pagina menos 1 multiplicado por la cantidad de registro
+ */
+if (!$pagina) {
+    $inicio = 0;
+    $pagina = 1;
+} else {
+    $inicio = ($pagina - 1) * $registro;
+}
 ?>
 
 
@@ -37,6 +54,20 @@ include "../header.php";
                         ";
                         
                         $registros = mysqli_query($conn, $consultar);
+                        $total_registros = mysqli_num_rows($registros);
+
+                        $consultar = "SELECT *
+                        FROM producto p
+                        INNER JOIN material m ON m.id_material = p.id_producto
+                        INNER JOIN tipo_material tm ON tm.id_tipo_material = m.id_tipo_material
+                        INNER JOIN fabricantes fa ON fa.id_fabricante = p.id_fabricante
+                        ORDER BY p.id_producto  ASC LIMIT $inicio, $registro;
+                        ";
+                        
+                        $registros = mysqli_query($conn, $consultar);
+                        $total_paginas = ceil($total_registros / $registro);
+
+                       
                         ?>
 
                         <div class="table-responsive">
@@ -60,21 +91,22 @@ include "../header.php";
                                 </thead>
                                 <tbody>
                                 <?php
-                                while ($registro = mysqli_fetch_assoc($registros)) {
+                               if ($total_registros) {
+                                while ($personas = mysqli_fetch_array($registros, MYSQLI_ASSOC)) {
                                     ?>
                                     <tr class="align-middle">
-                                        <td><?php echo $registro['id_producto']; ?></td>
-                                        <td><?php echo $registro['nombre_producto']; ?></td>
-                                        <td><?php echo $registro['marca']; ?></td>
-                                        <td><?php echo $registro['referencia']; ?></td>
-                                        <td><?php echo $registro['precio']; ?></td>
-                                        <td><?php echo $registro['color']; ?></td>
-                                        <td><?php echo $registro['peso']; ?></td>
-                                        <td><?php echo $registro['Descripcion']; ?></td>
-                                        <td><?php echo $registro['modelodeimpresion']; ?></td>
-                                        <td><?php echo $registro['Nombrematerial']; ?></td>
-                                        <td><?php echo $registro['tamaño']; ?></td>
-                                        <td><?php echo $registro['nombre_fabricante']; ?></td>
+                                        <td><?php echo $personas['id_producto']; ?></td>
+                                        <td><?php echo $personas['nombre_producto']; ?></td>
+                                        <td><?php echo $personas['marca']; ?></td>
+                                        <td><?php echo $personas['referencia']; ?></td>
+                                        <td><?php echo $personas['precio']; ?></td>
+                                        <td><?php echo $personas['color']; ?></td>
+                                        <td><?php echo $personas['peso']; ?></td>
+                                        <td><?php echo $personas['Descripcion']; ?></td>
+                                        <td><?php echo $personas['modelodeimpresion']; ?></td>
+                                        <td><?php echo $personas['Nombrematerial']; ?></td>
+                                        <td><?php echo $personas['tamaño']; ?></td>
+                                        <td><?php echo $personas['nombre_fabricante']; ?></td>
                                         <td>
                                             <?php 
                                             echo "<img width='100px' height='100px' src='../imagenes/{$registro['fotografia_producto']}' alt='Imagen de producto'>"; 
@@ -82,11 +114,52 @@ include "../header.php";
                                         </td>
                                     </tr>
                                     <?php
-                                }
+                                $contador++;
+                            }
+                         } else {
+                          echo "<font color='darkgray'>(sin resultados)</font>";
+                        }
+             
+             
+                        mysqli_free_result($registros);
                                 ?>
                                 </tbody>
                             </table>
-                        </div>
+                            <div>
+        <?php
+        if ($total_registros) {
+            /**
+             * Aca activamos o desactivamos la opción "< Anterior", si estamos en la pagina 1 nos dará como resultado 0 por ende NO
+             * activaremos el primer if y pasaremos al else en donde se desactiva la opción anterior. Pero si el resultado es mayor
+             * a 0 se activara el href del link para poder retroceder.
+             */
+            if (($pagina - 1) > 0) {
+                echo "<a href='listado.php?pagina=".($pagina-1)."'>< Anterior</a>";
+            } else {
+                echo "<a href='#'>< Anterior</a>";
+            }
+ 
+            // Generamos el ciclo para mostrar la cantidad de paginas que tenemos.
+            for ($i = 1; $i <= $total_paginas; $i++) {
+                if ($pagina == $i) {
+                    echo "<a href='#'>". $pagina ."</a>";
+                } else {
+                    echo "<a href='listado.php?pagina=$i'>$i</a> ";
+                }
+            }
+ 
+            /**
+             * Igual que la opcion primera de "< Anterior", pero aca para la opcion "Siguiente >", si estamos en la ultima pagina no podremos
+             * utilizar esta opcion.
+             */
+            if (($pagina + 1)<=$total_paginas) {
+                echo "<a href='listado.php?pagina=".($pagina+1)."'>Siguiente ></a>";
+            } else {
+                echo "<a href='#'>Siguiente ></a>";
+            }
+        }
+        ?>
+    </div>            </div>
                     </div>
                 </div>
             </div>

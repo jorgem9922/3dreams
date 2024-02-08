@@ -22,8 +22,12 @@
 					<input type="checkbox" class="checkbox" id="remember_me">
 					<label for="remember_me">Remember me</label>
 
+<<<<<<< HEAD
+					<input type="submit" class="button" value="Login"><a href="listado.php">
+=======
 					<input type="submit" class="button" value="Login">
 
+>>>>>>> e5aa674b547352888bee5fb4abf1d4a2726e40fd
 				</form><!--.login-form-->
 				<div class="help-text">
 					<p>Forget your password?</a></p>
