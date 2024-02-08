@@ -19,6 +19,8 @@ $usuario = $_SESSION['nombre'];
     <title>3Dreams</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
 </head>
 <body>
 
@@ -41,15 +43,15 @@ $usuario = $_SESSION['nombre'];
                 <li class="nav-item">
                   <a class="nav-link" href="#">diseños</a>
                 </li>
+                
               </ul>
               <form class="form-inline" action="busqueda.php" method="GET">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
               </form>
+              
             </div>
-            
-          </nav>
-          <ul class="nav navbar-nav pull-right hidden-xs">                       
+            <ul class="nav navbar-nav pull-right hidden-xs">                       
             <li class="notification-dropdown hidden-xs hidden-sm">
                 <a href="#" class="trigger">
                     <i class="icon-user"></i>
@@ -63,13 +65,15 @@ $usuario = $_SESSION['nombre'];
                 </a>                
             </li>  
             <li class="settings hidden-xs hidden-sm">
-                <a href="cerrarSesion.php" role="button">
+                <a href="compra.php" role="button">
                     <i class="icon-share-alt"></i>
                     <li><i class="bi-cart-dash px-3" ></i></li>           
 
                 </a>
             </li>
         </ul>
+          </nav>
+          
     </header>
    
 
