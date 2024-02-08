@@ -8,8 +8,24 @@ if (!isset($_SESSION['nombre']) || $_SESSION['nombre'] === null) {
     
 }
 $usuario = $_SESSION['nombre'];
-
+//$registros nos entrega la cantidad de registros a mostrar.
+$registros = 10;
+ 
+//$contador como su nombre lo indica el contador.
+$contador = 1;
+ 
+/**
+ * Se inicia la paginación, si el valor de $pagina es 0 le asigna el valor 1 e $inicio entra con valor 0.
+ * si no es la pagina 1 entonces $inicio sera igual al numero de pagina menos 1 multiplicado por la cantidad de registro
+ */
+if (!$pagina) {
+    $inicio = 0;
+    $pagina = 1;
+} else {
+    $inicio = ($pagina - 1) * $registros;
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -23,7 +39,10 @@ $usuario = $_SESSION['nombre'];
 
 </head>
 <body>
-
+<?php 
+if ($total_registros) {
+                while ($personas = mysqli_fetch_array($resultados, MYSQLI_ASSOC)) {
+                ?>
     <header class="container-fluid">
         <div>
         </div>
@@ -73,7 +92,16 @@ $usuario = $_SESSION['nombre'];
             </li>
         </ul>
           </nav>
-          
+          <?php 
+
+          $contador++;
+                }
+             } else {
+              echo "<font color='darkgray'>(sin resultados)</font>";
+            }
+ 
+            mysqli_free_result($resultados);
+            ?>
     </header>
    
 
