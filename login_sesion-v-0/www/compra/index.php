@@ -26,11 +26,7 @@ $contador = 1;
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
 </head>
-<body>
-<?php 
-if ($total_registros) {
-                while ($personas = mysqli_fetch_array($resultados, MYSQLI_ASSOC)) {
-                ?>
+<body>           
     <header class="container-fluid">
         <div>
         </div>
@@ -80,16 +76,7 @@ if ($total_registros) {
             </li>
         </ul>
           </nav>
-          <?php 
-
-          $contador++;
-                }
-             } else {
-              echo "<font color='darkgray'>(sin resultados)</font>";
-            }
- 
-            mysqli_free_result($resultados);
-            ?>
+         
     </header>
    
 
