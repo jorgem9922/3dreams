@@ -38,7 +38,8 @@ if (isset($_FILES['imagen'])) {
     }
 }
 
-$insertar = "INSERT INTO reseña (id_reseña, calificacion, id_usuario, titulo, descripcion, fecha_creacion, id_producto, fotografia_reseña) VALUES ($id_reseña, '$calificacion', '$usuario', '$titulo', '$descripcion', '$fecha_creacion', '$id_producto', '$nombreCompleto')";
+$insertar = "INSERT INTO reseña (id_reseña, calificacion, id_usuario, titulo, descripcion, fecha_creacion, id_producto, fotografia_reseña)
+ VALUES ($id_reseña, '$calificacion', '$usuario', '$titulo', '$descripcion', '$fecha_creacion', '$id_producto', '$nombreCompleto')";
 
 mysqli_query($conn, $insertar);
 header("Location:alta_ok.php");
