@@ -95,14 +95,6 @@ if (!$pagina) {
       //Generamos otra consulta la cual creara en si la paginacion, ordenando y crendo un limite en las consultas.
       $resultados = mysqli_query($conexion,"SELECT * FROM producto  LIMIT $inicio, $registro");
 
-        $total_registros = mysqli_num_rows($registro);
-        $consultar= "SELECT * FROM producto ASC LIMIT $inicio, $registros";
-        $total_registros = mysqli_num_rows($registros);
-        $consultar= "SELECT * FROM producto limit 5 $inicio, $registros";
-
-
-        $registros= mysqli_query($conexion, $consultar);
-        $total_paginas = ceil($total_registros / $registro);
       //Con ceil redondearemos el resultado total de las paginas 4.53213 = 5
       $total_paginas = ceil($total_registros / $registro);
       ?>
