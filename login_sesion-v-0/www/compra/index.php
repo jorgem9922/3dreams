@@ -12,6 +12,13 @@ $registro = 10;
  $pagina=$_GET['pagina'];
 $contador = 1;
  
+
+if (!$pagina) {
+    $inicio = 0;
+    $pagina = 1;
+} else {
+    $inicio = ($pagina - 1) * $registro;
+}
 ?>
 
 
@@ -89,6 +96,7 @@ $contador = 1;
 
         $total_registros = mysqli_num_rows($registros);
         $consultar= "SELECT * FROM producto ASC  $inicio, $registros";
+
 
         $registros= mysqli_query($conexion, $consultar);
         $total_paginas = ceil($total_registros / $registro);
