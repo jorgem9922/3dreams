@@ -15,7 +15,7 @@
 	if($row[0] > 0 ){
 		session_start();
 		$_SESSION['nombre'] = $usuario;
-		header( 'Location: ../compra/index.php' );
+		header( 'Location: ../compra/index.php?pagina=1' );
 	}
 	else{
 		header( 'Location: index.php' );		
