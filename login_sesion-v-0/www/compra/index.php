@@ -8,7 +8,7 @@ if (!isset($_SESSION['nombre']) || $_SESSION['nombre'] === null) {
     
 }
 $usuario = $_SESSION['nombre'];
-$registros = 10;
+$registro = 10;
  $pagina=$_GET['pagina'];
 $contador = 1;
  
@@ -26,11 +26,7 @@ $contador = 1;
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
 </head>
-<body>
-<?php 
-if ($total_registros) {
-                while ($personas = mysqli_fetch_array($resultados, MYSQLI_ASSOC)) {
-                ?>
+<body>           
     <header class="container-fluid">
         <div>
         </div>
@@ -80,16 +76,7 @@ if ($total_registros) {
             </li>
         </ul>
           </nav>
-          <?php 
-
-          $contador++;
-                }
-             } else {
-              echo "<font color='darkgray'>(sin resultados)</font>";
-            }
- 
-            mysqli_free_result($resultados);
-            ?>
+         
     </header>
    
 
@@ -100,22 +87,80 @@ if ($total_registros) {
 
         $registros= mysqli_query($conexion, $consultar);
 
+        $total_registros = mysqli_num_rows($registro);
+        $consultar= "SELECT * FROM producto ASC LIMIT $inicio, $registros";
+
+        $registros= mysqli_query($conexion, $consultar);
+        $total_paginas = ceil($total_registros / $registro);
       ?>
       <div class="dreams">
-         <?php while ($registro = mysqli_fetch_assoc($registros)) { ?>
+        
+         <?php  if ($total_registros) {
+                while ($productos = mysqli_fetch_array($registros, MYSQLI_ASSOC)) {
+                ?>
+         
             <div class="productos">
-            <img src="../imagenes/<?php echo $registro['fotografia_producto']; ?>" alt="Imagen de usuario">
-                <p><strong>Nombre:</strong> <?php echo $registro['nombre_producto']; ?></p>
-                <p><strong>Marca:</strong> <?php echo $registro['marca']; ?></p>
-                <p><strong>referencia:</strong> <?php echo $registro['referencia']; ?></p>
-                <p><strong>Precio:</strong> <?php echo $registro['precio']; ?></p>
-                 <a href="producto_especifico.php?id=<?php echo $registro['id_producto']; ?>" class="btn btn-primary">Detalles</a>
+            <img src="../imagenes/<?php echo $productos['fotografia_producto']; ?>" alt="Imagen de usuario">
+                <p><strong>Nombre:</strong> <?php echo $productos['nombre_producto']; ?></p>
+                <p><strong>Marca:</strong> <?php echo $productos['marca']; ?></p>
+                <p><strong>referencia:</strong> <?php echo $productos['referencia']; ?></p>
+                <p><strong>Precio:</strong> <?php echo $productos['precio']; ?></p>
+                 <a href="producto_especifico.php?id=<?php echo $productos['id_producto']; ?>" class="btn btn-primary">Detalles</a>
             </div>
-          <?php } ?>
+          
        </div>  
     </section>
+    <?php
+                    /**
+                     * La variable $contador es la misma que iniciamos arriba con valor 1, en cada ciclo sumara 1 a este valor.
+                     * $contador sirve para mostrar cuantos registros tenemos, es mas que nada una guia.
+                     */
+                   $contador++;
+                }
+             } else {
+              echo "<font color='darkgray'>(sin resultados)</font>";
+            }
+ 
+            mysqli_free_result($registros);
+            ?>
 
-    <!-- ... (resto del código) ... -->
+
+<div>
+        <?php
+        if ($total_registros) {
+            /**
+             * Aca activamos o desactivamos la opción "< Anterior", si estamos en la pagina 1 nos dará como resultado 0 por ende NO
+             * activaremos el primer if y pasaremos al else en donde se desactiva la opción anterior. Pero si el resultado es mayor
+             * a 0 se activara el href del link para poder retroceder.
+             */
+            if (($pagina - 1) > 0) {
+                echo "<a href='index.php?pagina=".($pagina-1)."'>< Anterior</a>";
+            } else {
+                echo "<a href='#'>< Anterior</a>";
+            }
+ 
+            // Generamos el ciclo para mostrar la cantidad de paginas que tenemos.
+            for ($i = 1; $i <= $total_paginas; $i++) {
+                if ($pagina == $i) {
+                    echo "<a href='#'>". $pagina ."</a>";
+                } else {
+                    echo "<a href='index.php?pagina=$i'>$i</a> ";
+                }
+            }
+ 
+            /**
+             * Igual que la opcion primera de "< Anterior", pero aca para la opcion "Siguiente >", si estamos en la ultima pagina no podremos
+             * utilizar esta opcion.
+             */
+            if (($pagina + 1)<=$total_paginas) {
+                echo "<a href='index.php?pagina=".($pagina+1)."'>Siguiente ></a>";
+            } else {
+                echo "<a href='#'>Siguiente ></a>";
+            }
+        }
+        ?>
+    </div>
+
 
     <footer class="container-fluid">
         <p>3Dreams - Impresión 3D y más</p>
