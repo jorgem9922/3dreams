@@ -87,8 +87,14 @@ $contador = 1;
 
         $registros= mysqli_query($conexion, $consultar);
 
+<<<<<<< HEAD
         $total_registros = mysqli_num_rows($registro);
         $consultar= "SELECT * FROM producto ASC LIMIT $inicio, $registros";
+=======
+        $total_registros = mysqli_num_rows($registros);
+        $consultar= "SELECT * FROM producto limit 5 $inicio, $registros";
+
+>>>>>>> 08ead1ddfdb98f628fed1b811a68f916c9d37671
 
         $registros= mysqli_query($conexion, $consultar);
         $total_paginas = ceil($total_registros / $registro);
