@@ -96,7 +96,7 @@ $contador = 1;
       <div class="dreams">
         
          <?php  if ($total_registros) {
-                while ($productos = mysqli_fetch_array($registros, MYSQLI_ASSOC)) {
+                while ($productos = mysqli_fetch_array($registro, MYSQLI_ASSOC)) {
                 ?>
          
             <div class="productos">
