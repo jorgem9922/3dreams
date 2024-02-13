@@ -1,6 +1,6 @@
 <?php 
 include "../login/conexion.php";
-mysqli_select_db($conn, "productosbd");
+mysqli_select_db($conexion, "productosbd");
 session_start();
 if (!isset($_SESSION['nombre']) || $_SESSION['nombre'] === null) {
     header("Location: index.php");
@@ -11,7 +11,12 @@ $usuario = $_SESSION['nombre'];
 $registro = 10;
  $pagina=$_GET['pagina'];
 $contador = 1;
- 
+if (!$pagina) {
+    $inicio = 0;
+    $pagina = 1;
+} else {
+    $inicio = ($pagina - 1) * $registro;
+}
 ?>
 
 
@@ -82,10 +87,13 @@ $contador = 1;
 
     <section>
       <?php 
-        mysqli_select_db($conexion,"productosbd");
-        $consultar= "SELECT * FROM producto";
+      $resultados = mysqli_query($conexion,"SELECT * FROM producto ");
+ 
+      //Contamos la cantidad de filas entregadas por la consulta, de esta forma sabemos cuantos registros fueron retornados por la consulta.
+      $total_registros = mysqli_num_rows($resultados);
 
-        $registros= mysqli_query($conexion, $consultar);
+      //Generamos otra consulta la cual creara en si la paginacion, ordenando y crendo un limite en las consultas.
+      $resultados = mysqli_query($conexion,"SELECT * FROM producto  LIMIT $inicio, $registro");
 
         $total_registros = mysqli_num_rows($registro);
         $consultar= "SELECT * FROM producto ASC LIMIT $inicio, $registros";
@@ -95,11 +103,13 @@ $contador = 1;
 
         $registros= mysqli_query($conexion, $consultar);
         $total_paginas = ceil($total_registros / $registro);
+      //Con ceil redondearemos el resultado total de las paginas 4.53213 = 5
+      $total_paginas = ceil($total_registros / $registro);
       ?>
       <div class="dreams">
         
          <?php  if ($total_registros) {
-                while ($productos = mysqli_fetch_array($registros, MYSQLI_ASSOC)) {
+                while ($productos = mysqli_fetch_array($resultados, MYSQLI_ASSOC)) {
                 ?>
          
             <div class="productos">
@@ -124,7 +134,7 @@ $contador = 1;
               echo "<font color='darkgray'>(sin resultados)</font>";
             }
  
-            mysqli_free_result($registros);
+            mysqli_free_result($resultados);
             ?>
 
 
