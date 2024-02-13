@@ -130,7 +130,8 @@ if (isset($_GET['id'])) {
     echo "<p>ID del producto no proporcionado.</p>";
 }
 ?>
-
+<td> <a href="baja2.php?id=<?php echo $registro['id_usuario']; ?>"><i class="bi-trash px-1" style="font-size: 2rem; color:red;"></i> </a></td> 
+                                        <!-- Agrega más celdas según tus necesidades -->
     <!-- ... (resto del código) ... -->
 
     <footer class="container-fluid">
