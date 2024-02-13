@@ -33,7 +33,7 @@ include "../header.php"
                                 <td scope="row"><a href="alta.php"><i class="bi-database-add px-3" style="font-size: 4rem; color:yellow;"></i></a></td>
                                 <td scope="row"><a href="baja.php"><i class="bi-database-dash px-3" style="font-size: 4rem; color:yellow;"></i></a></td>
                                 <td scope="row"><a href="actualiza.php"><i class="bi-database-check px-3" style="font-size: 4rem; color:yellow;"></a></i></td>
-                                <td scope="row"><a href="listado.php"><i class="bi-database-down px-3" style="font-size: 4rem; color:yellow;"></i></a></td>
+                                <td scope="row"><a href="listado.php?pagina=1"><i class="bi-database-down px-3" style="font-size: 4rem; color:yellow;"></i></a></td>
                                 </tr>
                             
                         </tbody>
