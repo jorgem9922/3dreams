@@ -87,7 +87,7 @@ $contador = 1;
 
         $registros= mysqli_query($conexion, $consultar);
 
-        $total_registros = mysqli_num_rows($registro);
+        $total_registros = mysqli_num_rows($registros);
         $consultar= "SELECT * FROM producto ASC LIMIT $inicio, $registros";
 
         $registros= mysqli_query($conexion, $consultar);
@@ -96,7 +96,7 @@ $contador = 1;
       <div class="dreams">
         
          <?php  if ($total_registros) {
-                while ($productos = mysqli_fetch_array($registros, MYSQLI_ASSOC)) {
+                while ($productos = mysqli_fetch_array($registro, MYSQLI_ASSOC)) {
                 ?>
          
             <div class="productos">
