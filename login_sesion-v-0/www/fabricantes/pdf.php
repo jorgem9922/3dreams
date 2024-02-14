@@ -1,6 +1,6 @@
 <?php
 include_once("../conexion.php");
-mysqli_select_db($conn,"dreams3");
+mysqli_select_db($conn,"productosbd");
         $consultar= "SELECT * FROM fabricantes";
 
         $resultset = mysqli_query($conn, $consultar);
