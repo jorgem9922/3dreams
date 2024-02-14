@@ -51,6 +51,7 @@ section {
     background-color: #5a58589f;
     border-radius: 20px;
     width: fit-content;
+    margin: auto;
 }
 
 .about div {
@@ -139,7 +140,8 @@ header img {
 .productos {
     width: 25%; /* Cambié el ancho a 20% para que haya espacio suficiente para 5 elementos en una fila */
     margin: 0 2% 2%;
-  
+  background-color: #aca8a8;
+  border-radius: 10px;
     border:#333 1px solid; /* Agregué un margen a cada elemento para espaciarlos un poco */
 }
 
