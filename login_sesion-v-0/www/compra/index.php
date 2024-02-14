@@ -124,10 +124,6 @@ if (!$pagina) {
        </div>  
     </section>
     
-                    /**
-                     * La variable $contador es la misma que iniciamos arriba con valor 1, en cada ciclo sumara 1 a este valor.
-                     * $contador sirve para mostrar cuantos registros tenemos, es mas que nada una guia.
-                     */
                   
 
 
