@@ -108,7 +108,7 @@ if (isset($_GET['id'])) {
         }
         echo "</div>";
         ?>
-        <a href="carrito.php?id=<?php echo $registro['id_producto']; ?>" role="button">
+        <a href="carrito.php?id=<?php echo $registroProducto['id_producto']; ?>" role="button">
                     <i class="bi-cart-dash px-3" ></i>          
                 </a>
         <?php
