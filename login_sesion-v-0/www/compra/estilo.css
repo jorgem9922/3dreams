@@ -29,7 +29,7 @@ header {
 
 nav a {
     margin: 0 15px;
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 
@@ -130,8 +130,10 @@ header img {
 }
 
 .productos {
-    width: 250px; /* Cambié el ancho a 20% para que haya espacio suficiente para 5 elementos en una fila */
-    margin: 0 2%; /* Agregué un margen a cada elemento para espaciarlos un poco */
+    width: 25%; /* Cambié el ancho a 20% para que haya espacio suficiente para 5 elementos en una fila */
+    margin: 0 2% 2%;
+  
+    border:#333 1px solid; /* Agregué un margen a cada elemento para espaciarlos un poco */
 }
 
 .productos img {

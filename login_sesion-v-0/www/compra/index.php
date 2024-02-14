@@ -27,7 +27,7 @@ if (!$pagina) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3Dreams</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="estilo.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
 </head>
@@ -112,15 +112,8 @@ if (!$pagina) {
                 <p><strong>Precio:</strong> <?php echo $productos['precio']; ?></p>
                  <a href="producto_especifico.php?id=<?php echo $productos['id_producto']; ?>" class="btn btn-primary">Detalles</a>
             </div>
-          
-       </div>  
-    </section>
-    <?php
-                    /**
-                     * La variable $contador es la misma que iniciamos arriba con valor 1, en cada ciclo sumara 1 a este valor.
-                     * $contador sirve para mostrar cuantos registros tenemos, es mas que nada una guia.
-                     */
-                   $contador++;
+            <?php
+           $contador++;
                 }
              } else {
               echo "<font color='darkgray'>(sin resultados)</font>";
@@ -128,6 +121,14 @@ if (!$pagina) {
  
             mysqli_free_result($resultados);
             ?>
+       </div>  
+    </section>
+    
+                    /**
+                     * La variable $contador es la misma que iniciamos arriba con valor 1, en cada ciclo sumara 1 a este valor.
+                     * $contador sirve para mostrar cuantos registros tenemos, es mas que nada una guia.
+                     */
+                  
 
 
 <div>
