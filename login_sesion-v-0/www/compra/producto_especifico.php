@@ -18,6 +18,8 @@ $usuario = $_SESSION['nombre'];
     <title>3Dreams</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
 </head>
 <body>
 
@@ -105,6 +107,11 @@ if (isset($_GET['id'])) {
             echo "<p>Tipo de producto no reconocido.</p>";
         }
         echo "</div>";
+        ?>
+        <a href="compra.php" role="button">
+                    <i class="bi-cart-dash px-3" ></i>          
+                </a>
+        <?php
 
         // Mostrar reseñas del producto
         $consultaReseñas = "SELECT * FROM reseña WHERE id_producto = $productoId";
@@ -130,7 +137,6 @@ if (isset($_GET['id'])) {
     echo "<p>ID del producto no proporcionado.</p>";
 }
 ?>
-<td> <a href="baja2.php?id=<?php echo $registro['id_usuario']; ?>"><i class="bi-trash px-1" style="font-size: 2rem; color:red;"></i> </a></td> 
                                         <!-- Agrega más celdas según tus necesidades -->
     <!-- ... (resto del código) ... -->
 
