@@ -44,6 +44,10 @@ section {
     align-items: center;
 }
 
+.menupaginacion{
+    text-align: center;
+}
+
 .about div {
     background-color: rgb(255, 246, 210);
     display: flex;

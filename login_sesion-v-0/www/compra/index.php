@@ -127,7 +127,7 @@ if (!$pagina) {
                   
 
 
-<div>
+<div class="menupaginacion">
         <?php
         if ($total_registros) {
             /**
