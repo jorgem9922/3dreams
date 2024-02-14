@@ -155,9 +155,9 @@ if (!$pagina) {
              * utilizar esta opcion.
              */
             if (($pagina + 1)<=$total_paginas) {
-                echo "<a href='index.php?pagina=".($pagina+1)."'>Siguiente ></a>";
+                echo "<a href='index.php?pagina=".($pagina+1)."'> Siguiente ></a>";
             } else {
-                echo "<a href='#'>Siguiente ></a>";
+                echo "<a href='#'> Siguiente ></a>";
             }
         }
         ?>

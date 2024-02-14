@@ -42,11 +42,15 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+   
 }
 
 .menupaginacion{
     text-align: center;
     margin-bottom: 5px;
+    background-color: #5a58589f;
+    border-radius: 20px;
+    width: fit-content;
 }
 
 .about div {
