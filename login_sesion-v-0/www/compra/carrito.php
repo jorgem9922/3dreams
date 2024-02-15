@@ -8,7 +8,7 @@ if (!isset($_SESSION['nombre']) || $_SESSION['nombre'] === null) {
 }
 mysqli_select_db($conn, "productosbd");
 $usuario = $_SESSION['nombre'];
-$cantidad= $_POST["cantidad"];
+// $cantidad= $_POST["cantidad"];
 $sql = "SELECT id_usuario FROM usuario where nombre='$usuario' ";
 $res = mysqli_query($conn,$sql);
 $fila = mysqli_fetch_assoc($res);
