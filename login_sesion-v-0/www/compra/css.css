@@ -131,11 +131,11 @@ header img {
 
 .productoscarrito {
     width: 250px; /* Cambié el ancho a 20% para que haya espacio suficiente para 5 elementos en una fila */
-    margin: 0 2%; /* Agregué un margen a cada elemento para espaciarlos un poco */
+    margin: 0 2% 2% 2%; /* Agregué un margen a cada elemento para espaciarlos un poco */
 }
 
 .productoscarrito img {
-    width: 100%;
+    width: 40vh;
     height: auto; /* Para mantener la proporción de la imagen */
     object-fit: cover;
 }
