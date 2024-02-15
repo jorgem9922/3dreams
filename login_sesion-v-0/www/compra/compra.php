@@ -76,7 +76,20 @@ $usuario = $_SESSION['nombre'];
           
     </header>
    
-
+    <?php 
+          mysqli_select_db($conexion,"productosbd");
+          $consultar1= "SELECT sum(p.precio)as total_precio FROM producto p 
+          inner join carrito c
+          on c.id_producto = p.id_producto
+          inner join usuario u
+          on u.id_usuario = c.id_usuario
+          where u.nombre = '$usuario' ";
+  
+          $registros1= mysqli_query($conexion, $consultar1);
+          $fila = mysqli_fetch_assoc($registros1);
+          $total = $fila['total_precio']    
+   ?>
+   <p><strong>Precio Total:</strong> <?php echo $total; ?></p>
     <section class="compra">
       <?php 
         mysqli_select_db($conexion,"productosbd");
@@ -103,6 +116,7 @@ $usuario = $_SESSION['nombre'];
 
             </div>
           <?php } ?>
+          
        </div>  
     </section>
 
