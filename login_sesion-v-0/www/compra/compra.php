@@ -18,7 +18,7 @@ $usuario = $_SESSION['nombre'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3Dreams</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="estilo.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
 </head>
@@ -92,7 +92,7 @@ $usuario = $_SESSION['nombre'];
       ?>
       <div class="dreams">
          <?php while ($registro = mysqli_fetch_assoc($registros)) { ?>
-            <div class="productos">
+            <div class="productoscarrito">
             <img src="../imagenes/<?php echo $registro['fotografia_producto']; ?>" alt="Imagen de usuario">
                 <p><strong>Nombre:</strong> <?php echo $registro['nombre_producto']; ?></p>
                 <p><strong>Marca:</strong> <?php echo $registro['marca']; ?></p>

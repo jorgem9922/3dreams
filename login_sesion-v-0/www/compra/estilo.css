@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: rgb(254, 255, 255);
+    background-color: rgb(0, 0, 0);
     color: rgb(0, 0, 0);
 }
 header {
@@ -80,7 +80,7 @@ section {
 }
 
 section img {
-    width: 100vw;
+    width: 10vw;
     height: 60vh;
     object-fit: cover;
 }
@@ -137,6 +137,18 @@ header img {
     width: 100%;
 }
 
+.productoscarrito {
+    width: 50%; /* Cambié el ancho a 20% para que haya espacio suficiente para 5 elementos en una fila */
+    margin: 0 2% 2%;
+  background-color: #aca8a8;
+  border-radius: 10px;
+    border:#333 1px solid; /* Agregué un margen a cada elemento para espaciarlos un poco */
+}
+.productoscarrito img {
+    width: 40px;
+    height: auto;
+    object-fit: cover;
+}
 .productos {
     width: 25%; /* Cambié el ancho a 20% para que haya espacio suficiente para 5 elementos en una fila */
     margin: 0 2% 2%;

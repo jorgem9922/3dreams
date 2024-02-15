@@ -61,8 +61,7 @@ if (isset($_GET['id'])) {
     mysqli_select_db($conexion, "productosbd");
 
     // Consulta para obtener la información del producto específico
-    $consultaProducto = "SELECT * FROM producto WHERE id_producto = $productoId";
-    $resultadoProducto = mysqli_query($conexion, $consultaProducto);
+     $resultadoProducto = mysqli_query($conexion, $consultaProducto);
 
     if ($registroProducto = mysqli_fetch_assoc($resultadoProducto)) {
         // Mostrar información general del producto
@@ -108,6 +107,9 @@ if (isset($_GET['id'])) {
         }
         echo "</div>";
         ?>
+        <label for="" class="form-label">cantidad</label>
+                          <input type="number"
+                            class="form-control" name="cantidad" id="cantidad" required aria-describedby="helpId" placeholder="Introduce la cantidad">
         <a href="carrito.php?id=<?php echo $registroProducto['id_producto']; ?>" role="button">
                     <i class="bi-cart-dash px-3" ></i>          
                 </a>
