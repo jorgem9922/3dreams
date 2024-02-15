@@ -22,11 +22,6 @@ $id = mysqli_real_escape_string($conn, $_GET["id"]);
 $insertar = "INSERT INTO `carrito` (`id_producto`, id_usuario) VALUES ($id,$id_usuario)";
 mysqli_query($conn, $insertar);
 
-
-
-
-
-
 // Redirige a donde desees después de la eliminación
 header("Location: compra.php");
 exit();
