@@ -108,9 +108,7 @@ if (isset($_GET['id'])) {
         }
         echo "</div>";
         ?>
-        <label for="" class="form-label">cantidad</label>
-                          <input type="number"
-                            class="form-control" name="cantidad" id="cantidad" required aria-describedby="helpId" placeholder="Introduce la cantidad">
+       
         <a href="carrito.php?id=<?php echo $registroProducto['id_producto']; ?>" role="button">
                     <i class="bi-cart-dash px-3" ></i>          
                 </a>
