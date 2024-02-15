@@ -116,12 +116,7 @@ $usuario = $_SESSION['nombre'];
                  <a href="eliminar_producto.php?id=<?php echo $registro['id_carrito']; ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a>
 
             </div>
-<<<<<<< HEAD
-          <?php } include "../paypal/paypalCheckout.php";?>
-=======
-          <?php } ?>
-          
->>>>>>> 46d39f9c2ec03085114269647e698205003ef951
+            <?php } include "../paypal/paypalCheckout.php";?>
        </div>  
     </section>
 
