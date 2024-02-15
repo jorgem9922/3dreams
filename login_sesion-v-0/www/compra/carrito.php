@@ -19,11 +19,14 @@ $id = mysqli_real_escape_string($conn, $_GET["id"]);
 // Ahora puedes eliminar el registro en la tabla `material`
 $insertar = "INSERT INTO `carrito` (`id_producto`, id_usuario) VALUES ($id,$id_usuario)";
 mysqli_query($conn, $insertar);
+<<<<<<< HEAD
 // echo $insertar;
 
 
 
 
+=======
+>>>>>>> 088a52c341295cade4efdc57e1fa9b2e2cc9355c
 
 // Redirige a donde desees después de la eliminación
 header("Location: compra.php");
