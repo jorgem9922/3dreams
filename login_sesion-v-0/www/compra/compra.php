@@ -99,6 +99,8 @@ $usuario = $_SESSION['nombre'];
                 <p><strong>referencia:</strong> <?php echo $registro['referencia']; ?></p>
                 <p><strong>Precio:</strong> <?php echo $registro['precio']; ?></p>
                  <a href="producto_especifico.php?id=<?php echo $registro['id_producto']; ?>" class="btn btn-primary">Detalles</a>
+                 <a href="eliminar_producto.php?id=<?php echo $registro['id_carrito']; ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+
             </div>
           <?php } ?>
        </div>  
