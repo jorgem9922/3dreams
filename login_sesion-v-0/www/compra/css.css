@@ -147,8 +147,6 @@ header img {
     object-fit: cover;
 }
 
-
-
 .reseñas {
     background-color: #f8f9fa; /* Cambiar el color de fondo de la sección de reseñas */
     width: 30%;
@@ -168,4 +166,9 @@ header img {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
+.productoscarrito{
+    width: 40vw;
+    height: auto;
+    object-fit: cover;
+}
 
