@@ -90,7 +90,7 @@ $usuario = $_SESSION['nombre'];
         $registros= mysqli_query($conexion, $consultar);
 
       ?>
-      <div class="dreams">
+      <div class="dreams3">
          <?php while ($registro = mysqli_fetch_assoc($registros)) { ?>
             <div class="productoscarrito">
             <img src="../imagenes/<?php echo $registro['fotografia_producto']; ?>" alt="Imagen de usuario">
