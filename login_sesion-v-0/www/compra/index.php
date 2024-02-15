@@ -8,7 +8,7 @@ if (!isset($_SESSION['nombre']) || $_SESSION['nombre'] === null) {
     
 }
 $usuario = $_SESSION['nombre'];
-$registro = 9;
+$registro = 10;
  $pagina=$_GET['pagina'];
 $contador = 1;
 if (!$pagina) {
@@ -27,7 +27,7 @@ if (!$pagina) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3Dreams</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="css.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
 </head>
@@ -53,7 +53,7 @@ if (!$pagina) {
                 </li>
                 
               </ul>
-              <form require class="form-inline" action="busqueda.php" method="GET">
+              <form class="form-inline" action="busqueda.php" method="GET">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
               </form>
@@ -125,9 +125,10 @@ if (!$pagina) {
     </section>
     
                   
+                  
 
 
-<div class="menupaginacion">
+<div>
         <?php
         if ($total_registros) {
             /**
@@ -155,9 +156,9 @@ if (!$pagina) {
              * utilizar esta opcion.
              */
             if (($pagina + 1)<=$total_paginas) {
-                echo "<a href='index.php?pagina=".($pagina+1)."'> Siguiente ></a>";
+                echo "<a href='index.php?pagina=".($pagina+1)."'>Siguiente ></a>";
             } else {
-                echo "<a href='#'> Siguiente ></a>";
+                echo "<a href='#'>Siguiente ></a>";
             }
         }
         ?>

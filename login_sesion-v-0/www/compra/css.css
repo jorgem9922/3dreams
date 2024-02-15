@@ -1,25 +1,27 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
 }
+
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0);
 }
+
+
 /* Agrega estilos personalizados */
 .navbar-light .navbar-nav .nav-link {
-  color: #ffffff00; /* Cambia el color del texto a blanco */
+  color: #000000; /* Cambia el color del texto a blanco */
 }
 
 /* Cambia el color del enlace activo (por ejemplo, la página actual) */
 .navbar-light .navbar-nav .nav-item.active .nav-link {
-  color: #ffffff00; /* Cambia el color del texto a blanco para el enlace activo */
+  color: #000000; /* Cambia el color del texto a blanco para el enlace activo */
 }
 .bg-light{
   width: 100%;
@@ -27,7 +29,7 @@ header {
 
 nav a {
     margin: 0 15px;
-    color: rgb(0, 0, 0);
+    color: white;
     text-decoration: none;
 }
 
@@ -42,20 +44,10 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   
-}
-
-.menupaginacion{
-    text-align: center;
-    margin-bottom: 5px;
-    background-color: #5a58589f;
-    border-radius: 20px;
-    width: fit-content;
-    margin: auto;
 }
 
 .about div {
-    background-color: rgba(255, 246, 210, 0);
+    background-color: rgb(255, 246, 210);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -80,7 +72,7 @@ section {
 }
 
 section img {
-    width: 10vw;
+    width: 100vw;
     height: 60vh;
     object-fit: cover;
 }
@@ -117,7 +109,7 @@ section img {
 
 footer {
     background-color: #333;
-    color: rgba(255, 255, 255, 0);
+    color: white;
     padding: 20px;
     text-align: center;
 }
@@ -136,34 +128,10 @@ header img {
     padding: 20px;
     width: 100%;
 }
-.dreams {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
-    width: 100%;
-}
 
-.productoscarrito {
-    width: 50%; /* Cambié el ancho a 20% para que haya espacio suficiente para 5 elementos en una fila */
-    margin: 0 2% 2%;
-  background-color: #aca8a8;
-  border-radius: 10px;
-    border:#333 1px solid; /* Agregué un margen a cada elemento para espaciarlos un poco */
-}
-.productoscarrito img {
-    width: 40px;
-    height: auto;
-    object-fit: cover;
-}
 .productos {
-    width: 25%; /* Cambié el ancho a 20% para que haya espacio suficiente para 5 elementos en una fila */
-    margin: 0 2% 2%;
-  background-color: #aca8a8;
-  border-radius: 10px;
-    border:#333 1px solid; /* Agregué un margen a cada elemento para espaciarlos un poco */
+    width: 250px; /* Cambié el ancho a 20% para que haya espacio suficiente para 5 elementos en una fila */
+    margin: 0 2%; /* Agregué un margen a cada elemento para espaciarlos un poco */
 }
 
 .productos img {
@@ -182,7 +150,7 @@ header img {
 
 
 .reseñas {
-    background-color: #f8f9fa00; /* Cambiar el color de fondo de la sección de reseñas */
+    background-color: #f8f9fa; /* Cambiar el color de fondo de la sección de reseñas */
     width: 30%;
     padding: 20px;
     margin: 20px 0;
@@ -193,7 +161,7 @@ header img {
 .reseña {
     color: black;
     
-    background-color: #ffffff00; /* Cambiar el color de fondo de cada reseña según tu preferencia */
+    background-color: #ffffff; /* Cambiar el color de fondo de cada reseña según tu preferencia */
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 8px;
