@@ -13,7 +13,7 @@ define("PayPalENV", "production");
 } else {
 define("PayPalClientId", "Ac-wWzb8ykKExhd9I1UPKLmdowXpgLWS5dbPf0uf5s6BF2VjOv27rdtYt8PiAme3W_BnHxPRU3DNfVEM");
 define("PayPalSecret", "EKH6n0JJoTuHOjdIfiUjvJWE3fflKqt0wXKeDg4PbhWiuJgIP-lqQ6tRwfIchLz2NpimZnqlofYlCs5I");
-define("PayPalBaseUrl", "../paypal");
+define("PayPalBaseUrl", "../paypal/");
 define("PayPalENV", "sandbox");
 }
 ?>

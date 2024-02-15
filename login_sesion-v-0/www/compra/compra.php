@@ -16,11 +16,11 @@ $usuario = $_SESSION['nombre'];
 include('header.php');
 include('../paypal/config.php');
 $productName = "Producto Demostración";
-$currency = "ES";
+$currency = "EUR";
 $productPrice = 25;
 $productId = 123456;
 $orderNumber = 546;
-$total =  400;
+
 ?>
 
 <!DOCTYPE html>
@@ -99,7 +99,7 @@ $total =  400;
   
           $registros1= mysqli_query($conexion, $consultar1);
           $fila = mysqli_fetch_assoc($registros1);
-         
+          $total = $fila['total_precio'];
    ?>
    <p><strong>Precio Total:</strong> <?php echo $total; ?></p>
     <section class="compra">
