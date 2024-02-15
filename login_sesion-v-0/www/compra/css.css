@@ -11,6 +11,7 @@ header {
     justify-content: space-between;
     padding: 20px;
     width: 100%;
+   
 }
 
 
@@ -33,9 +34,7 @@ nav a {
     text-decoration: none;
 }
 
-section {
-    text-align: center;
-}
+
 
 .about article {
    
@@ -71,6 +70,12 @@ section {
     left: 55%;
 }
 
+section {
+    text-align: center;
+
+    margin: 2% 2% 2% 2%;
+   
+}
 section img {
     width: 100vw;
     height: 60vh;
@@ -127,11 +132,15 @@ header img {
     justify-content: space-around;
     padding: 20px;
     width: 100%;
+    border:red 1px solid;
+
 }
 
 .productoscarrito {
     width: 250px; /* Cambié el ancho a 20% para que haya espacio suficiente para 5 elementos en una fila */
-    margin: 0 2% 2% 2%; /* Agregué un margen a cada elemento para espaciarlos un poco */
+    margin: 0 2% 2% 2%;
+    
+    /* Agregué un margen a cada elemento para espaciarlos un poco */
 }
 
 .productoscarrito img {
@@ -148,10 +157,22 @@ header img {
     padding: 20px;
     width: 100%;
 }
+.enlace {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
 
+}
+.enlace a{
+    color: black;
+}
 .productos {
     width: 250px; /* Cambié el ancho a 20% para que haya espacio suficiente para 5 elementos en una fila */
-    margin: 0 2%; /* Agregué un margen a cada elemento para espaciarlos un poco */
+    margin: 2%;
+  
+    height: 50vh;
+    /* Agregué un margen a cada elemento para espaciarlos un poco */
 }
 
 .productos img {
