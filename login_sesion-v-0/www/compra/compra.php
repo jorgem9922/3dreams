@@ -1,5 +1,6 @@
 <?php 
 include "../login/conexion.php";
+
 mysqli_select_db($conn, "productosbd");
 session_start();
 if (!isset($_SESSION['nombre']) || $_SESSION['nombre'] === null) {
@@ -102,7 +103,7 @@ $usuario = $_SESSION['nombre'];
                  <a href="eliminar_producto.php?id=<?php echo $registro['id_carrito']; ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a>
 
             </div>
-          <?php } ?>
+          <?php } include "../paypal/paypalCheckout.php";?>
        </div>  
     </section>
 
