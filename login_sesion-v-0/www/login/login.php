@@ -7,6 +7,7 @@
 	mysqli_select_db($conn, "productosbd");
 	$usuario = $_POST['usuario'];
 	$contra = $_POST['contra'];
+	
 
 	$sql = "SELECT COUNT(*) FROM usuario where(nombre='$usuario' and contra='$contra' )";
 	$res = mysqli_query($conn,$sql);
