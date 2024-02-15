@@ -12,7 +12,7 @@ $usuario = $_SESSION['nombre'];
 $sql = "SELECT id_usuario FROM usuario where nombre='$usuario' ";
 $res = mysqli_query($conn,$sql);
 $fila = mysqli_fetch_assoc($res);
-echo $cantidad;
+// echo $cantidad;
     // Obtiene el id del usuario de la fila obtenida
     $id_usuario = $fila['id_usuario'];
    
