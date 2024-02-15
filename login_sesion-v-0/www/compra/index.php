@@ -8,7 +8,7 @@ if (!isset($_SESSION['nombre']) || $_SESSION['nombre'] === null) {
     
 }
 $usuario = $_SESSION['nombre'];
-$registro = 9;
+$registro = 10;
  $pagina=$_GET['pagina'];
 $contador = 1;
 if (!$pagina) {

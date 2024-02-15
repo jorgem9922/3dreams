@@ -68,12 +68,13 @@ if (isset($_GET['id'])) {
         // Mostrar información general del producto
         echo "<div class='producto'>";
         echo "<h1>{$registroProducto['nombre_producto']}</h1>";
+        echo "<img src='../imagenes/{$registroProducto['fotografia_producto']}' alt='Imagen de producto'>";
         echo "<p><strong>Marca:</strong> {$registroProducto['marca']}</p>";
         echo "<p><strong>Referencia:</strong> {$registroProducto['referencia']}</p>";
         echo "<p><strong>Precio:</strong> {$registroProducto['precio']}</p>";
 
         // Mostrar la imagen del producto
-        echo "<img src='../imagenes/{$registroProducto['fotografia_producto']}' alt='Imagen de producto'>";
+        
 
         // Realizar consultas adicionales según el tipo de producto
         $consultaImpresora = "SELECT * FROM impresora WHERE id_impresora = $productoId";
@@ -83,6 +84,7 @@ if (isset($_GET['id'])) {
         $resultadoPieza = mysqli_query($conexion, $consultaPieza);
 
         $consultaDiseño = "SELECT * FROM diseño WHERE id_diseño = $productoId";
+        
         $resultadoDiseño = mysqli_query($conexion, $consultaDiseño);
 
         // Mostrar información específica del tipo de producto
@@ -101,16 +103,16 @@ if (isset($_GET['id'])) {
         } elseif ($registroDiseño = mysqli_fetch_assoc($resultadoDiseño)) {
             echo "<div class='diseño'>";
             echo "<p><strong>Tamaño:</strong> {$registroDiseño['Tamaño']}</p>";
-            echo "<p><strong>Alto:</strong> {$registroDiseño['alto']} cm</p>";
-            echo "<p><strong>Ancho:</strong> {$registroDiseño['ancho']} cm</p>";
+            echo "<p><strong>Alto:</strong> {$registroDiseño['alto']} </p>";
+            echo "<p><strong>Ancho:</strong> {$registroDiseño['ancho']} </p>";
         } else {
             echo "<p>Tipo de producto no reconocido.</p>";
         }
         echo "</div>";
         ?>
        
-        <a href="carrito.php?id=<?php echo $registroProducto['id_producto']; ?>" role="button">
-                    <i class="bi-cart-dash px-3" ></i>          
+        <a href="carrito.php?id=<?php echo $registroProducto['id_producto']; ?>" role="button"  class="btn-carrito">
+        <i class="bi bi-cart"></i>         
                 </a>
         <?php
 

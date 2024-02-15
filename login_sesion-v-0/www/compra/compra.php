@@ -77,7 +77,20 @@ $usuario = $_SESSION['nombre'];
           
     </header>
    
-
+    <?php 
+          mysqli_select_db($conexion,"productosbd");
+          $consultar1= "SELECT sum(p.precio)as total_precio FROM producto p 
+          inner join carrito c
+          on c.id_producto = p.id_producto
+          inner join usuario u
+          on u.id_usuario = c.id_usuario
+          where u.nombre = '$usuario' ";
+  
+          $registros1= mysqli_query($conexion, $consultar1);
+          $fila = mysqli_fetch_assoc($registros1);
+          $total = $fila['total_precio']    
+   ?>
+   <p><strong>Precio Total:</strong> <?php echo $total; ?></p>
     <section class="compra">
       <?php 
         mysqli_select_db($conexion,"productosbd");
@@ -103,7 +116,12 @@ $usuario = $_SESSION['nombre'];
                  <a href="eliminar_producto.php?id=<?php echo $registro['id_carrito']; ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a>
 
             </div>
+<<<<<<< HEAD
           <?php } include "../paypal/paypalCheckout.php";?>
+=======
+          <?php } ?>
+          
+>>>>>>> 46d39f9c2ec03085114269647e698205003ef951
        </div>  
     </section>
 
