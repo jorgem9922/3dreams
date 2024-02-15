@@ -132,7 +132,7 @@ header img {
     justify-content: space-around;
     padding: 20px;
     width: 100%;
-    border:red 1px solid;
+    
 
 }
 
@@ -183,18 +183,31 @@ header img {
 /* Otros estilos existentes */
 
 .producto img {
-    width: 10vw;
+    width: 30vw;
     height: auto;
     object-fit: cover;
+    text-align: center;
 }
+.btn-carrito i {
+    font-size: 2em; /* Tamaño de la fuente del icono */
+    padding: 10px; /* Espacio alrededor del icono */
+    color:black;
+}
+.btn-carrito i:hover{
+    font-size: 2em; /* Tamaño de la fuente del icono */
+    padding: 10px; /* Espacio alrededor del icono */
+    color:rgb(212, 1, 1);
+}
+
 
 .reseñas {
     background-color: #f8f9fa; /* Cambiar el color de fondo de la sección de reseñas */
-    width: 30%;
+    width: 50%;
     padding: 20px;
     margin: 20px 0;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   
 }
 
 .reseña {
