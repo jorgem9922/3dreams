@@ -68,12 +68,13 @@ if (isset($_GET['id'])) {
         // Mostrar información general del producto
         echo "<div class='producto'>";
         echo "<h1>{$registroProducto['nombre_producto']}</h1>";
+        echo "<img src='../imagenes/{$registroProducto['fotografia_producto']}' alt='Imagen de producto'>";
         echo "<p><strong>Marca:</strong> {$registroProducto['marca']}</p>";
         echo "<p><strong>Referencia:</strong> {$registroProducto['referencia']}</p>";
         echo "<p><strong>Precio:</strong> {$registroProducto['precio']}</p>";
 
         // Mostrar la imagen del producto
-        echo "<img src='../imagenes/{$registroProducto['fotografia_producto']}' alt='Imagen de producto'>";
+        
 
         // Realizar consultas adicionales según el tipo de producto
         $consultaImpresora = "SELECT * FROM impresora WHERE id_impresora = $productoId";

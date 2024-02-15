@@ -170,7 +170,6 @@ header img {
 .productos {
     width: 250px; /* Cambié el ancho a 20% para que haya espacio suficiente para 5 elementos en una fila */
     margin: 2%;
-  
     height: 50vh;
     /* Agregué un margen a cada elemento para espaciarlos un poco */
 }
@@ -181,17 +180,25 @@ header img {
     object-fit: cover;
 }
 /* Otros estilos existentes */
-
+.producto h1{
+    text-align: center;
+}
+.producto{
+    margin: 0% 2% 2%;
+}
 .producto img {
     width: 30vw;
     height: auto;
     object-fit: cover;
-    text-align: center;
+    display:block;
+    margin:auto;;
+   
 }
 .btn-carrito i {
     font-size: 2em; /* Tamaño de la fuente del icono */
     padding: 10px; /* Espacio alrededor del icono */
     color:black;
+    margin: 0% 2% 2%;
 }
 .btn-carrito i:hover{
     font-size: 2em; /* Tamaño de la fuente del icono */
@@ -202,7 +209,10 @@ header img {
 
 .reseñas {
     background-color: #f8f9fa; /* Cambiar el color de fondo de la sección de reseñas */
-    width: 50%;
+    width: 100%;
+    display: flex;
+    place-content: center;
+    justify-content: center;
     padding: 20px;
     margin: 20px 0;
     border-radius: 10px;
@@ -212,7 +222,7 @@ header img {
 
 .reseña {
     color: black;
-    
+    width: 50%;
     background-color: #ffffff; /* Cambiar el color de fondo de cada reseña según tu preferencia */
     padding: 15px;
     margin-bottom: 15px;
