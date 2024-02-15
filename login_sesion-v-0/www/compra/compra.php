@@ -18,7 +18,7 @@ $usuario = $_SESSION['nombre'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3Dreams</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="css.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
 </head>
@@ -77,7 +77,7 @@ $usuario = $_SESSION['nombre'];
     </header>
    
 
-    <section>
+    <section class="compra">
       <?php 
         mysqli_select_db($conexion,"productosbd");
         $consultar= "SELECT * FROM producto p 
