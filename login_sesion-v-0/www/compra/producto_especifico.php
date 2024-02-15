@@ -61,7 +61,8 @@ if (isset($_GET['id'])) {
     mysqli_select_db($conexion, "productosbd");
 
     // Consulta para obtener la información del producto específico
-     $resultadoProducto = mysqli_query($conexion, $consultaProducto);
+    $consultaProducto = "SELECT * FROM producto WHERE id_producto = $productoId";
+    $resultadoProducto = mysqli_query($conexion, $consultaProducto);
 
     if ($registroProducto = mysqli_fetch_assoc($resultadoProducto)) {
         // Mostrar información general del producto
