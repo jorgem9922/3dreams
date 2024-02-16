@@ -1,5 +1,6 @@
 <?php 
 include "../login/conexion.php";
+
 mysqli_select_db($conn, "productosbd");
 session_start();
 if (!isset($_SESSION['nombre']) || $_SESSION['nombre'] === null) {
@@ -11,6 +12,17 @@ $usuario = $_SESSION['nombre'];
 
 ?>
 
+<?php 
+include('header.php');
+include('../paypal/config.php');
+$productName = "Producto Demostración";
+$currency = "EUR";
+$productPrice = 25;
+$productId = 123456;
+$orderNumber = 546;
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,7 +30,7 @@ $usuario = $_SESSION['nombre'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3Dreams</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
 </head>
@@ -76,8 +88,21 @@ $usuario = $_SESSION['nombre'];
           
     </header>
    
-
-    <section>
+    <?php 
+          mysqli_select_db($conexion,"productosbd");
+          $consultar1= "SELECT sum(p.precio)as total_precio FROM producto p 
+          inner join carrito c
+          on c.id_producto = p.id_producto
+          inner join usuario u
+          on u.id_usuario = c.id_usuario
+          where u.nombre = '$usuario' ";
+  
+          $registros1= mysqli_query($conexion, $consultar1);
+          $fila = mysqli_fetch_assoc($registros1);
+          $total = $fila['total_precio'];
+   ?>
+   <p><strong>Precio Total:</strong> <?php echo $total; ?></p>
+    <section class="compra">
       <?php 
         mysqli_select_db($conexion,"productosbd");
         $consultar= "SELECT * FROM producto p 
@@ -90,17 +115,21 @@ $usuario = $_SESSION['nombre'];
         $registros= mysqli_query($conexion, $consultar);
 
       ?>
-      <div class="dreams">
+      <div class="dreams3">
          <?php while ($registro = mysqli_fetch_assoc($registros)) { ?>
-            <div class="productos">
+            <div class="productoscarrito">
             <img src="../imagenes/<?php echo $registro['fotografia_producto']; ?>" alt="Imagen de usuario">
                 <p><strong>Nombre:</strong> <?php echo $registro['nombre_producto']; ?></p>
                 <p><strong>Marca:</strong> <?php echo $registro['marca']; ?></p>
                 <p><strong>referencia:</strong> <?php echo $registro['referencia']; ?></p>
                 <p><strong>Precio:</strong> <?php echo $registro['precio']; ?></p>
                  <a href="producto_especifico.php?id=<?php echo $registro['id_producto']; ?>" class="btn btn-primary">Detalles</a>
+                 <a href="eliminar_producto.php?id=<?php echo $registro['id_carrito']; ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+
             </div>
-          <?php } ?>
+            <?php } ?>
+            
+            <?php include "../paypal/payPalCheckout.php";?>
        </div>  
     </section>
 
