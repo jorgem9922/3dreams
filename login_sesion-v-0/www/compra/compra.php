@@ -12,6 +12,17 @@ $usuario = $_SESSION['nombre'];
 
 ?>
 
+<?php 
+include('header.php');
+include('../paypal/config.php');
+$productName = "Producto Demostración";
+$currency = "EUR";
+$productPrice = 25;
+$productId = 123456;
+$orderNumber = 546;
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -88,7 +99,7 @@ $usuario = $_SESSION['nombre'];
   
           $registros1= mysqli_query($conexion, $consultar1);
           $fila = mysqli_fetch_assoc($registros1);
-          $total = $fila['total_precio']    
+          $total = $fila['total_precio'];
    ?>
    <p><strong>Precio Total:</strong> <?php echo $total; ?></p>
     <section class="compra">
@@ -116,7 +127,9 @@ $usuario = $_SESSION['nombre'];
                  <a href="eliminar_producto.php?id=<?php echo $registro['id_carrito']; ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a>
 
             </div>
-            <?php } include "../paypal/paypalCheckout.php";?>
+            <?php } ?>
+            
+            <?php include "../paypal/payPalCheckout.php";?>
        </div>  
     </section>
 

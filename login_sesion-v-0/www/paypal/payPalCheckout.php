@@ -15,7 +15,7 @@ payment: function (data, actions) {
 return actions.payment.create({
 transactions: [{
 amount: {
-total: '<?php echo $productPrice; ?>',
+total: '<?php echo $total; ?>',
 currency: '<?php echo $currency; ?>'
 }
 }]
