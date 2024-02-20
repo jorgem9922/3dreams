@@ -11,6 +11,7 @@ header {
     justify-content: space-between;
     padding: 20px;
     width: 100%;
+    background-color: #99add3;
    
 }
 
@@ -30,8 +31,11 @@ header {
 
 nav a {
     margin: 0 15px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     text-decoration: none;
+    background-color: #3d7dc7;
+    border-radius: 6px;
+    
 }
 
 
@@ -178,20 +182,25 @@ header img {
     width: 100%;
     height: auto; /* Para mantener la proporción de la imagen */
     object-fit: cover;
+    
 }
 /* Otros estilos existentes */
 .producto h1{
     text-align: center;
+    color: #e08e58;
 }
 .producto{
     margin: 0% 2% 2%;
+    text-align: center;
 }
 .producto img {
-    width: 30vw;
+    width: 20vw;
     height: auto;
     object-fit: cover;
     display:block;
-    margin:auto;;
+    margin:auto;
+    margin-bottom: 2%;
+    background-color: #7b9ec7;
    
 }
 .btn-carrito i {
@@ -199,6 +208,7 @@ header img {
     padding: 10px; /* Espacio alrededor del icono */
     color:black;
     margin: 0% 2% 2%;
+    
 }
 .btn-carrito i:hover{
     font-size: 2em; /* Tamaño de la fuente del icono */
@@ -208,7 +218,7 @@ header img {
 
 
 .reseñas {
-    background-color: #f8f9fa; /* Cambiar el color de fondo de la sección de reseñas */
+  
     width: 100%;
     display: flex;
     place-content: center;
@@ -217,13 +227,16 @@ header img {
     margin: 20px 0;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #8da2c9; /* Cambiar el color de fondo de cada reseña según tu preferencia */
+
+   
    
 }
 
 .reseña {
     color: black;
     width: 50%;
-    background-color: #ffffff; /* Cambiar el color de fondo de cada reseña según tu preferencia */
+    background-color: #8da2c9; /* Cambiar el color de fondo de cada reseña según tu preferencia */
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 8px;

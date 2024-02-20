@@ -43,7 +43,7 @@ if (!$pagina) {
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="#">productos </a>
+                  <a class="nav-link" href="index.php?pagina=1">productos </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">piezas</a>
