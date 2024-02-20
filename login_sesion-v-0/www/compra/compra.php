@@ -13,7 +13,7 @@ $usuario = $_SESSION['nombre'];
 ?>
 
 <?php 
-include('header.php');
+
 include('../paypal/config.php');
 $productName = "Producto Demostración";
 $currency = "EUR";
