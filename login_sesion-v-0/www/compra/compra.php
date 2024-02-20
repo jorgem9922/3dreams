@@ -13,7 +13,7 @@ $usuario = $_SESSION['nombre'];
 ?>
 
 <?php 
-include('header.php');
+
 include('../paypal/config.php');
 $productName = "Producto Demostración";
 $currency = "EUR";
@@ -40,7 +40,7 @@ $orderNumber = 546;
         <div>
         </div>
         <nav class="navbar navbar-expand-lg navbar-light container-fluid">
-            <img src="../Free_Sample_By_Wix (1).jpg" alt="Logo de 3Dreams">
+            <img src="../imagenes/logo.png" alt="Logo de 3Dreams">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
