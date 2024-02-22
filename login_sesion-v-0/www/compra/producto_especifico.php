@@ -8,7 +8,7 @@ if (!isset($_SESSION['nombre']) || $_SESSION['nombre'] === null) {
     
 }
 $usuario = $_SESSION['nombre'];
-
+$productoId = $_GET['id'];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -51,6 +51,8 @@ $usuario = $_SESSION['nombre'];
             
           </nav>
     </header>
+    <form class="p-4" method="POST" action="carrito.php?id=<?php echo $productoId ?>" enctype="multipart/form-data">
+
     <?php
 include "conexion.php";
 
@@ -110,10 +112,11 @@ if (isset($_GET['id'])) {
         }
         echo "</div>";
         ?>
-       
-        <a href="carrito.php?id=<?php echo $registroProducto['id_producto']; ?>" role="button"  class="btn-carrito">
-        <i class="bi bi-cart"></i>         
-                </a>
+       <label for="cantidad">Cantidad:</label><br>
+      <input type="number" id="cantidad" name="cantidad" min="0" step="1" value="1"><br><br>
+      <div class="d-grid">
+                            <input type="submit" class="btn btn-primary" value="carrito">
+                        </div>
         <?php
 
         // Mostrar reseñas del producto
@@ -140,6 +143,7 @@ if (isset($_GET['id'])) {
     echo "<p>ID del producto no proporcionado.</p>";
 }
 ?>
+</form>
                                         <!-- Agrega más celdas según tus necesidades -->
     <!-- ... (resto del código) ... -->
 

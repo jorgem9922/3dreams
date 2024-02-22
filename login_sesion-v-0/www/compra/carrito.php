@@ -8,6 +8,8 @@ if (!isset($_SESSION['nombre']) || $_SESSION['nombre'] === null) {
 }
 mysqli_select_db($conn, "productosbd");
 $usuario = $_SESSION['nombre'];
+$cantidad = $_POST["cantidad"];
+
 $sql = "SELECT id_usuario FROM usuario where nombre='$usuario' ";
 $res = mysqli_query($conn,$sql);
 $fila = mysqli_fetch_assoc($res);
@@ -17,7 +19,7 @@ $fila = mysqli_fetch_assoc($res);
 // Obtén el id del material a eliminar
 $id = mysqli_real_escape_string($conn, $_GET["id"]);
 // Ahora puedes eliminar el registro en la tabla `material`
-$insertar = "INSERT INTO `carrito` (`id_producto`, id_usuario) VALUES ($id,$id_usuario)";
+$insertar = "INSERT INTO `carrito` (`id_producto`, id_usuario,cantidaD) VALUES ($id,$id_usuario,$cantidad)";
 mysqli_query($conn, $insertar);
 // Redirige a donde desees después de la eliminación
 header("Location: compra.php");
