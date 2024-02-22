@@ -90,7 +90,7 @@ $orderNumber = 546;
    
     <?php 
           mysqli_select_db($conexion,"productosbd");
-          $consultar1= "SELECT sum(p.precio)as total_precio FROM producto p 
+          $consultar1= "SELECT sum(p.precio * c.cantidad)as total_precio FROM producto p 
           inner join carrito c
           on c.id_producto = p.id_producto
           inner join usuario u
@@ -123,6 +123,7 @@ $orderNumber = 546;
                 <p><strong>Marca:</strong> <?php echo $registro['marca']; ?></p>
                 <p><strong>referencia:</strong> <?php echo $registro['referencia']; ?></p>
                 <p><strong>Precio:</strong> <?php echo $registro['precio']; ?></p>
+                <p><strong>cantidad:</strong> <?php echo $registro['cantidad']; ?></p>
                  <a href="producto_especifico.php?id=<?php echo $registro['id_producto']; ?>" class="btn btn-primary">Detalles</a>
                  <a href="eliminar_producto.php?id=<?php echo $registro['id_carrito']; ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a>
 
